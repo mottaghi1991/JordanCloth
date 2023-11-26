@@ -1,13 +1,10 @@
 ﻿using Core.Interface.Users;
-using Core.Services.Survey;
 using Core.Services.Users;
 using Data.MasterInterface;
 using Data.MasterServices;
-using Domain.Survey;
 using Domain.User;
 using Domain.User.Permission;
 using Domain.Users;
-using Fuel_Core.Interface.Survey;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IOC
@@ -20,13 +17,9 @@ namespace IOC
 
             #region Survey
 
-            Services.AddScoped<ISurveyList, SurveyServices>();
-            Services.AddScoped<IQuestion, QuestionServices>();
-            Services.AddScoped<IAnswer, AnswerServices>();
+ 
 
-            Services.AddScoped<IMaster<SurveyList>, MasterServices<SurveyList>>();
-            Services.AddScoped<IMaster<Question>, MasterServices<Question>>();
-            Services.AddScoped<IMaster<Answer>, MasterServices<Answer>>();
+      
             #endregion
 
             #region User
