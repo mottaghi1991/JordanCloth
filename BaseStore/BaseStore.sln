@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{A93A8B64-9FD6-4C47-AA1E-A34857C29FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite", "WebSite\WebSite.csproj", "{A93A8B64-9FD6-4C47-AA1E-A34857C29FDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Domain", "1.Domain", "{DE46804B-B2C7-484F-AED9-BF7416CF51A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Data", "2.Data", "{BDFD1490-CD71-459A-9BB9-86BCE12CDDDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Core", "3.Core", "{13E00DF8-C4DD-4730-A31C-5D880509C1D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Presentation", "5.Presentation", "{2816CFC1-3F4E-4E35-A565-DF96EBFF58DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A93A8B64-9FD6-4C47-AA1E-A34857C29FDD} = {2816CFC1-3F4E-4E35-A565-DF96EBFF58DA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37E74971-F64F-4F3E-BE48-D8BF723EA375}
