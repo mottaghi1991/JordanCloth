@@ -16,7 +16,7 @@ namespace Data
         {
             
         }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<MyUser> MyUser { get; set; }
         public virtual DbSet<PermissionList> PermissionList { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<RolePermission> RolePermission { get; set; }

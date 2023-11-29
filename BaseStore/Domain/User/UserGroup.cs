@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,6 @@ namespace Domain.Users
         public int UserGroupId { get; set; }
         public string GroupName { get; set; }
        
-        public List<User.User> User { get; set; }
+        public List<MyUser> User { get; set; }
     }
 }

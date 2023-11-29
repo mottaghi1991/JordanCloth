@@ -27,10 +27,11 @@ namespace IOC
             Services.AddScoped<IPermisionList, PermissionListServices>();
             Services.AddScoped<IRole, RoleServices>();
             Services.AddScoped<IRolePermission, RolePermissionServices>();
+            Services.AddScoped<IViewRender, RenderViewToStringServices>();
 
 
             Services.AddScoped<IMaster<PermissionList>, MasterServices<PermissionList>>();
-            Services.AddScoped<IMaster<User>, MasterServices<User>>();
+            Services.AddScoped<IMaster<MyUser>, MasterServices<MyUser>>();
             Services.AddScoped<IMaster<Role>, MasterServices<Role>>();
             Services.AddScoped<IMaster<RolePermission>, MasterServices<RolePermission>>();
             #endregion

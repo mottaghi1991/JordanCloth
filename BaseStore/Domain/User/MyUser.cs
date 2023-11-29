@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.User
 {
-    public class User
+    public class MyUser
     {
         [Key]
         public int ItUserId { get; set; }

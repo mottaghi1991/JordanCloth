@@ -1,0 +1,63 @@
+﻿@model Core.Dto.ViewModel.User.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="col-10 col-md-7 col-lg-5 signup-login-box">
+    <!-- start signup & login box -->
+    
+   
+    <img src="assets/images/logo.png">
+    @if (TempData["Success"] != null)
+    {
+        
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        
+    }
+    @if (TempData["Error"] != null)
+    {
+       
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+       
+
+    }
+    <form asp-action="Login">
+        <div asp-validation-summary="All" class="text-danger">
+
+        </div>   
+        <div class="input-group signup-login-form mobile-number"><!-- start mobile number input -->
+            <input asp-for="UserName" type="email" class="form-control form-control-lg signup-login-input" placeholder="ایمیل ">
+        </div><!-- end mobile number input -->
+
+        <div class="input-group signup-login-form password"><!-- start password input -->
+            <input asp-for="PassWord" type="password" class="form-control form-control-lg signup-login-input" placeholder="رمز عبور">
+        </div><!-- end password input -->
+
+        <div class="signup-login-form">
+            <div class="form-check"><!-- start input check -->
+                <input asp-for="IsRemember" class="form-check-input form-check-input-custom" type="checkbox" id="customCheck" checked>
+                <label class="form-check-label line-height ps-1" for="customCheck">
+                    مرا به خاطر داشته باش
+                </label>
+            </div><!-- end input check -->
+        </div>
+
+        <button type="submit" class="btn btn-danger d-block font-12 mx-auto mb-4 login-btn"><!-- login btn -->
+            ورود
+        </button>
+
+        <p>کاربر جدید هستید؟ <a asp-action="Register" class="underline">ثبت‌ نام در نیک کالا </a></p>
+        <p>رمز عبور خود را فراموش کرده اید ؟<a asp-action="ForgetPassword"  class="underline"> بازیابی رمز عبور </a></p>
+
+    </form>
+</div>
+
