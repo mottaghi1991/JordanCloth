@@ -1,0 +1,49 @@
+﻿@using Core.Dto.ViewModel.Admin.Role
+@using Domain.User.Permission
+@model Core.Dto.ViewModel.Admin.Role.EditPermissionRoleVm
+
+
+
+
+
+@{
+    IEnumerable<ShowMenuVm> Permissions = ViewBag.PermssionList as IEnumerable<ShowMenuVm>;
+}
+<div class="card card-primary">
+    <div class="card-header">
+        @Model.RoleName
+    </div>
+    <div class="card-body">
+        <form asp-action="RolePermission">
+            <input type="hidden" asp-for="RoleId"/>
+            @foreach (var permission in Permissions.Where(a => a.ParentId == 1))
+            {
+                <div class="col-md-4" style="padding-bottom: 25px">
+                    <div class="card">
+                        <div class="card-body" style="height: 150px; overflow-y: auto">
+                            <li style="color: red">
+                                <input type="checkbox" name="PermissionList" value="@permission.PermissionListId" @((Model.MenuVm.Any(r => r.PermissionListId == permission.PermissionListId) ? "checked" : "")) />
+                                @permission.MenuDesc
+                            </li>
+                            @if (Permissions.Any(p => p.ParentId == permission.ParentId))
+                            {
+                                <ul style="padding-right: 20px">
+                                    @foreach (var sub in Permissions.Where(a => a.ParentId == permission.PermissionListId))
+                                    {
+                                        <li style="font-weight: 500">
+                                            <input type="checkbox" name="PermissionList" value="@sub.PermissionListId" @((Model.MenuVm.Any(r => r.PermissionListId == permission.PermissionListId) ? "checked" : "")) />
+                                            @sub.MenuDesc
+                                        </li>
+
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            <input type="submit" class="btn btn-success" value="ثبت">
+        </form>
+
+    </div>
+</div>

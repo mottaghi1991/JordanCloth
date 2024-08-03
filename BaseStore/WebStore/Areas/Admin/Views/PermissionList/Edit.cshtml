@@ -1,0 +1,67 @@
+﻿@model Domain.User.Permission.PermissionList
+
+<div class="col-md-12">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">PermissionList</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+
+                <form asp-action="Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="PermissionListId" />
+
+
+
+
+                    <div class="form-group">
+                        <label asp-for="Descript" class="control-label"></label>
+                        <input asp-for="Descript" class="form-control" />
+                        <span asp-validation-for="Descript" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ParentId" class="control-label"></label>
+                        <select asp-for="ParentId" class="form-control" asp-items="ViewBag.ParentList">
+                            <option>  لطفا انتخاب فرمایید</option>
+                            <option value ="-1"> سرلیست</option>
+                       
+                        </select>
+                        <span asp-validation-for="ParentId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Status" class="control-label"></label>
+                        <select asp-for="Status " class="form-control">
+                            <option value="0">سیستمی</option>
+                            <option value="1">دسترسی</option>
+                            <option value="2">منو</option>
+                        </select>
+
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Radif" class="control-label"></label>
+                        <input asp-for="Radif" class="form-control" />
+                        <span asp-validation-for="Radif" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="ثبت" class="btn btn-info" />
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+        }

@@ -91,5 +91,15 @@ namespace Core.Services.Users
         {
             return _User.Update(user);
         }
+
+        public IEnumerable<ShowUserBrifViewModel> GetPAggingUser(int Page, int pagesize)
+        {
+            return _User.GetPaging(Page,pagesize).Select(a=>new ShowUserBrifViewModel(){Email = a.Email,UserName = a.UserName,UserId = a.ItUserId});
+        }
+
+        public IEnumerable<ShowUserBrifViewModel> GetAllAdmin()
+        {
+            return _User.GetAll(a=>a.IsAdmin==true).Select(a => new ShowUserBrifViewModel() { Email = a.Email, UserName = a.UserName, UserId = a.ItUserId });
+        }
     }
 }

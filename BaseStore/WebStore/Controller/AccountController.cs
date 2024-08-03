@@ -57,6 +57,7 @@ namespace WebStore.Controller
                 PassWord =PasswordHelper.EncodePasswordMD5(model.PassWord) ,
                 RegisterDate = DateTime.Now,
                 UserAvatar = "default.jpg",
+                IsAdmin = false,
                 ActiveCode = StringTools.GenerateUniqeCode()
             };
             var result = _user.AddUser(user);
@@ -110,6 +111,7 @@ namespace WebStore.Controller
         public IActionResult LogOut()
         {
             HttpContext.SignOutAsync();
+            HttpContext.Session.Clear();
             return RedirectToAction("Index","Home");
         }
 

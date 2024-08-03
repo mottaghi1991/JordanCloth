@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.Interface.Users;
+using Core.Interface.Admin;
 using Data.MasterInterface;
+using Domain.User;
 using Domain.User.Permission;
 
 namespace Core.Services.Users
@@ -12,10 +13,12 @@ namespace Core.Services.Users
     public class RoleServices:IRole
     {
         private readonly  IMaster<Role> _master;
+        private readonly  IMaster<UserRole> _UserRolemaster;
 
-        public RoleServices(IMaster<Role> master)
+        public RoleServices(IMaster<Role> master, IMaster<UserRole> userRolemaster)
         {
             _master = master;
+            _UserRolemaster = userRolemaster;
         }
         public IEnumerable<Role> GetAllRole()
         {
@@ -40,6 +43,21 @@ namespace Core.Services.Users
         public bool delete(Role role)
         {
             return _master.Delete(role);
+        }
+
+        public IEnumerable<UserRole> GetAllUSerOfRole(int RoleId)
+        {
+            return _UserRolemaster.GetAll(a => a.RoleId == RoleId);
+        }
+
+        public bool BulkDelete(IEnumerable<UserRole> List)
+        {
+            return _UserRolemaster.BulkeDelete(List);
+        }
+
+        public bool BulkInsert(IEnumerable<UserRole> List)
+        {
+            return _UserRolemaster.BulkeInsert(List.ToList());
         }
     }
 }

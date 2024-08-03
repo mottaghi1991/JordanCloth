@@ -24,6 +24,8 @@ namespace Core.Interface.Users
     MyUser GetUserByActiveCode(string code);
 
     MyUser Update(MyUser user);
-
+    
+    IEnumerable<ShowUserBrifViewModel> GetPAggingUser(int Page,int pagesize);
+    IEnumerable<ShowUserBrifViewModel> GetAllAdmin();
     }
 }

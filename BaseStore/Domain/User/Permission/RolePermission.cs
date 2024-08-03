@@ -18,11 +18,6 @@ namespace Domain.User.Permission
 
     }
 
-    public class RolePermissionWiewModel
-    {
-        public IEnumerable<RolePermission> RolePermissions { get; set; }
-        public string RoleTitle { get; set; }
-        public int RoleId { get; set; }
-    }
+
 
 }

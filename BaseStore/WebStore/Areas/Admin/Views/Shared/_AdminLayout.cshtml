@@ -1,0 +1,113 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>سیستم مدیریت محتوا</title>
+
+    <link href="~/MyFile/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/MyFile/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/MyFile/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="~/MyFile/dist/css/custom-style.css">
+    <link href="~/MyFile/dist/css/persian-datepicker.css" rel="stylesheet" />
+    <link href="~/MyFile/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/MyFile/dist/css/bootstrap-rtl.min.css">
+    @await RenderSectionAsync("style",false);
+</head>
+<body class="hold-transition sidebar-mini">
+
+
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">خانه</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+
+                    <a href="#" class="nav-link">ویرایش اطلاعات کاربری</a>
+                </li>
+            </ul>
+            <!-- Right navbar links -->
+        </nav>
+
+
+
+
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="index3.html" class="brand-link">
+                <img src="/MyFile/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light"></span>
+            </a>
+            <div class="">
+                <div>
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex " style="color: white;padding-right: 50px">
+                        <div class="image text-center">
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block"></a>
+                        </div>
+                    </div>
+                    <nav class="mt-2">
+                        @await Component.InvokeAsync("FillMenu")
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+
+
+
+
+
+        <div class="content-wrapper">
+
+
+            <section class="content">
+                <div class="container-fluid">
+
+                    @RenderBody()
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="~/MyFile/dist/js/JQuery.js"></script>
+    <script src="~/MyFile/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/MyFile/plugins/select2/select2.full.min.js"></script>
+    <script src="~/MyFile/dist/js/adminlte.js"></script>
+    <script src="~/MyFile/dist/js/pages/dashboard.js"></script>
+    <script src="~/js/select2.full.min.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.fa.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/MyFile/dist/js/persian-date.js"></script>
+    <script src="~/MyFile/dist/js/persian-datepicker.js"></script>
+    <script src="~/js/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.MyDateTime').datepicker({ dateFormat: "yy/mm/dd", isRTL: true, showButtonPanel: true });
+            $('.table').addClass("table-striped");
+            $('.table').addClass("table-responsive");
+            $('.table').addClass("text-center");
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

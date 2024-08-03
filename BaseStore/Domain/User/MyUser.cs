@@ -28,6 +28,7 @@ namespace Domain.User
         public bool IsActive { get; set; }
         public DateTime RegisterDate { get; set; }
         public string UserAvatar { get; set; }
+        public bool IsAdmin { get; set; }
         public virtual List<UserRole> UserRoles { get; set; }
     }
 

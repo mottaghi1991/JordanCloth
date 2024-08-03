@@ -5,22 +5,26 @@ using System.Linq;
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
-using Core.Interface.Users;
+using Core.Dto.ViewModel.Admin.Role;
+using Core.Interface.Admin;
 using Dapper;
 using Data.MasterInterface;
 using Domain;
 using Domain.User;
 using Domain.User.Permission;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Core.Services.Users
 {
     public class PermissionListServices:IPermisionList
     {
         IMaster<PermissionList> _master;
+        IMaster<RolePermission> _RolePemissionmaster;
 
-        public PermissionListServices(IMaster<PermissionList> master)
+        public PermissionListServices(IMaster<PermissionList> master,IMaster<RolePermission> rolePemissionmaster)
         {
             _master = master;
+            _RolePemissionmaster=rolePemissionmaster;
         }
 
         public IEnumerable<PermissionList> GetAll()
@@ -33,17 +37,18 @@ namespace Core.Services.Users
           return  _master.GetAll(a => a.Area == Area & a.ControllerName == Controller);
         }
 
-        public IEnumerable<PermissionList> GetAllArea()
+        public IEnumerable<FillSelectList> GetAllArea()
         {
-            var obj = _master.GetAll("GetAllArea");
+         var obj=   _master.GetAll().GroupBy(a=>a.Area).Select(a=>a.First()).Select(a => new FillSelectList(){ Value = a.Area, Text = a.Area }).Distinct();
+            //var obj = _master.GetAll("GetAllArea");
             return obj;
         }
 
-        public IEnumerable<PermissionList> GetControllerByArea(string Area)
+        public IEnumerable<FillSelectList> GetControllerByArea(string Area)
         {
-            DynamicParameters p = new DynamicParameters();
-            p.Add("Area", Area, DbType.String);
-            return _master.GetAll("GetControllerByArea", p);
+            return _master.GetAll(a => a.Area == Area).GroupBy(a=> new {a.Area,a.ControllerName}).Select(c=>c.First()).Select(b => new FillSelectList()
+                { Value = b.ControllerName, Text = b.ControllerName });
+            
         }
 
         public List<PermissionList> UserMenu()
@@ -104,6 +109,17 @@ namespace Core.Services.Users
         {
             var obj = _master.GetAll(a => a.Status != (int)PermissionStatus.menu);
             return obj;
+        }
+
+        public IEnumerable<ShowMenuVm> GetAllMenu()
+        {
+            return _master.GetAll(a => a.Status == 2).Select(a => new ShowMenuVm()
+                { PermissionListId = a.PermissionListId, MenuDesc = a.Descript,ParentId = a.ParentId});
+        }
+
+        public IEnumerable<RolePermission> GetPermissionOfRole(int RoleId)
+        {
+            return _RolePemissionmaster.GetAll(a => a.RoleId == RoleId);
         }
     }
 }

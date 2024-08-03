@@ -1,0 +1,188 @@
+﻿
+
+
+@model IEnumerable<Domain.User.Permission.PermissionList>
+
+<div class="card card-primary">
+    <div class="card-header">
+        دسترسی ها
+
+    </div>
+
+    <div class="card-body">
+
+        <form asp-action="ShowPermision" asp-controller="PermissionList" method="get">
+            <div class="row">
+
+
+                <div class="col-md-3">
+                   
+                        <select name="MyArea" class="form-control" asp-items="ViewBag.Area" onchange="LoadController(this.value)">
+                        <option disabled="disabled" selected="selected">لطفا یک گزینه را انتخاب فرمایید</option>
+                        </select>
+               
+                    
+                </div>
+                <div class="col-md-3">
+                   
+                        <select name="SearchController" class="form-control" asp-items="ViewBag.Controller" id="SearchController">
+                            <option disabled="disabled" selected="selected">لطفا یک گزینه را انتخاب فرمایید</option>
+                        </select>
+                   
+                  
+                </div>
+
+
+                <div class="col-md-1">
+                    <input class="btn btn-primary" type="submit" value="جستجو" />
+                </div>
+                <div class="col-md-1">
+                    <a class="btn btn-success" asp-action="insertArea">بروزرسانی</a>
+                </div>
+
+            </div>
+        </form>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ردیف</th>
+                    <th>ترتیب</th>
+                    <th>دسته بندی</th>
+                    <th>کنترلر</th>
+                    <th>اکشن</th>
+                    <th>توضیحات</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @{
+                    int i = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@i </td>
+                        <td>@item.Radif </td>
+                        <td>@item.Area </td>
+                        <td>@item.ControllerName </td>
+                        <td>@item.ActionName </td>
+                        <td>@item.Descript </td>
+
+                        <td>
+                            @switch (item.Status)
+                            {
+                                case 0:
+                                    <label> سیستمی</label>
+                                    break;
+                                case 1:
+                                    <label> دسترسی</label>
+                                    break;
+                                case 2:
+                                    <label> منو</label>
+                                    break;
+                                case null:
+                                    <label style="color: red"> نامعلوم</label>
+                                    break;
+                            }
+                        </td>
+
+                        <td> <a data-toggle="modal" data-target="#exampleModal" class="btn btn-info" onclick="View(@item.PermissionListId)">ویرایش</a></td>
+                        <td> <a asp-action="Delete" asp-route-Id="@item.PermissionListId" onclick="return confirm('ایا از حذف اطمینان دارید؟')" class="btn btn-danger"> حذف</a> </td>
+
+
+                    </tr>
+                    i = i + 1;
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="myModal" role="dialog" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+
+            <div class="modal-body">
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts
+    {
+    <script>
+
+        function LoadController(MyArea) {
+
+
+            $.ajax({
+                url: "../../Admin/PermissionList/GetController?MyArea=" + MyArea,
+                method: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    var s = '<option value="-1">بخش ها</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        s += '<option value="' + data[i].value + '">' + data[i].text + '</option>';
+                    }
+                    $("#SearchController").html(s);
+                },
+                error: function (data) {
+                    console.log(data);
+
+                }
+            });
+        };
+
+    </script>
+
+
+
+    01    <script>
+              function View(Id) {
+
+                  $.ajax({
+                      type: "Get",
+                          url: '../../Admin/PermissionList/Edit?Id=' + Id,
+                      contentType: "application/text; charset=utf-8",
+                      dataType: "text",
+                      async: false,
+                      success: function (data) {
+                          console.log(data);
+                          $('.modal-body').html(data);
+
+                          $("#myModal").modal("show");
+
+                      },
+                      error: function (response1) {
+                          console.log(response1);
+                      }
+
+                  })
+
+              }
+
+    </script>
+}
+

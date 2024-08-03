@@ -11,6 +11,7 @@ namespace Data.MasterInterface
         IEnumerable<T> GetAll(Expression<Func<T, bool>> Filter);
         IEnumerable<T> GetAll(string spName, DynamicParameters parameters);
         IEnumerable<T> GetAll(string spName);
+        IEnumerable<T> GetPaging(int Page, int pagesize);
         int GetNumberFromDatabase(string spName, object[] parameters);
         string GetStringFromDatabase(string spName, DynamicParameters parameters);
         T Insert(T Obj);

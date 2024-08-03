@@ -1,4 +1,5 @@
-﻿using Core.Interface.Users;
+﻿using Core.Interface.Admin;
+using Core.Interface.Users;
 using Core.Services.Users;
 using Data.MasterInterface;
 using Data.MasterServices;
@@ -13,13 +14,13 @@ namespace IOC
     {
         public static void RegisterServices(IServiceCollection Services)
         {
-         
 
-            #region Survey
 
- 
+            #region Admin
+            Services.AddScoped<IUser, UserServices>();
 
-      
+
+
             #endregion
 
             #region User
@@ -34,6 +35,7 @@ namespace IOC
             Services.AddScoped<IMaster<MyUser>, MasterServices<MyUser>>();
             Services.AddScoped<IMaster<Role>, MasterServices<Role>>();
             Services.AddScoped<IMaster<RolePermission>, MasterServices<RolePermission>>();
+            Services.AddScoped<IMaster<UserRole>, MasterServices<UserRole>>();
             #endregion
 
 

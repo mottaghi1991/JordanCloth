@@ -78,6 +78,14 @@ namespace Data.MasterServices
             }
         }
 
+        public IEnumerable<T> GetPaging(int page, int pageSize)
+        {
+           
+            int skipRows = (page - 1) * pageSize;
+            var obj = cnnsql.Query<T>($"Select * FROM {typeof(T).Name}").Skip(skipRows).Take(pageSize).ToList();
+            return obj;
+        }
+
         public int GetNumberFromDatabase(string spName, object[] parameters)
         {
             if (parameters == null)
