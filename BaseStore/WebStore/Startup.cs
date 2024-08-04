@@ -12,6 +12,7 @@ using Data;
 using IOC;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using WebStore.MiddleWare;
 
 namespace WebStore
 {
@@ -27,12 +28,15 @@ namespace WebStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-          
+            services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
+               options.Cookie.HttpOnly=true;
+                options.Cookie.IsEssential=true;
+               // options.Cookie.Name = "ali .aspnet";
             });
-
+            services.AddControllersWithViews();
             services.AddDbContext<MyContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Connect"));
@@ -58,14 +62,11 @@ namespace WebStore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
+        
+
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseSession();
-
-
+         
 
             if (env.IsDevelopment())
             {
@@ -77,8 +78,13 @@ namespace WebStore
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-         
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseSession();
+            app.UseMiddleware<SessionLogMiddleware>();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

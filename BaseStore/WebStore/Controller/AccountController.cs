@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using Core.Dto.ViewModel.User;
+using Core.Extention;
 using Core.Interface.Users;
 using Core.Tools;
 using Domain.User;
@@ -11,6 +12,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
+using EventId = Core.Enums.EventId;
 
 namespace WebStore.Controller
 {
@@ -18,11 +21,12 @@ namespace WebStore.Controller
     {
         private IUser _user;
         private IViewRender _viewRender;
-
-        public AccountController(IUser user,IViewRender viewRender)
+        private readonly ILogger _logger;
+        public AccountController(IUser user,IViewRender viewRender,ILoggerFactory factory)
         {
             _user = user;
             _viewRender = viewRender;
+            _logger=factory.CreateLogger("Session");
         }
         [Route("Register")]
         public IActionResult Register()
@@ -110,6 +114,7 @@ namespace WebStore.Controller
         [Route("Logout")]
         public IActionResult LogOut()
         {
+            _logger.LogInformation(eventId:EventId.Session, "User with UserId={UserId} clear session={SessionId}",User.GetUserId(),HttpContext.Session.Id);
             HttpContext.SignOutAsync();
             HttpContext.Session.Clear();
             return RedirectToAction("Index","Home");
