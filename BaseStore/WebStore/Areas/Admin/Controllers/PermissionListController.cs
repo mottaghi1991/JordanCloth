@@ -33,7 +33,7 @@ namespace NoorMehr.Areas.Admin.Controllers
                 SearchController = SearchController == "-1" ? null : SearchController;
                 ViewBag.Area = new SelectList(_permisionList.GetAllArea(), "Value", "Text", MyArea);
              
-                if (MyArea == null & SearchController == null)
+                if (MyArea != null)
                 {
                     ViewBag.Controller = new SelectList(_permisionList.GetControllerByArea(MyArea), "Value", "Text", SearchController);
                     var obj = _permisionList.GetAll();
@@ -210,6 +210,29 @@ namespace NoorMehr.Areas.Admin.Controllers
             }
 
             return list;
+        }
+        [HttpGet]
+        public JsonResult FillParent(int Id)
+        {
+            if (Id == 0)
+            {
+                var result = new SelectList(_permisionList.GetAllParentPermissionList(), "SystemMenuID", "Description");
+
+                return Json(result);
+            }
+            else
+            {
+                var result = new SelectList(_permisionList.ParentList(), "Value", "Text");
+
+                return Json(result);
+            }
+
+        }
+        public JsonResult FillController(int Id)
+        {
+            var result = new SelectList(_permisionList.GetContrllersOfArea(Id), "Value", "Text");
+
+            return Json(result);
         }
     }
 }

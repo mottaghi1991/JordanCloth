@@ -6,6 +6,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Dto.ViewModel.Admin.Role;
+using Core.Enums;
 using Core.Interface.Admin;
 using Dapper;
 using Data.MasterInterface;
@@ -46,8 +47,11 @@ namespace Core.Services.Users
 
         public IEnumerable<FillSelectList> GetControllerByArea(string Area)
         {
-            return _master.GetAll(a => a.Area == Area).GroupBy(a=> new {a.Area,a.ControllerName}).Select(c=>c.First()).Select(b => new FillSelectList()
-                { Value = b.ControllerName, Text = b.ControllerName });
+            var obj = _master.GetAll(a => a.Area == Area).GroupBy(a => new { a.Area, a.ControllerName })
+                .Select(c => c.First())
+                .Select(b => new FillSelectList()
+                    { Value = b.ControllerName, Text = b.ControllerName });
+            return obj;
             
         }
 
@@ -120,6 +124,33 @@ namespace Core.Services.Users
         public IEnumerable<RolePermission> GetPermissionOfRole(int RoleId)
         {
             return _RolePemissionmaster.GetAll(a => a.RoleId == RoleId);
+        }
+
+        public IEnumerable<SelectListItem> GetContrllersOfArea(int SystemMenuId)
+        {
+            var area = _master.GetAll(a => a.ParentId == SystemMenuId).FirstOrDefault()?.Area;
+            var obj = _master.GetAll(a => a.Area == area & a.ActionName == null).Select(a => new SelectListItem()
+            {
+                Text = a.ControllerName,
+                Value = a.PermissionListId.ToString()
+            }).AsEnumerable().Append(new SelectListItem("منو", "-1")).Append(new SelectListItem("کنترلر اصلی", "-2"));
+            return obj;
+        }
+
+        public IEnumerable<SelectListItem> ParentList()
+        {
+            var obj = _master.GetAll(a => a.ParentId == null).Select(a => new SelectListItem()
+            {
+                Text = a.Descript,
+                Value = a.PermissionListId.ToString()
+            });
+            var dis = obj.OrderBy(a => a.Text);
+            return dis;
+        }
+
+        public IEnumerable<PermissionList> GetAllParentPermissionList()
+        {
+            return _master.GetAll(a => a.ParentId == (int)MenuStatus.permission);
         }
     }
 }

@@ -3,6 +3,7 @@ using Core.Dto.ViewModel.Admin.Role;
 using Domain;
 using Domain.User;
 using Domain.User.Permission;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Core.Interface.Admin
 {
@@ -26,5 +27,8 @@ namespace Core.Interface.Admin
 
         IEnumerable<ShowMenuVm> GetAllMenu();
         IEnumerable<RolePermission> GetPermissionOfRole(int RoleId);
+        public IEnumerable<SelectListItem> GetContrllersOfArea(int SystemMenuId);
+        public IEnumerable<SelectListItem> ParentList();
+        public IEnumerable<PermissionList> GetAllParentPermissionList();
     }
 }
