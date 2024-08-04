@@ -35,24 +35,24 @@ namespace Core.Services.Users
 
         public IEnumerable<PermissionList> GetPermisionByAreaAndController(string Area, string Controller)
         {
-          return  _master.GetAll(a => a.Area == Area & a.ControllerName == Controller);
+            DynamicParameters p = new DynamicParameters();
+            p.Add("Area", Area, DbType.String);
+            p.Add("Controller", Controller, DbType.String);
+            return _master.GetAll("SearchPermission", p);
         }
 
-        public IEnumerable<FillSelectList> GetAllArea()
+        public IEnumerable<PermissionList> GetAllArea()
         {
-         var obj=   _master.GetAll().GroupBy(a=>a.Area).Select(a=>a.First()).Select(a => new FillSelectList(){ Value = a.Area, Text = a.Area }).Distinct();
-            //var obj = _master.GetAll("GetAllArea");
-            return obj;
+            DynamicParameters p = new DynamicParameters();
+            return _master.GetAll("GetAllArea", p);
         }
 
-        public IEnumerable<FillSelectList> GetControllerByArea(string Area)
+        public IEnumerable<PermissionList> GetControllerByArea(string Area)
         {
-            var obj = _master.GetAll(a => a.Area == Area).GroupBy(a => new { a.Area, a.ControllerName })
-                .Select(c => c.First())
-                .Select(b => new FillSelectList()
-                    { Value = b.ControllerName, Text = b.ControllerName });
-            return obj;
-            
+            DynamicParameters p = new DynamicParameters();
+            p.Add("Area", Area, DbType.String);
+            return _master.GetAll("GetControllerByArea", p);
+
         }
 
         public List<PermissionList> UserMenu()

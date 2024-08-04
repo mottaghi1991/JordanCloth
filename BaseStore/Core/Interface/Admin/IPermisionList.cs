@@ -11,8 +11,8 @@ namespace Core.Interface.Admin
     {
         IEnumerable<PermissionList> GetAll();
         IEnumerable<PermissionList> GetPermisionByAreaAndController(string Area, string Controller);
-        IEnumerable<FillSelectList> GetAllArea();
-        IEnumerable<FillSelectList> GetControllerByArea(string Area);
+        IEnumerable<PermissionList> GetAllArea();
+        IEnumerable<PermissionList> GetControllerByArea(string Area);
         List<PermissionList> UserMenu();
         int checkExistArea(string Area);
         int checkExistController(string Area, string Controller);

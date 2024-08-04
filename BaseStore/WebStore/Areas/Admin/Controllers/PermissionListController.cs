@@ -21,32 +21,20 @@ namespace NoorMehr.Areas.Admin.Controllers
             _permisionList = permisionList;
         }
         [HttpGet]
-        public IActionResult ShowPermision(string MyArea=null, string SearchController = null)
+        public IActionResult ShowPermision(string MyArea, string SearchController )
         {
-            var first = _permisionList.GetAll().Any();
-            if (!first)
+            if (MyArea == null)
             {
-                return RedirectToAction("insertArea");
+                ViewBag.Area = new SelectList(_permisionList.GetAllArea(), "Area", "Area", MyArea);
+                ViewBag.Controller = new SelectList(_permisionList.GetControllerByArea(MyArea), "ControllerName", "ControllerName", SearchController);
+                return View(_permisionList.GetAllParentPermissionList());
             }
-            else
-            {
-                SearchController = SearchController == "-1" ? null : SearchController;
-                ViewBag.Area = new SelectList(_permisionList.GetAllArea(), "Value", "Text", MyArea);
-             
-                if (MyArea != null)
-                {
-                    ViewBag.Controller = new SelectList(_permisionList.GetControllerByArea(MyArea), "Value", "Text", SearchController);
-                    var obj = _permisionList.GetAll();
-                    return View(obj);
-                }
-                else
-                {
-                    var obj = _permisionList.GetPermisionByAreaAndController(MyArea, SearchController);
-                    return View(obj);
-                }
-            }
-            
-           
+            var obj = _permisionList.GetPermisionByAreaAndController(MyArea, SearchController);
+            ViewBag.Area = new SelectList(_permisionList.GetAllArea(), "Area", "Area", MyArea);
+            ViewBag.Controller = new SelectList(_permisionList.GetControllerByArea(MyArea), "ControllerName", "ControllerName", SearchController);
+            return View(obj);
+
+
         }
         [HttpGet]
         public IActionResult Edit(int Id)
