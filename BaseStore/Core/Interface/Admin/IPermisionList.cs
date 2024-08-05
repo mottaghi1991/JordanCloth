@@ -30,5 +30,6 @@ namespace Core.Interface.Admin
         public IEnumerable<SelectListItem> GetContrllersOfArea(int SystemMenuId);
         public IEnumerable<SelectListItem> ParentList();
         public IEnumerable<PermissionList> GetAllParentPermissionList();
+        public IEnumerable<SelectListItem> PermissionParentList();
     }
 }

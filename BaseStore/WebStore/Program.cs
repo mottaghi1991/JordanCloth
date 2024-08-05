@@ -15,6 +15,8 @@ namespace WebStore
     {
         public static void Main(string[] args)
         {
+
+
             var con = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).Build();
 
            

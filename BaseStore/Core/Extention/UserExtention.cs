@@ -13,8 +13,18 @@ namespace Core.Extention
         {
             try
             {
-                var Identifier = principal.Claims.SingleOrDefault(a => a.Type == ClaimTypes.NameIdentifier);
-                return Identifier.Value == null ? 0 : int.Parse(Identifier.Value);
+                var identifier = principal.Claims.SingleOrDefault(a => a.Type == ClaimTypes.NameIdentifier);
+                if (identifier != null)
+                {
+                    return int.Parse(identifier.Value);
+                }
+
+                else
+                {
+                    return 0;
+                }
+
+                return identifier.Value == null ? 0 : int.Parse(identifier.Value);
             }
             catch (Exception e)
             {

@@ -23,7 +23,7 @@ namespace WebStore.MiddleWare
         {
             var path=httpContext.Request.Path;
             var sessionId = httpContext.Session.Id;
-          
+            var a = httpContext.User.GetUserId();
             if (!string.IsNullOrEmpty(sessionId))
             {
                 _factory.LogInformation(EventId.Session, "User Requset path={path} SessionId={SessionId} start",path,sessionId);

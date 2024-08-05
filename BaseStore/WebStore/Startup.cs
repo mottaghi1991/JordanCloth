@@ -62,27 +62,38 @@ namespace WebStore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-        
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-         
-
-            if (env.IsDevelopment())
+      
+            app.UseMiddleware<ExeptionMiddleware>();
+            app.UseStatusCodePages(async context =>
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+                var response = context.HttpContext.Response;
+                if (response.StatusCode == 404)
+                {
+
+                    context.HttpContext.Response.Redirect("/Home/NotFound?Path=" + context.HttpContext.Request.Path);
+                }
+            });
+
+
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+            //app.UseExceptionHandler("/Error");
+            //app.UseExceptionHandler(new ExceptionHandlerOptions()
+            //{
+            //    ExceptionHandlingPath = "/Error"
+            //});
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            //    app.UseHsts();
+            //}
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseSession();
-            app.UseMiddleware<SessionLogMiddleware>();
+            //app.UseMiddleware<SessionLogMiddleware>();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
@@ -90,7 +101,7 @@ namespace WebStore
                 endpoints.MapRazorPages();
             });
 
-            app.UseAuthentication();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

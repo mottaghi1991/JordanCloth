@@ -1,0 +1,903 @@
+2024-08-05 07:51:59.971 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 07:52:01.786 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 07:52:01.787 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 07:52:01.787 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 07:52:01.819 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 07:52:01.903 +03:30 [Information] (Session.) User Requset path="/" SessionId="445a726b-633a-1f30-5717-67e3f57a785f" start
+2024-08-05 07:52:01.903 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:52:01.969 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 07:52:02.034 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 07:52:02.035 +03:30 [Warning] (WebStore.Controller.HomeController.) sessonid="445a726b-633a-1f30-5717-67e3f57a785f"
+2024-08-05 07:52:02.039 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Index (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.1496ms.
+2024-08-05 07:52:05.075 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Index".
+2024-08-05 07:52:05.679 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Index" executed in 3634.6915ms.
+2024-08-05 07:52:05.679 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 3710.2569ms
+2024-08-05 07:52:05.680 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:52:05.684 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Session started; Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c", Id:"445a726b-633a-1f30-5717-67e3f57a785f"
+2024-08-05 07:52:05.695 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - text/html;+charset=utf-8 3878.3409ms
+2024-08-05 07:52:05.707 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/owl.carousel.min.css - -
+2024-08-05 07:52:05.707 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/search.png - -
+2024-08-05 07:52:05.707 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/owl.theme.default.min.css - -
+2024-08-05 07:52:05.707 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/style.css - -
+2024-08-05 07:52:05.707 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/bootstrap.rtl.css - -
+2024-08-05 07:52:05.707 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/cart.png - -
+2024-08-05 07:52:05.739 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/avatar.jpg - -
+2024-08-05 07:52:05.739 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/mobile1.jpg - -
+2024-08-05 07:52:05.739 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/logo.png - -
+2024-08-05 07:52:05.739 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/fontawesome/css/all.min.css - -
+2024-08-05 07:52:05.739 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/mobile3.jpg - -
+2024-08-05 07:52:05.739 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/mobile2.jpg - -
+2024-08-05 07:52:05.750 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/1.svg - -
+2024-08-05 07:52:05.750 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:52:05.750 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/2.svg - -
+2024-08-05 07:52:05.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/bazzar.svg - -
+2024-08-05 07:52:05.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/menu-pic.jpg - -
+2024-08-05 07:52:05.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/4.svg - -
+2024-08-05 07:52:05.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/footerLogo.png - -
+2024-08-05 07:52:05.760 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/f-1.png - -
+2024-08-05 07:52:05.763 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/f-2.png - -
+2024-08-05 07:52:05.776 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/font/Vazir-Medium-FD.woff - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/css/owl.carousel.min.css"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\css\owl.carousel.min.css"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/css/style.css"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\css\style.css"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/css/bootstrap.rtl.css"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\css\bootstrap.rtl.css"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/fontawesome/css/all.min.css"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\fontawesome\css\all.min.css"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/mobile2.jpg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\mobile2.jpg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/1.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\1.svg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/css/owl.carousel.min.css - - - 0 3351 text/css 82.5286ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/mobile2.jpg - - - 0 8433 image/jpeg 51.1355ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/footerLogo.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\footerLogo.png"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/mobile3.jpg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\mobile3.jpg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/avatar.jpg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\avatar.jpg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/4.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\4.svg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/menu-pic.jpg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\menu-pic.jpg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/avatar.jpg - - - 0 13794 image/jpeg 51.2933ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/2.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\2.svg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/f-1.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\f-1.png"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/f-2.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\f-2.png"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/2.svg - - - 0 2447 image/svg+xml 40.9106ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/bazzar.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\bazzar.svg"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/f-2.png - - - 0 9423 image/png 27.6132ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/font/Vazir-Medium-FD.woff"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\font\Vazir-Medium-FD.woff"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/bazzar.svg - - - 0 9550 image/svg+xml 36.7008ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/5.svg - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/search.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\search.png"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/mobile1.jpg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\mobile1.jpg"'
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/search.png - - - 0 1104 image/png 83.0789ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/css/owl.theme.default.min.css"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\css\owl.theme.default.min.css"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/css/bootstrap.rtl.css - - - 0 203803 text/css 82.5302ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/mobile1.jpg - - - 0 11500 image/jpeg 51.5560ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/css/style.css - - - 0 46602 text/css 82.5288ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/3.svg - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/cart.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\cart.png"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/logo.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\logo.png"'
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/1.svg - - - 0 2145 image/svg+xml 40.7100ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/footerLogo.png - - - 0 2549 image/png 36.3796ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/logo.png - - - 0 5187 image/png 51.6923ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/css/owl.theme.default.min.css - - - 0 1013 text/css 83.1182ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/bootstrap.bundle.min.js - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/font//Vazir.woff - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/fontawesome/css/all.min.css - - - 0 58935 text/css 50.9884ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/font/Vazir-Medium-FD.woff - - - 0 55440 application/font-woff 14.1574ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-solid-900.woff2 - -
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/owl.carousel.min.js - -
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/cart.png - - - 0 336 image/png 83.2099ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/jquery.min.js - -
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/jquery.simple.timer.js - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/sib-app.svg - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-brands-400.woff2 - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/4.svg - - - 0 2546 image/svg+xml 36.5636ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/mobile3.jpg - - - 0 8212 image/jpeg 51.2678ms
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/menu-pic.jpg - - - 0 19968 image/jpeg 36.5828ms
+2024-08-05 07:52:05.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/script.js - -
+2024-08-05 07:52:05.790 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/f-1.png - - - 0 23407 image/png 30.1644ms
+2024-08-05 07:52:05.792 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/5.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\5.svg"'
+2024-08-05 07:52:05.793 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/sib-app.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\sib-app.svg"'
+2024-08-05 07:52:05.793 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/5.svg - - - 0 5657 image/svg+xml 2.1423ms
+2024-08-05 07:52:05.793 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/sib-app.svg - - - 0 19912 image/svg+xml 2.1235ms
+2024-08-05 07:52:05.793 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/3.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\3.svg"'
+2024-08-05 07:52:05.793 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/font//Vazir.woff"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\font\Vazir.woff"'
+2024-08-05 07:52:05.793 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/font//Vazir.woff - - - 0 54004 application/font-woff 2.5542ms
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/3.svg - - - 0 3461 image/svg+xml 2.3125ms
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/fontawesome/webfonts/fa-solid-900.woff2"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\fontawesome\webfonts\fa-solid-900.woff2"'
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/fontawesome/webfonts/fa-brands-400.woff2"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\fontawesome\webfonts\fa-brands-400.woff2"'
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/js/owl.carousel.min.js"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\js\owl.carousel.min.js"'
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/js/jquery.simple.timer.js"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\js\jquery.simple.timer.js"'
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-brands-400.woff2 - - - 0 77400 font/woff2 3.8108ms
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/owl.carousel.min.js - - - 0 44342 application/javascript 3.4576ms
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/js/jquery.min.js"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\js\jquery.min.js"'
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/js/bootstrap.bundle.min.js"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\js\bootstrap.bundle.min.js"'
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-solid-900.woff2 - - - 0 80148 font/woff2 3.8775ms
+2024-08-05 07:52:05.795 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/bootstrap.bundle.min.js - - - 0 78468 application/javascript 3.7024ms
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/jquery.simple.timer.js - - - 0 7964 application/javascript 3.4591ms
+2024-08-05 07:52:05.795 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/jquery.min.js - - - 0 84280 application/javascript 3.8223ms
+2024-08-05 07:52:05.794 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/js/script.js"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\js\script.js"'
+2024-08-05 07:52:05.795 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/script.js - - - 0 4685 application/javascript 3.8338ms
+2024-08-05 07:52:05.795 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 42.0620ms
+2024-08-05 07:52:05.838 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.6895ms
+2024-08-05 07:52:05.896 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:52:05.897 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 0.7901ms
+2024-08-05 07:52:05.899 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:52:05.908 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.1725ms
+2024-08-05 07:52:07.387 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:52:07.391 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="445a726b-633a-1f30-5717-67e3f57a785f" start
+2024-08-05 07:52:07.392 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:52:07.394 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:52:09.438 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:52:09.515 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.AccountController.Login (WebStore)" - Validation state: Valid
+2024-08-05 07:52:09.515 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.AccountController.Login (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.2669ms.
+2024-08-05 07:52:09.735 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:52:09.789 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 273.8003ms.
+2024-08-05 07:52:09.790 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 2395.8565ms
+2024-08-05 07:52:09.790 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:52:09.795 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 2408.2273ms
+2024-08-05 07:52:09.809 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:52:09.809 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:52:09.811 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 1.3637ms
+2024-08-05 07:52:09.815 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.6423ms
+2024-08-05 07:52:09.833 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:52:09.833 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:52:09.836 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 2.8974ms
+2024-08-05 07:52:09.841 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.1014ms
+2024-08-05 07:52:26.464 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:52:31.708 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="445a726b-633a-1f30-5717-67e3f57a785f" start
+2024-08-05 07:52:32.912 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:52:32.919 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:52:32.921 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:52:32.934 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.AccountController.Login (WebStore)" - Validation state: Valid
+2024-08-05 07:52:32.938 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.AccountController.Login (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 4.781ms.
+2024-08-05 07:52:32.939 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:52:32.941 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 2.6251ms.
+2024-08-05 07:52:32.941 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 21.9248ms
+2024-08-05 07:52:32.941 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:52:35.448 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 8984.3146ms
+2024-08-05 07:52:35.455 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:52:35.456 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:52:35.463 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 8.0847ms
+2024-08-05 07:52:35.465 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:52:35.466 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 1.2008ms
+2024-08-05 07:52:35.479 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.6713ms
+2024-08-05 07:52:35.592 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:52:35.602 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.0948ms
+2024-08-05 07:52:56.890 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:53:05.130 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="445a726b-633a-1f30-5717-67e3f57a785f" start
+2024-08-05 07:53:05.132 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:53:05.132 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:53:05.160 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:53:05.178 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.AccountController.Login (WebStore)" - Validation state: Valid
+2024-08-05 07:53:05.178 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.AccountController.Login (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.02ms.
+2024-08-05 07:53:05.179 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:53:05.180 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 1.6105ms.
+2024-08-05 07:53:05.180 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 47.9023ms
+2024-08-05 07:53:05.180 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:53:05.181 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 8291.9653ms
+2024-08-05 07:53:05.193 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:53:05.193 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:53:05.195 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 1.2831ms
+2024-08-05 07:53:05.205 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.1905ms
+2024-08-05 07:54:08.587 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:54:13.200 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="445a726b-633a-1f30-5717-67e3f57a785f" start
+2024-08-05 07:54:13.200 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:54:13.200 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:54:13.203 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:54:13.214 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.AccountController.Login (WebStore)" - Validation state: Valid
+2024-08-05 07:54:13.214 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.AccountController.Login (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0186ms.
+2024-08-05 07:54:13.217 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:54:13.223 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 8.8978ms.
+2024-08-05 07:54:13.223 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 22.9811ms
+2024-08-05 07:54:13.224 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:54:13.224 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 4637.9138ms
+2024-08-05 07:54:13.236 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:54:13.238 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 1.5348ms
+2024-08-05 07:54:13.251 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:54:13.257 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.2524ms
+2024-08-05 07:54:21.916 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 07:54:41.178 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 07:54:41.179 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 07:54:41.179 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 07:54:41.221 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 07:54:43.480 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Accessing expired session, Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c"
+2024-08-05 07:54:49.320 +03:30 [Information] (Session.) User Requset path="/" SessionId="31c28205-0c35-849d-05d2-468fe94c24d2" start
+2024-08-05 07:54:49.321 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:54:49.358 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 07:54:49.390 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 07:54:49.390 +03:30 [Warning] (WebStore.Controller.HomeController.) sessonid="31c28205-0c35-849d-05d2-468fe94c24d2"
+2024-08-05 07:54:49.394 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Index (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0505ms.
+2024-08-05 07:54:51.202 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Index".
+2024-08-05 07:54:51.751 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Index" executed in 2352.4143ms.
+2024-08-05 07:54:51.752 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2393.2831ms
+2024-08-05 07:54:51.752 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:54:51.756 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Session started; Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c", Id:"31c28205-0c35-849d-05d2-468fe94c24d2"
+2024-08-05 07:54:51.769 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - text/html;+charset=utf-8 10550.8352ms
+2024-08-05 07:54:51.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:54:51.791 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:54:51.795 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 3.0207ms
+2024-08-05 07:54:51.822 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.3186ms
+2024-08-05 07:55:30.816 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 07:55:31.030 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 07:55:31.030 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 07:55:31.030 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 07:55:31.041 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 07:55:31.078 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Accessing expired session, Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c"
+2024-08-05 07:55:31.079 +03:30 [Information] (Session.) User Requset path="/" SessionId="f13ff8b4-8a50-3d4f-15a1-31158666bf31" start
+2024-08-05 07:55:31.080 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:55:31.103 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 07:55:31.105 +03:30 [Warning] (WebStore.Controller.HomeController.) sessonid="f13ff8b4-8a50-3d4f-15a1-31158666bf31"
+2024-08-05 07:55:32.450 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Index".
+2024-08-05 07:55:32.853 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Index" executed in 1744.9958ms.
+2024-08-05 07:55:32.853 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 1749.6311ms
+2024-08-05 07:55:32.854 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:55:32.857 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Session started; Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c", Id:"f13ff8b4-8a50-3d4f-15a1-31158666bf31"
+2024-08-05 07:55:32.860 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - text/html;+charset=utf-8 1821.6094ms
+2024-08-05 07:55:32.884 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:55:32.884 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:55:32.887 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 2.3473ms
+2024-08-05 07:55:32.905 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.5194ms
+2024-08-05 07:55:34.822 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:55:34.831 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="f13ff8b4-8a50-3d4f-15a1-31158666bf31" start
+2024-08-05 07:55:34.831 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:55:34.833 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:55:35.332 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:55:35.357 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.AccountController.Login (WebStore)" - Validation state: Valid
+2024-08-05 07:55:35.361 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.AccountController.Login (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1665ms.
+2024-08-05 07:55:35.561 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:55:35.610 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 248.073ms.
+2024-08-05 07:55:35.611 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 777.6285ms
+2024-08-05 07:55:35.611 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:55:35.614 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 792.4382ms
+2024-08-05 07:55:35.625 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:55:35.625 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:55:35.626 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 0.8301ms
+2024-08-05 07:55:35.640 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.5904ms
+2024-08-05 07:57:14.307 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 07:57:14.524 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 07:57:14.524 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 07:57:14.524 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 07:57:14.534 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:57:14.571 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Accessing expired session, Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c"
+2024-08-05 07:57:14.572 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="c98ffb7c-1ae2-c306-567a-2c6e3a022c24" start
+2024-08-05 07:57:14.573 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:57:14.593 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:57:14.917 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:57:16.704 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:57:16.965 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 2033.0841ms.
+2024-08-05 07:57:16.965 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 2372.258ms
+2024-08-05 07:57:16.966 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:57:16.974 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 2442.0147ms
+2024-08-05 07:57:16.975 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:57:16.975 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:57:16.980 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 2.0924ms
+2024-08-05 07:57:17.003 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.4388ms
+2024-08-05 07:57:24.607 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 07:57:47.691 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 07:57:47.692 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 07:57:47.692 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 07:57:47.713 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 07:57:51.107 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Accessing expired session, Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c"
+2024-08-05 07:57:52.487 +03:30 [Information] (Session.) User Requset path="/" SessionId="2fd12174-2a3c-da3d-8d87-d575b7fcada4" start
+2024-08-05 07:57:52.490 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:57:52.529 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 07:57:52.564 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 07:57:52.564 +03:30 [Warning] (WebStore.Controller.HomeController.) sessonid="2fd12174-2a3c-da3d-8d87-d575b7fcada4"
+2024-08-05 07:57:52.568 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Index (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0429ms.
+2024-08-05 07:57:54.215 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Index".
+2024-08-05 07:57:54.739 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Index" executed in 2166.0665ms.
+2024-08-05 07:57:54.740 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2210.7177ms
+2024-08-05 07:57:54.741 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 07:57:54.745 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Session started; Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c", Id:"2fd12174-2a3c-da3d-8d87-d575b7fcada4"
+2024-08-05 07:57:54.756 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - text/html;+charset=utf-8 7044.8979ms
+2024-08-05 07:57:54.776 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:57:54.780 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 2.5560ms
+2024-08-05 07:57:54.783 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:57:54.816 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.4657ms
+2024-08-05 07:57:57.420 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Login - -
+2024-08-05 07:58:03.731 +03:30 [Information] (Session.) User Requset path="/Login" SessionId="2fd12174-2a3c-da3d-8d87-d575b7fcada4" start
+2024-08-05 07:58:03.732 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:58:03.738 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Login\", controller = \"Account\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Login()" on controller "WebStore.Controller.AccountController" ("WebStore").
+2024-08-05 07:58:04.191 +03:30 [Information] (Microsoft.EntityFrameworkCore.Infrastructure.) Entity Framework Core "5.0.17" initialized '"MyContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2024-08-05 07:58:04.219 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.AccountController.Login (WebStore)" - Validation state: Valid
+2024-08-05 07:58:04.220 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.AccountController.Login (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1769ms.
+2024-08-05 07:58:04.411 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Login".
+2024-08-05 07:58:04.455 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Login" executed in 234.94ms.
+2024-08-05 07:58:04.455 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.AccountController.Login (WebStore)" in 716.6462ms
+2024-08-05 07:58:04.455 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.AccountController.Login (WebStore)"'
+2024-08-05 07:58:04.459 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Login - - - 200 - text/html;+charset=utf-8 7038.7622ms
+2024-08-05 07:58:04.469 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 07:58:04.469 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 07:58:04.472 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 2.3900ms
+2024-08-05 07:58:04.480 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.6171ms
+2024-08-05 08:20:56.936 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:21:16.668 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:21:24.236 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:21:24.237 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:21:24.237 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:21:24.272 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:21:30.719 +03:30 [Information] (Microsoft.AspNetCore.Session.DistributedSession.) Accessing expired session, Key:"04ad2f31-52db-a176-ddbd-a4e1f2f7715c"
+2024-08-05 08:21:36.859 +03:30 [Information] (Session.) User Requset path="/" SessionId="8f384cf1-5a67-66d3-a22e-25ab27a9e65f" start
+2024-08-05 08:21:44.853 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:21:44.923 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:21:44.961 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:21:44.964 +03:30 [Warning] (WebStore.Controller.HomeController.) sessonid="8f384cf1-5a67-66d3-a22e-25ab27a9e65f"
+2024-08-05 08:21:44.967 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Index (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.5458ms.
+2024-08-05 08:21:46.976 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Index".
+2024-08-05 08:21:47.498 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Index" executed in 2525.512ms.
+2024-08-05 08:21:47.500 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2576.5101ms
+2024-08-05 08:21:47.501 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-solid-900.woff2 - -
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/avatar.jpg - -
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/owl.theme.default.min.css - -
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/font/Vazir-Medium-FD.woff - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/cart.png - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/style.css - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/mobile1.jpg - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/logo.png - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/mobile3.jpg - -
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/mobile2.jpg - -
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/fontawesome/css/all.min.css - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/owl.carousel.min.css - -
+2024-08-05 08:21:49.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/search.png - -
+2024-08-05 08:21:49.589 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/css/bootstrap.rtl.css - -
+2024-08-05 08:25:24.876 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:25:27.540 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:25:27.543 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:25:27.543 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:25:27.559 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:25:27.615 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:25:27.646 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:25:27.690 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:25:30.636 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2987.564ms
+2024-08-05 08:25:30.639 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:25:34.139 +03:30 [Error] (.) error
+System.Exception: test error
+   at WebStore.Controller.HomeController.Index() in C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\Controller\HomeController.cs:line 22
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at WebStore.MiddleWare.ExeptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\MiddleWare\ExeptionMiddleware.cs:line 24
+2024-08-05 08:25:35.399 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Error - -
+2024-08-05 08:25:35.400 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 302 - - 7842.8867ms
+2024-08-05 08:25:35.410 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Error (WebStore)"'
+2024-08-05 08:25:35.411 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Error\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:25:35.427 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Error (WebStore)" - Validation state: Valid
+2024-08-05 08:25:42.662 +03:30 [Error] (WebStore.Controller.HomeController.) (Exceptions)User=0 with TraceId="8000002f-0011-f600-b63f-84710c7967bb" get Exception without Controll
+2024-08-05 08:25:44.539 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Error (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 9105.5492ms.
+2024-08-05 08:25:46.283 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Error".
+2024-08-05 08:25:46.724 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Error" executed in 2182.3359ms.
+2024-08-05 08:25:46.724 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Error (WebStore)" in 11314.1325ms
+2024-08-05 08:25:46.724 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Error (WebStore)"'
+2024-08-05 08:25:46.727 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Error - - - 200 - text/html;+charset=utf-8 11328.3668ms
+2024-08-05 08:25:46.751 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 08:25:46.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/menu-pic.jpg - -
+2024-08-05 08:25:46.762 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 5.9399ms
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/2.svg - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/4.svg - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/bazzar.svg - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/3.svg - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/footerLogo.png - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/1.svg - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/5.svg - -
+2024-08-05 08:25:46.771 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/sib-app.svg - -
+2024-08-05 08:25:46.784 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/f-2.png - -
+2024-08-05 08:25:46.784 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/images/f-1.png - -
+2024-08-05 08:25:46.818 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-brands-400.woff2 - -
+2024-08-05 08:25:46.818 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/4.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\4.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/3.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\3.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/menu-pic.jpg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\menu-pic.jpg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/footerLogo.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\footerLogo.png"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/5.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\5.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/bazzar.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\bazzar.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/sib-app.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\sib-app.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/2.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\2.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/3.svg - - - 0 3461 image/svg+xml 66.4574ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/4.svg - - - 0 2546 image/svg+xml 66.5025ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/sib-app.svg - - - 0 19912 image/svg+xml 66.1922ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/5.svg - - - 0 5657 image/svg+xml 66.5654ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/footerLogo.png - - - 0 2549 image/png 66.5690ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/bazzar.svg - - - 0 9550 image/svg+xml 66.6542ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/menu-pic.jpg - - - 0 19968 image/jpeg 83.2317ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/2.svg - - - 0 2447 image/svg+xml 66.9070ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/1.svg"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\1.svg"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/f-1.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\f-1.png"'
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/fontawesome/webfonts/fa-brands-400.woff2"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\fontawesome\webfonts\fa-brands-400.woff2"'
+2024-08-05 08:25:46.838 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/f-1.png - - - 0 23407 image/png 54.2483ms
+2024-08-05 08:25:46.838 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/fontawesome/webfonts/fa-brands-400.woff2 - - - 0 77400 font/woff2 19.9273ms
+2024-08-05 08:25:46.838 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/1.svg - - - 0 2145 image/svg+xml 67.1443ms
+2024-08-05 08:25:46.837 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) Sending file. Request path: '"/assets/images/f-2.png"'. Physical path: '"C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\wwwroot\assets\images\f-2.png"'
+2024-08-05 08:25:46.838 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/images/f-2.png - - - 0 9423 image/png 54.2689ms
+2024-08-05 08:25:46.859 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.8747ms
+2024-08-05 08:30:23.301 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:30:26.235 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:30:26.238 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:30:26.238 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:30:26.255 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:30:26.313 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:30:26.347 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:30:26.390 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:30:30.217 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 3865.0858ms
+2024-08-05 08:30:30.218 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:34:28.899 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:34:32.648 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:34:32.648 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:34:32.648 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:34:32.666 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:34:32.722 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:34:32.757 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:34:32.801 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:34:35.330 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2567.9875ms
+2024-08-05 08:34:35.331 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:41:12.658 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:41:20.205 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:41:20.206 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:41:20.206 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:41:20.222 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:41:20.279 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:41:20.311 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:41:20.354 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:41:22.515 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2200.6777ms
+2024-08-05 08:41:22.519 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:41:51.694 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:41:55.739 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:41:55.739 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:41:55.739 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:41:55.758 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:41:55.802 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:41:55.835 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:41:55.865 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:41:58.091 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2253.4062ms
+2024-08-05 08:41:58.095 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:44:04.644 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:44:05.425 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:44:05.425 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:44:05.425 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:44:05.464 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:44:05.544 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:44:05.594 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:44:05.860 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:44:08.591 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2992.7736ms
+2024-08-05 08:44:08.593 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:44:09.377 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 3915.1049ms
+2024-08-05 08:44:44.894 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/sljdhfblsdbf - -
+2024-08-05 08:44:44.900 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/sljdhfblsdbf - - - 404 - - 5.7807ms
+2024-08-05 08:44:59.044 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/sljdhfblsdbf - -
+2024-08-05 08:46:01.527 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:46:01.967 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:46:01.972 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:46:01.972 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:46:01.993 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:46:09.432 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:46:09.469 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:46:09.513 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:46:11.803 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2329.5872ms
+2024-08-05 08:46:11.804 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:46:14.040 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 12049.0082ms
+2024-08-05 08:46:20.873 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/slkdgfskdf - -
+2024-08-05 08:47:02.992 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:47:03.351 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:47:03.351 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:47:03.351 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:47:03.372 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:47:13.748 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:47:13.804 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:47:13.843 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:47:14.981 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 1173.6493ms
+2024-08-05 08:47:14.983 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:47:15.034 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 11663.1776ms
+2024-08-05 08:47:20.590 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/sdlfgbsdlkf - -
+2024-08-05 08:47:26.206 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/sdlfgbsdlkf - - - 404 - - 5615.7310ms
+2024-08-05 08:48:19.360 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:48:19.822 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:48:19.823 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:48:19.823 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:48:19.841 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:48:25.357 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:48:25.395 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:48:25.459 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:48:26.369 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 971.3714ms
+2024-08-05 08:48:26.371 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:48:26.418 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 6578.5879ms
+2024-08-05 08:48:32.033 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/سینذلسیب - -
+2024-08-05 08:48:46.011 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/سینذلسیب - - - 404 - - 13978.7557ms
+2024-08-05 08:51:27.362 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:51:27.745 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:51:27.748 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:51:27.748 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:51:27.764 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:51:27.823 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:51:27.857 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:51:27.903 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:51:30.601 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2740.7166ms
+2024-08-05 08:51:30.602 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:51:30.655 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 2892.6559ms
+2024-08-05 08:51:41.814 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:59:29.311 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 08:59:29.759 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 08:59:29.759 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 08:59:29.759 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 08:59:29.776 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 08:59:29.831 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:59:29.863 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 08:59:29.908 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 08:59:31.669 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 1798.4353ms
+2024-08-05 08:59:31.670 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 08:59:31.723 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 1949.4210ms
+2024-08-05 09:00:00.583 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 09:00:00.587 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 09:00:00.587 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:00:00.601 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 09:00:02.870 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 2283.0968ms
+2024-08-05 09:00:02.871 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 09:00:02.903 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 200 - - 2320.2691ms
+2024-08-05 09:06:48.944 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 09:06:49.344 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 09:06:49.344 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 09:06:49.344 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 09:06:49.366 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 09:06:49.429 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 09:06:49.462 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:06:49.508 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 09:06:53.459 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 3990.5584ms
+2024-08-05 09:06:53.460 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 09:06:53.486 +03:30 [Error] (.) error
+System.Exception: test error
+   at WebStore.Controller.HomeController.Index() in C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\Controller\HomeController.cs:line 22
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at WebStore.MiddleWare.ExeptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\MiddleWare\ExeptionMiddleware.cs:line 25
+2024-08-05 09:06:53.961 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Error - -
+2024-08-05 09:06:53.962 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 302 - - 4598.6274ms
+2024-08-05 09:06:53.971 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Error (WebStore)"'
+2024-08-05 09:06:53.983 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Error\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:06:54.001 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Error (WebStore)" - Validation state: Valid
+2024-08-05 09:06:56.720 +03:30 [Error] (WebStore.Controller.HomeController.) (Exceptions)User=0 with TraceId="8000003a-0011-f600-b63f-84710c7967bb" get Exception without Controll
+2024-08-05 09:06:56.735 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Error (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2722.4287ms.
+2024-08-05 09:06:58.948 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Error".
+2024-08-05 09:06:59.445 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Error" executed in 2692.4066ms.
+2024-08-05 09:06:59.446 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Error (WebStore)" in 5462.6985ms
+2024-08-05 09:06:59.446 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Error (WebStore)"'
+2024-08-05 09:06:59.448 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Error - - - 200 - text/html;+charset=utf-8 5487.6864ms
+2024-08-05 09:06:59.487 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/jquery.min.js - -
+2024-08-05 09:06:59.487 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/bootstrap.bundle.min.js - -
+2024-08-05 09:06:59.487 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/owl.carousel.min.js - -
+2024-08-05 09:06:59.487 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/jquery.simple.timer.js - -
+2024-08-05 09:06:59.488 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/assets/js/script.js - -
+2024-08-05 09:06:59.488 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 09:06:59.496 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 5.0129ms
+2024-08-05 09:06:59.497 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) The file "/assets/js/bootstrap.bundle.min.js" was not modified
+2024-08-05 09:06:59.497 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) The file "/assets/js/jquery.min.js" was not modified
+2024-08-05 09:06:59.497 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) The file "/assets/js/jquery.simple.timer.js" was not modified
+2024-08-05 09:06:59.497 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) The file "/assets/js/owl.carousel.min.js" was not modified
+2024-08-05 09:06:59.497 +03:30 [Information] (Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.) The file "/assets/js/script.js" was not modified
+2024-08-05 09:06:59.498 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/jquery.simple.timer.js - - - 304 - application/javascript 10.4889ms
+2024-08-05 09:06:59.498 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/script.js - - - 304 - application/javascript 10.4080ms
+2024-08-05 09:06:59.498 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/jquery.min.js - - - 304 - application/javascript 11.2450ms
+2024-08-05 09:06:59.498 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/owl.carousel.min.js - - - 304 - application/javascript 10.7720ms
+2024-08-05 09:06:59.498 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/assets/js/bootstrap.bundle.min.js - - - 304 - application/javascript 11.1398ms
+2024-08-05 09:06:59.504 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 09:06:59.545 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.0709ms
+2024-08-05 09:07:04.928 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/سیبارکسینتذلبر - -
+2024-08-05 09:07:04.943 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/سیبارکسینتذلبر - - - 302 - - 14.5680ms
+2024-08-05 09:07:04.945 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/%D8%B3%DB%8C%D8%A8%D8%A7%D8%B1%DA%A9%D8%B3%DB%8C%D9%86%D8%AA%D8%B0%D9%84%D8%A8%D8%B1 - -
+2024-08-05 09:07:04.947 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:04.963 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:04.984 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:07.615 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/سیبارکسینتذلبر" 
+2024-08-05 09:07:07.616 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2632.1019ms.
+2024-08-05 09:07:07.726 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:07.729 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 112.7987ms.
+2024-08-05 09:07:07.729 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 2766.5045ms
+2024-08-05 09:07:07.729 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.730 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/%D8%B3%DB%8C%D8%A8%D8%A7%D8%B1%DA%A9%D8%B3%DB%8C%D9%86%D8%AA%D8%B0%D9%84%D8%A8%D8%B1 - - - 200 - text/html;+charset=utf-8 2784.8420ms
+2024-08-05 09:07:07.750 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/logo.png - -
+2024-08-05 09:07:07.751 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/search.png - -
+2024-08-05 09:07:07.751 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/cart.png - -
+2024-08-05 09:07:07.751 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/avatar.jpg - -
+2024-08-05 09:07:07.751 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/mobile1.jpg - -
+2024-08-05 09:07:07.751 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/mobile2.jpg - -
+2024-08-05 09:07:07.752 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/menu-pic.jpg - -
+2024-08-05 09:07:07.752 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/mobile3.jpg - -
+2024-08-05 09:07:07.753 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/logo.png - - - 302 - - 3.1731ms
+2024-08-05 09:07:07.753 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/mobile1.jpg - - - 302 - - 2.1873ms
+2024-08-05 09:07:07.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/avatar.jpg - - - 302 - - 2.9031ms
+2024-08-05 09:07:07.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/mobile2.jpg - - - 302 - - 2.3719ms
+2024-08-05 09:07:07.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/mobile3.jpg - - - 302 - - 1.8172ms
+2024-08-05 09:07:07.754 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/search.png - - - 302 - - 2.7066ms
+2024-08-05 09:07:07.755 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 09:07:07.755 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 09:07:07.757 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/cart.png - - - 302 - - 4.7013ms
+2024-08-05 09:07:07.766 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 11.2622ms
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/cart.png - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/logo.png - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile3.jpg - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile1.jpg - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/avatar.jpg - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/menu-pic.jpg - - - 302 - - 32.9284ms
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/menu-pic.jpg - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile2.jpg - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/search.png - -
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.786 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.785 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:07:07.807 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:07.807 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:07.821 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:07.821 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:14.296 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:16.934 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:16.934 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:16.946 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:07:17.417 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/logo.png" 
+2024-08-05 09:07:17.417 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 9610.5242ms.
+2024-08-05 09:07:17.417 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:17.429 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/mobile2.jpg" 
+2024-08-05 09:07:17.429 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 9622.6139ms.
+2024-08-05 09:07:17.429 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.217 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/mobile1.jpg" 
+2024-08-05 09:07:18.217 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/avatar.jpg" 
+2024-08-05 09:07:18.217 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1271.6438ms.
+2024-08-05 09:07:18.217 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 10396.6528ms.
+2024-08-05 09:07:18.218 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 800.7958ms.
+2024-08-05 09:07:18.218 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10433.0656ms
+2024-08-05 09:07:18.218 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.219 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 789.1303ms.
+2024-08-05 09:07:18.219 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10433.3721ms
+2024-08-05 09:07:18.219 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.217 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/mobile3.jpg" 
+2024-08-05 09:07:18.239 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 20.7636ms.
+2024-08-05 09:07:18.239 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3943.6633ms.
+2024-08-05 09:07:18.238 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/menu-pic.jpg" 
+2024-08-05 09:07:18.239 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/search.png" 
+2024-08-05 09:07:18.239 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1305.2364ms.
+2024-08-05 09:07:18.239 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile2.jpg - - - 200 - text/html;+charset=utf-8 10455.1849ms
+2024-08-05 09:07:18.238 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/cart.png" 
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1305.2322ms.
+2024-08-05 09:07:18.239 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10454.1522ms
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 10418.6578ms.
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.218 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.218 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:07:18.240 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile1.jpg - - - 200 - text/html;+charset=utf-8 10456.1059ms
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 0.9963ms.
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 1.1114ms.
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 1.0551ms.
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10455.4607ms
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10455.4611ms
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10455.4954ms
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 22.6924ms.
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10455.8431ms
+2024-08-05 09:07:18.241 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/menu-pic.jpg - - - 200 - text/html;+charset=utf-8 10457.7695ms
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/search.png - - - 200 - text/html;+charset=utf-8 10457.8740ms
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/avatar.jpg - - - 200 - text/html;+charset=utf-8 10457.9088ms
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 2.6761ms.
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 10457.1211ms
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:07:18.242 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/cart.png - - - 200 - text/html;+charset=utf-8 10458.0826ms
+2024-08-05 09:07:18.243 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile3.jpg - - - 200 - text/html;+charset=utf-8 10458.4008ms
+2024-08-05 09:07:18.243 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/logo.png - - - 200 - text/html;+charset=utf-8 10458.9717ms
+2024-08-05 09:07:18.255 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10500.0259ms
+2024-08-05 09:09:42.135 +03:30 [Information] (Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.) User profile is available. Using '"C:\Users\motaghi\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-05 09:09:42.542 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Application started. Press Ctrl+C to shut down.
+2024-08-05 09:09:42.546 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Hosting environment: "Production"
+2024-08-05 09:09:42.546 +03:30 [Information] (Microsoft.Hosting.Lifetime.) Content root path: "C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore"
+2024-08-05 09:09:42.567 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/ - -
+2024-08-05 09:09:42.624 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 09:09:42.655 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:09:42.702 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Index (WebStore)" - Validation state: Valid
+2024-08-05 09:09:54.675 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Index (WebStore)" in 12014.4724ms
+2024-08-05 09:09:54.676 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Index (WebStore)"'
+2024-08-05 09:09:54.701 +03:30 [Error] (.) error
+System.Exception: test error
+   at WebStore.Controller.HomeController.Index() in C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\Controller\HomeController.cs:line 22
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at WebStore.MiddleWare.ExeptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\motaghi\source\repos\BaseStore\BaseStore\WebStore\MiddleWare\ExeptionMiddleware.cs:line 25
+2024-08-05 09:09:54.747 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Error - -
+2024-08-05 09:09:54.748 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/ - - - 302 - - 12182.6461ms
+2024-08-05 09:09:54.763 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.Error (WebStore)"'
+2024-08-05 09:09:54.764 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"Error\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Error()" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:09:54.775 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.Error (WebStore)" - Validation state: Valid
+2024-08-05 09:09:55.800 +03:30 [Error] (WebStore.Controller.HomeController.) (Exceptions)User=0 with TraceId="80000010-0013-f500-b63f-84710c7967bb" get Exception without Controll
+2024-08-05 09:09:55.807 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.Error (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1025.7825ms.
+2024-08-05 09:09:57.590 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "Error".
+2024-08-05 09:09:58.032 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "Error" executed in 2222.4389ms.
+2024-08-05 09:09:58.033 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.Error (WebStore)" in 3269.0008ms
+2024-08-05 09:09:58.033 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.Error (WebStore)"'
+2024-08-05 09:09:58.036 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Error - - - 200 - text/html;+charset=utf-8 3289.3963ms
+2024-08-05 09:09:58.063 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 09:09:58.070 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 09:09:58.072 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 7.1200ms
+2024-08-05 09:09:58.104 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.2812ms
+2024-08-05 09:12:32.991 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Error/skdbfsdbf - -
+2024-08-05 09:12:33.004 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Error/skdbfsdbf - - - 302 - - 13.1666ms
+2024-08-05 09:12:33.006 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Error/skdbfsdbf - -
+2024-08-05 09:12:33.007 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.014 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.029 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.030 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Error/skdbfsdbf" 
+2024-08-05 09:12:33.030 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.523ms.
+2024-08-05 09:12:33.158 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.165 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 134.6184ms.
+2024-08-05 09:12:33.165 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 150.2208ms
+2024-08-05 09:12:33.165 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.166 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Error/skdbfsdbf - - - 200 - text/html;+charset=utf-8 159.9377ms
+2024-08-05 09:12:33.184 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - -
+2024-08-05 09:12:33.185 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_framework/aspnetcore-browser-refresh.js - - - 200 12348 application/javascript;+charset=utf-8 1.2353ms
+2024-08-05 09:12:33.191 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/mobile1.jpg - -
+2024-08-05 09:12:33.191 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/cart.png - -
+2024-08-05 09:12:33.191 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/search.png - -
+2024-08-05 09:12:33.191 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/logo.png - -
+2024-08-05 09:12:33.191 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/mobile3.jpg - -
+2024-08-05 09:12:33.191 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/avatar.jpg - -
+2024-08-05 09:12:33.199 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/menu-pic.jpg - -
+2024-08-05 09:12:33.199 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/assets/images/mobile2.jpg - -
+2024-08-05 09:12:33.199 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/_vs/browserLink - -
+2024-08-05 09:12:33.209 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/search.png - - - 302 - - 17.9233ms
+2024-08-05 09:12:33.209 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/logo.png - - - 302 - - 18.5086ms
+2024-08-05 09:12:33.210 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/mobile1.jpg - - - 302 - - 19.4105ms
+2024-08-05 09:12:33.215 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/avatar.jpg - - - 302 - - 24.2631ms
+2024-08-05 09:12:33.215 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/logo.png - -
+2024-08-05 09:12:33.215 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/search.png - -
+2024-08-05 09:12:33.215 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile1.jpg - -
+2024-08-05 09:12:33.219 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.219 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/avatar.jpg - -
+2024-08-05 09:12:33.219 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/menu-pic.jpg - - - 302 - - 20.5850ms
+2024-08-05 09:12:33.219 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.220 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.220 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.220 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.220 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.220 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.220 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.222 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/menu-pic.jpg - -
+2024-08-05 09:12:33.226 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.227 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.240 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/cart.png - - - 302 - - 48.9491ms
+2024-08-05 09:12:33.240 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile3.jpg - -
+2024-08-05 09:12:33.240 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/mobile3.jpg - - - 302 - - 49.0209ms
+2024-08-05 09:12:33.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.240 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/mobile1.jpg" 
+2024-08-05 09:12:33.240 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0352ms.
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/assets/images/mobile2.jpg - - - 302 - - 57.1696ms
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.257 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/avatar.jpg" 
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile2.jpg - -
+2024-08-05 09:12:33.257 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0339ms.
+2024-08-05 09:12:33.257 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.257 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/logo.png" 
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request starting HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/cart.png - -
+2024-08-05 09:12:33.256 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.257 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.257 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7354ms.
+2024-08-05 09:12:33.257 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/search.png" 
+2024-08-05 09:12:33.257 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0659ms.
+2024-08-05 09:12:33.257 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.258 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.258 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.258 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executing endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.258 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.258 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Route matched with "{action = \"NotFound\", controller = \"Home\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult NotFound(System.String)" on controller "WebStore.Controller.HomeController" ("WebStore").
+2024-08-05 09:12:33.274 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.274 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.281 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/mobile3.jpg" 
+2024-08-05 09:12:33.281 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/menu-pic.jpg" 
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.569ms.
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 24.0961ms.
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 23.9726ms.
+2024-08-05 09:12:33.281 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/mobile2.jpg" 
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 59.4414ms
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0481ms.
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 59.4297ms
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.281 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.6184ms.
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 31.9128ms.
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 33.3873ms.
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 69.7339ms
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 69.7742ms
+2024-08-05 09:12:33.289 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executing action method "WebStore.Controller.HomeController.NotFound (WebStore)" - Validation state: Valid
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.290 +03:30 [Warning] (WebStore.Controller.HomeController.) (Not Found)UserId=0 with Path="/Home/assets/images/cart.png" 
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action method "WebStore.Controller.HomeController.NotFound (WebStore)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1136ms.
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.1422ms
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executing ViewResult, running view "NotFound".
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 8.9041ms.
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 8.904ms.
+2024-08-05 09:12:33.290 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 0.8833ms.
+2024-08-05 09:12:33.291 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 34.133ms
+2024-08-05 09:12:33.291 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.291 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile1.jpg - - - 200 - text/html;+charset=utf-8 76.2420ms
+2024-08-05 09:12:33.292 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 33.5588ms
+2024-08-05 09:12:33.295 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.295 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 56.0334ms
+2024-08-05 09:12:33.295 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.295 +03:30 [Information] (Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.) Executed ViewResult - view "NotFound" executed in 5.1271ms.
+2024-08-05 09:12:33.295 +03:30 [Information] (Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.) Executed action "WebStore.Controller.HomeController.NotFound (WebStore)" in 37.4425ms
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/search.png - - - 200 - text/html;+charset=utf-8 80.4246ms
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Routing.EndpointMiddleware.) Executed endpoint '"WebStore.Controller.HomeController.NotFound (WebStore)"'
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile3.jpg - - - 200 - text/html;+charset=utf-8 55.8217ms
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/logo.png - - - 200 - text/html;+charset=utf-8 81.2755ms
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/menu-pic.jpg - - - 200 - text/html;+charset=utf-8 76.8725ms
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/mobile2.jpg - - - 200 - text/html;+charset=utf-8 40.1096ms
+2024-08-05 09:12:33.296 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/avatar.jpg - - - 200 - text/html;+charset=utf-8 77.6697ms
+2024-08-05 09:12:33.297 +03:30 [Information] (Microsoft.AspNetCore.Hosting.Diagnostics.GET) Request finished HTTP/2 GET https://localhost:44347/Home/NotFound?Path=/Home/assets/images/cart.png - - - 200 - text/html;+charset=utf-8 40.4102ms

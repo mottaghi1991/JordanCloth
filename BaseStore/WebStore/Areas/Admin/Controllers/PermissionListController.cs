@@ -5,9 +5,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Core.Extention;
 using Domain;
 using Domain.User;
 using Core.Interface.Admin;
+using Microsoft.Extensions.Logging;
+using EventId = Core.Enums.EventId;
 
 namespace NoorMehr.Areas.Admin.Controllers
 {
@@ -15,10 +18,12 @@ namespace NoorMehr.Areas.Admin.Controllers
     public class PermissionListController : Controller
     {
         private IPermisionList _permisionList;
+        private ILogger _logger;
 
-        public PermissionListController(IPermisionList permisionList)
+        public PermissionListController(IPermisionList permisionList,ILogger<PermissionListController> logger)
         {
             _permisionList = permisionList;
+            _logger = logger;
         }
         [HttpGet]
         public IActionResult ShowPermision(string MyArea, string SearchController )
@@ -40,8 +45,24 @@ namespace NoorMehr.Areas.Admin.Controllers
         public IActionResult Edit(int Id)
         {
             var result = _permisionList.GetById(Id);
-            ViewBag.ParentList = new SelectList(_permisionList.GetParentList(), "PermissionListId", "Descript");
-            return PartialView("Edit",result);
+            if (result == null)
+            {
+                _logger.LogWarning(EventId.NotFound, "User With UserId={UserId} search Id={ItemId} and not Found ", User.GetUserId(), Id);
+                return NotFound();
+            }
+
+            if (result.Status == 1)
+            {
+                ViewBag.Parent = new SelectList(_permisionList.ParentList(), "Value", "Text", result.ParentId);
+            }
+            else
+            {
+                ViewBag.Parent = new SelectList(_permisionList.PermissionParentList(), "Value", "Text", result.ParentId);
+                ViewBag.Controller = new SelectList(_permisionList.GetContrllersOfArea(result.ParentId.Value), "Value", "Text", result.PermissionListId.ToString());
+            }
+
+
+            return View(result);
         }
         [HttpPost]
         public IActionResult Edit(PermissionList permissionList)

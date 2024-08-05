@@ -152,5 +152,16 @@ namespace Core.Services.Users
         {
             return _master.GetAll(a => a.ParentId == (int)MenuStatus.permission);
         }
+
+        public IEnumerable<SelectListItem> PermissionParentList()
+        {
+            var obj = _master.GetAll(a => a.ParentId == 0).Select(a => new SelectListItem()
+            {
+                Text = a.Descript,
+                Value = a.PermissionListId.ToString()
+            }).Append(new SelectListItem("دسترسی والد", "0"));
+            var dis = obj.OrderBy(a => a.Text);
+            return dis;
+        }
     }
 }
