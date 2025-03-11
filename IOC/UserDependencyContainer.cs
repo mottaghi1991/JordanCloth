@@ -1,5 +1,8 @@
-﻿using Core.Interface.Admin;
+﻿using Core.Dto.ViewModel.Exam;
+using Core.Interface.Admin;
+using Core.Interface.Exam;
 using Core.Interface.Users;
+using Core.Services.Exam;
 using Core.Services.Users;
 using Data.MasterInterface;
 using Data.MasterServices;
@@ -37,7 +40,14 @@ namespace IOC
             Services.AddScoped<IMaster<RolePermission>, MasterServices<RolePermission>>();
             Services.AddScoped<IMaster<UserRole>, MasterServices<UserRole>>();
             #endregion
+            #region Exam
+            Services.AddScoped<ISubOption, SubOptionServices>();
 
+
+
+
+            Services.AddScoped<IMaster<ShowExamToUserViewModel>, MasterServices<ShowExamToUserViewModel>>();
+            #endregion
 
         }
     }

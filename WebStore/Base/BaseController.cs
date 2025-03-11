@@ -8,5 +8,12 @@ namespace WebStore.Base
         public static string Success = "Success";
         public static string Error = "Error";
         public static string warning = "warning";
+
+
+        public static class AreaNames
+        {
+            public const string UserPanel = "UserPanel";
+            public const string Admin = "Admin";
+        }
     }
 }
