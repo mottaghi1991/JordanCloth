@@ -1,4 +1,5 @@
 ﻿using Core.Dto.ViewModel.Exam;
+using Domain.Exam;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Core.Interface.Exam
 {
     public interface ISubOption
     {
-        public IEnumerable<ShowExamToUserViewModel> GetAllQuestion();
+        public IEnumerable<ShowExamToUserViewModel> GetAllQuestion(int QuestionId);
+        public bool BulkInsert(List<UserAnswer> ListOfAnswer);
     }
 }

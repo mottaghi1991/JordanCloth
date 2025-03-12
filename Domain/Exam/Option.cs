@@ -11,8 +11,8 @@ namespace Domain.Exam
     {
       
         public string Title { get; set; }
+        public int Order { get; set; }
 
-    
         public IEnumerable<SubOption> SubOptions { get; set; }
     }
 }

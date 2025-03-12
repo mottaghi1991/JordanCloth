@@ -11,6 +11,8 @@ namespace Domain.Exam
     {
         public string Title { get; set; }
         public int OptionId { get; set; }
+        public int Order { get; set; }
+        public int QuestionId { get; set; }
         [ForeignKey("OptionId")]
         public Option Option { get; set; }
 

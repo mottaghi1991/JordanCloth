@@ -6,6 +6,7 @@ using Core.Services.Exam;
 using Core.Services.Users;
 using Data.MasterInterface;
 using Data.MasterServices;
+using Domain.Exam;
 using Domain.User;
 using Domain.User.Permission;
 using Domain.Users;
@@ -42,11 +43,21 @@ namespace IOC
             #endregion
             #region Exam
             Services.AddScoped<ISubOption, SubOptionServices>();
+            Services.AddScoped<IQuestion, QuestionServices>();
+            Services.AddScoped<IUserAnswer, UserAnswerServices>();
+           
+
+
+
+
+            Services.AddScoped<IMaster<UserAnswer>, MasterServices<UserAnswer>>();
+            Services.AddScoped<IMaster<Question>, MasterServices<Question>>();
 
 
 
 
             Services.AddScoped<IMaster<ShowExamToUserViewModel>, MasterServices<ShowExamToUserViewModel>>();
+            Services.AddScoped<IMaster<ExamResultViewModel>, MasterServices<ExamResultViewModel>>();
             #endregion
 
         }

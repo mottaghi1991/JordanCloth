@@ -17,8 +17,8 @@ namespace Personal.Controller
 
         public IActionResult Index()
         {
-            var obj = _subOption.GetAllQuestion();
-            return View(obj);
+           
+            return View();
         }
       
     }

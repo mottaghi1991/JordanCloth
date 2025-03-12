@@ -12,6 +12,6 @@ namespace Domain
         [Key]
         public int Id { get; set; }
         public bool IsDelete { get; set; } = false;
-        public DateTime DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
     }
 }

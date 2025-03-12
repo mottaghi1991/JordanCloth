@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Core.Dto.ViewModel.Exam.ExamResultViewModel>
+@{
+    ViewData["Title"] = "نتیجه آزمون";
+}
+
+
+<div class="card card-success mt-3">
+    <div class="card-header text-center">نتیجه رغبت سنجی</div>
+    <div class="card-body">
+        <table class="table table-active table-striped table-auto" style="table-layout:auto;width:auto">
+            <tr>
+                <th>گزینه </th>
+                <th>تعداد پاسخ </th>
+                <th></th>
+            </tr>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.SubOptionTitle</td>
+                    <td>@item.SubOptionCount</td>
+                </tr>
+            }<tr>
+                <td>مشاهده تفسیر تست</td>
+                <td><a class="btn btn-primary" asp-action="">پرداخت هزینه</a></td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>

@@ -40,6 +40,7 @@ namespace WebStore
             services.AddDbContext<MyContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Connect"));
+                //options.UseMySql(Configuration.GetConnectionString("Connect"),new MySqlServerVersion(new Version(8,0,31)));
             });
            
             services.AddAuthentication(option =>

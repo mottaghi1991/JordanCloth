@@ -27,6 +27,7 @@ namespace Data
         public virtual DbSet<Question> Questions{ get; set; }
         public virtual DbSet<Option> Options{ get; set; }
         public virtual DbSet<SubOption> SubOptions{ get; set; }
+        public virtual DbSet<UserAnswer> UserAnswers{ get; set; }
 
 
 

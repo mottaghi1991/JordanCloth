@@ -9,10 +9,13 @@ using Dapper;
 using Data.MasterInterface;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
+using MySql.Data.MySqlClient;
+
 
 namespace Data.MasterServices
 {
-    public class MasterServices<T>:IMaster<T> where T:class
+    public class MasterServices<T> : IMaster<T> where T : class
     {
 
         protected MyContext _ctx;
@@ -24,7 +27,7 @@ namespace Data.MasterServices
             _ctx = ctx;
             cnn = ctx.Database.GetConnectionString();
             cnnsql = new SqlConnection(cnn);
-
+            //cnnsql = new MySql.Data.MySqlClient.MySqlConnection(cnn);mysql
         }
         public IEnumerable<T> GetAll()
         {
@@ -169,6 +172,11 @@ namespace Data.MasterServices
             {
                 return false;
             }
+        }
+
+        public IEnumerable<T> GetAllEf()
+        {
+            return _ctx.Set<T>().ToList();
         }
     }
 }

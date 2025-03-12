@@ -8,7 +8,8 @@ namespace Domain.Exam
 {
     public class Question:BaseModel
     {
+        public int Order { get; set; }
         public string Title { get; set; }
-        public IEnumerable<Option> options { get; set; }
+   
     }
 }
