@@ -13,6 +13,8 @@ using IOC;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using WebStore.MiddleWare;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace WebStore
 {
@@ -28,6 +30,7 @@ namespace WebStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All, }));
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {

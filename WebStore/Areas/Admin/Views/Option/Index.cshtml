@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Domain.Exam.Option>
+
+@{
+    ViewData["Title"] = "لیست گزینه ها";
+}
+
+
+
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">لیست گزینه ها</h3>
+        </div>
+        <div class="card-body">
+            <p>
+                <a class="btn btn-success" asp-action="create">جدید</a>
+            </p>
+            <table class="table table-sm table-responsive table-hover table-striped text-center" style="width: auto">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Order)
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Order)
+                            </td>
+
+                            <td>
+                                <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info" style="font-size: 10px">ویرایش</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

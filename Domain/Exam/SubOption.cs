@@ -15,6 +15,7 @@ namespace Domain.Exam
         public int QuestionId { get; set; }
         [ForeignKey("OptionId")]
         public Option Option { get; set; }
+        public Question Question { get; set; }
 
     }
 }

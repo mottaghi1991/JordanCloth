@@ -45,6 +45,7 @@ namespace IOC
             Services.AddScoped<ISubOption, SubOptionServices>();
             Services.AddScoped<IQuestion, QuestionServices>();
             Services.AddScoped<IUserAnswer, UserAnswerServices>();
+            Services.AddScoped<IOption, OptionServices>();
            
 
 
@@ -52,6 +53,7 @@ namespace IOC
 
             Services.AddScoped<IMaster<UserAnswer>, MasterServices<UserAnswer>>();
             Services.AddScoped<IMaster<Question>, MasterServices<Question>>();
+            Services.AddScoped<IMaster<Option>, MasterServices<Option>>();
 
 
 

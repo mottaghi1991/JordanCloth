@@ -8,6 +8,8 @@ namespace WebStore.Base
         public static string Success = "Success";
         public static string Error = "Error";
         public static string warning = "warning";
+        public static string SuccessMessage = "عملیات با موفقیت انجام شد .";
+        public static string ErrorMessage = "عملیات با خطا مواجه شد .";
 
 
         public static class AreaNames
