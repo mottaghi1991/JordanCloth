@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using Core.Extention;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -10,6 +11,7 @@ using EventId = Core.Enums.EventId;
 
 namespace WebStore.Controller
 {
+    [Authorize]
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -21,7 +23,6 @@ namespace WebStore.Controller
         public IActionResult Index()
         {
       
-            HttpContext.Session.SetString("ali","khobi");
             _logger.LogWarning("sessonid={SessionId}",HttpContext.Session.Id);
             return View();
         }

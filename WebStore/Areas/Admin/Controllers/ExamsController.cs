@@ -5,6 +5,7 @@ using System;
 using WebStore.Base;
 using Domain.Exam;
 using System.Linq;
+using Core.Extention;
 
 namespace Personal.Areas.Admin.Controllers
 {
@@ -60,11 +61,12 @@ namespace Personal.Areas.Admin.Controllers
 
                         foreach (var subOptionId in selectedSubOptions)
                         {
-                         answers.Add(new UserAnswer
+                            answers.Add(new UserAnswer
                             {
                                 QuestionId = questionId,
                                 OptionId = optionId,
-                                SubOptionId = subOptionId
+                                SubOptionId = subOptionId,
+                                ItUserId = User.GetUserId()
                             });
                            
                            

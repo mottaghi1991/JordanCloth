@@ -12,5 +12,9 @@ namespace Core.Interface.Exam
     {
         public IEnumerable<ShowExamToUserViewModel> GetAllQuestion(int QuestionId);
         public bool BulkInsert(List<UserAnswer> ListOfAnswer);
+        public IEnumerable<SubOption> GetAllSubOptions();
+        public IEnumerable<SubOption> GetSubOptionByQuestionAndOption(int QuestionId,int OptionId);
+        public SubOption Insert(SubOption subOption);
+
     }
 }

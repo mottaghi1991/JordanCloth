@@ -38,4 +38,8 @@
     <ProjectReference Include="..\IOC\IOC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Shared\" />
+  </ItemGroup>
+
 </Project>

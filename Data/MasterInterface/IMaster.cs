@@ -9,6 +9,7 @@ namespace Data.MasterInterface
     {
         IEnumerable<T> GetAll();
         IEnumerable<T> GetAllEf();
+        IEnumerable<T> GetAllEf(Expression<Func<T, bool>> Filter);
         IEnumerable<T> GetAll(Expression<Func<T, bool>> Filter);
         IEnumerable<T> GetAll(string spName, DynamicParameters parameters);
         IEnumerable<T> GetAll(string spName);

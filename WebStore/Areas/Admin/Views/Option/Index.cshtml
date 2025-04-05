@@ -41,6 +41,7 @@
 
                             <td>
                                 <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info" style="font-size: 10px">ویرایش</a>
+                                <a class="btn btn-warning" asp-action="Index" asp-controller="SubOption" asp-route-questionId="@TempData["QuestionId"]" asp-route-optionId="@item.Id" style="font-size: 10px">لیست زیرگزینه ها</a>
 
                             </td>
                         </tr>

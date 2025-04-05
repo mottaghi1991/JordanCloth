@@ -16,8 +16,9 @@ namespace Personal.Areas.Admin.Controllers
             _option = option;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int QuestionId)
         {
+            TempData["QuestionId"] = QuestionId;
             return View(_option.GetAllOptions());
         }
         public ActionResult Create()

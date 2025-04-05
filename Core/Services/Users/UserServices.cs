@@ -25,7 +25,8 @@ namespace Core.Services.Users
 
         public bool ISExistUserName(string userName)
         {
-            return _User.GetAll(a => a.UserName == userName).Any();
+            var obj= _User.GetAll(a => a.UserName == userName).Any();
+            return obj;
         }
 
         public bool ISExistEmail(string Email)
@@ -40,9 +41,17 @@ namespace Core.Services.Users
 
         public MyUser LoginCheck(LoginViewModel model)
         {
-            return _User.GetAll(a =>
+            try
+            {
+                return _User.GetAllEf(a =>
                 a.UserName == StringTools.FixEmail(model.UserName) &&
-                a.PassWord == PasswordHelper.EncodePasswordMD5(model.PassWord)&a.IsActive==true).FirstOrDefault();
+                a.PassWord == PasswordHelper.EncodePasswordMD5(model.PassWord) & a.IsActive == true).FirstOrDefault();
+
+            }
+            catch (Exception ex) { 
+                return null;
+            }
+          
         }
 
         public InformationUserViewModel GetUserInformation(string userName)

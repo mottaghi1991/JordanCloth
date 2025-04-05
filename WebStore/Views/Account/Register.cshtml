@@ -1,41 +1,98 @@
 ﻿@model Core.Dto.ViewModel.User.RegisterViewModel
 @{
     ViewData["Title"] = "Register";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>ورود به سیستم</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            direction: rtl;
+            font-family: 'Vazir', sans-serif;
+        }
 
-<div class="col-10 col-md-7 col-lg-5 signup-login-box"><!-- start signup & login box -->
-    <img src="assets/images/logo.png">
-    <form asp-action="Register" method="post">
+        .signup-login-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
 
-        <div class="input-group signup-login-form mobile-number"><!-- start mobile number input -->
-            <input type="email" asp-for="UserName" class="form-control form-control-lg signup-login-input" placeholder="ایمیل">
-            <span class="alert alert-danger" asp-validation-for="UserName"></span>
-        </div><!-- end mobile number input -->
+        .signup-login-box img {
+            display: block;
+            margin: 0 auto 1.5rem auto;
+            max-width: 150px;
+        }
 
-        <div class="input-group signup-login-form password"><!-- start password input -->
-            <input type="password" asp-for="PassWord" class="form-control form-control-lg signup-login-input" placeholder="رمز عبور ">
-            <span class="alert alert-danger" asp-validation-for="PassWord"></span>
-        </div><!-- end password input -->
-        <div class="input-group signup-login-form password">
-            <!-- start password input -->
-            <input type="password" asp-for="RePassword" class="form-control form-control-lg signup-login-input" placeholder="تکرار رمز عبور ">
-            <span class="alert alert-danger" asp-validation-for="RePassword"></span>
-        </div>
-        <div class="signup-login-form">
-            <div class="form-check text-center"><!-- start input check -->
-                <input class="form-check-input form-check-input-custom" type="checkbox" id="customCheck" checked>
-                <label class="form-check-label line-height" for="customCheck">
-                    <a href="#" class="underline">حریم خصوصی</a> و <a href="#" class="underline">شرایط و قوانین</a> استفاده از سرویس های سایت  نیک کالا را مطالعه نموده و با کلیه موارد آن موافقم.
-                </label>
-            </div><!-- end input check -->
-        </div>
+        .signup-login-input {
+            border-radius: 10px;
+        }
 
-        <button type="submit" class="btn btn-danger d-block font-12 mx-auto signup-btn mb-4"><!-- signup btn -->
-            ثبت نام
-        </button>
+        .login-btn {
+            width: 100%;
+            font-size: 16px;
+            border-radius: 10px;
+        }
 
-        <p>قبلا در نیک کالا ثبت‌ نام کرده‌اید؟ <a asp-action="Login" class="underline">وارد شویــد</a></p>
+        }
+    </style>
+    <partial name="_HeaderLink" />
+</head>
+<body>
+    <div class="signup-login-box">
+        <!-- start signup & login box -->
 
-    </form>
-</div>
+        <img src="~/assets/images/logo.png" alt="لوگو">
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+            <div class="input-group signup-login-form mobile-number">
+                <!-- start mobile number input -->
+                <input type="email" asp-for="UserName" class="form-control form-control-lg signup-login-input text-start" placeholder="ایمیل">
+            </div><!-- end mobile number input -->
 
+            <div class="input-group signup-login-form password">
+                <!-- start password input -->
+                <input type="password" asp-for="PassWord" class="form-control form-control-lg signup-login-input" placeholder="رمز عبور ">
+            </div><!-- end password input -->
+            <div class="input-group signup-login-form password">
+                <!-- start password input -->
+                <input type="password" asp-for="RePassword" class="form-control form-control-lg signup-login-input" placeholder="تکرار رمز عبور ">
+            </div>
+            <div class="signup-login-form">
+                <div class="form-check text-center">
+                    <!-- start input check -->
+                    <input class="form-check-input form-check-input-custom" type="checkbox" id="customCheck" checked>
+                    <label class="form-check-label line-height" for="customCheck">
+                        <a href="#" class="underline">حریم خصوصی</a> و <a href="#" class="underline">شرایط و قوانین</a> استفاده از سرویس های سایت  نورمهر را مطالعه نموده و با کلیه موارد آن موافقم.
+                    </label>
+                </div><!-- end input check -->
+            </div>
+
+            <button type="submit" class="btn btn-danger d-block font-12 mx-auto signup-btn mb-4">
+                <!-- signup btn -->
+                ثبت نام
+            </button>
+
+            <p>قبلا در نورمهر ثبت‌ نام کرده‌اید؟ <a asp-action="Login" class="underline">وارد شویــد</a></p>
+
+        </form>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+        <partial name="_Message" />
+        <partial name="_FooterLink" />
+    }
+</body>
+</html>

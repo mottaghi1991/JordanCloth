@@ -1,19 +1,36 @@
-﻿@model IEnumerable<Domain.Exam.Question>
+﻿@model IEnumerable<Domain.Exam.SubOption>
 @{
     ViewData["Title"] = "Index";
 }
 
 
-
 <div class="col-md-12">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">لیست سوالات</h3>
+            <h3 class="card-title">لیست زیرگزینه ها</h3>
         </div>
         <div class="card-body">
             <p>
                 <a class="btn btn-success" asp-action="create">جدید</a>
             </p>
+            <form>
+                <div class="row">
+                    <div class="col-md-3 form-group">
+                        <label>سوال</label>
+                        <select name="questionId" asp-items="@ViewBag.Questions" class="form-control">
+                            <option value="0">لطفا یک گزینه را برای جستجو انتخاب فرمائید.</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label>گزینه ها</label>
+                        <select name="optionId" asp-items="@ViewBag.options" class="form-control">
+                            <option value="0">لطفا یک گزینه را برای جستجو انتخاب فرمائید.</option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-1"><input type="submit" value="جستجو" class="btn btn-primary" /></div>
+                </div>
+            </form>
             <table class="table table-sm table-responsive table-hover table-striped text-center" style="width: auto">
                 <thead>
                     <tr>
@@ -23,7 +40,7 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Order)
                         </th>
-                      
+
                         <th></th>
                     </tr>
                 </thead>
@@ -37,10 +54,9 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Order)
                             </td>
-                          
+
                             <td>
                                 <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info" style="font-size: 10px">ویرایش</a>
-                                <a class="btn btn-warning" asp-action="Index" asp-controller="Option" asp-route-QuestionId="@item.Id" style="font-size: 10px">لیست گزینه ها</a>
                                 <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('ایا از حذف اطمینان دارید؟')" class="btn btn-danger" style="font-size: 10px"> حذف</a>
 
                             </td>

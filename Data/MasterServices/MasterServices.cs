@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 
 namespace Data.MasterServices
@@ -177,6 +178,30 @@ namespace Data.MasterServices
         public IEnumerable<T> GetAllEf()
         {
             return _ctx.Set<T>().ToList();
+        }
+        public IEnumerable<T> GetAllEf(Expression<Func<T, bool>> Filter)
+        {
+            try
+            {
+              
+              
+                var obj = _ctx.Set<T>().AsQueryable();
+                if (Filter != null)
+                {
+                    obj = obj.Where(Filter);
+                }
+              
+
+                return obj.ToList();
+            }
+            catch (Exception ex)
+            {
+
+
+                return null;
+            }
+
+
         }
     }
 }

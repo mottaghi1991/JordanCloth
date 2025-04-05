@@ -13,11 +13,12 @@ using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
+using WebStore.Base;
 using EventId = Core.Enums.EventId;
 
 namespace WebStore.Controller
 {
-    public class AccountController : Microsoft.AspNetCore.Mvc.Controller
+    public class AccountController : BaseController
     {
         private IUser _user;
         private IViewRender _viewRender;
@@ -57,7 +58,7 @@ namespace WebStore.Controller
             {
                 UserName = model.UserName,
                 Email = StringTools.FixEmail(model.UserName),
-                IsActive = false,
+                IsActive = true,
                 PassWord =PasswordHelper.EncodePasswordMD5(model.PassWord) ,
                 RegisterDate = DateTime.Now,
                 UserAvatar = "default.jpg",
@@ -65,7 +66,7 @@ namespace WebStore.Controller
                 ActiveCode = StringTools.GenerateUniqeCode()
             };
             var result = _user.AddUser(user);
-            TempData["Success"] = "ثبت نام با موفقیت انجام شد";
+            TempData[Success] = "ثبت نام با موفقیت انجام شد";
             //Send Active Code
            return RedirectToAction("Login");
         }
