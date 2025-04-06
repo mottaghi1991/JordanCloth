@@ -28,7 +28,7 @@
                 {
                     <div class="form-group">
                         <label asp-for="Status" class="control-label"></label>
-                        <select id="IsPublicId" class="form-control" name="IsPublic" onchange="FillParent(this.value)">
+                        <select id="IsPublicId" class="form-control" name="Status" onchange="FillParent(this.value)">
 
                             @if (Model.Status == 0)
                             {

@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
 
-    if ($('#IsPublicId').find(":selected").val() != 0) {
+    if ($('#IsPublicId').find(":selected").val() == 1) {
 
         $("#searchController").hide();
         $("#ControllerText").hide();
@@ -79,6 +79,7 @@ function FillParent(Id) {
                 s += '<option value="' + data[i].value + '">' + data[i].text + '</option>';
             }
             $("#searchParent").html(s);
+     
         },
         error: function (data) {
             console.log("error");
@@ -99,8 +100,7 @@ function FillController(Id) {
         dataType: "json",
         success: function (data) {
             console.log('suncess');
-            var s = '<option value="-1">منو</option><option value="-2">کنترلر اصلی</option>';
-
+            var s = '<option value="-1">بخش ها</option>';
             for (var i = 0; i < data.length; i++) {
 
 
@@ -141,16 +141,15 @@ function Edit(Id) {
 }
 
 
-function Add() {
+function AddParentMenu() {
 
     $.ajax({
         type: "Get",
-        url: '../../Admin/PermissionList/Add',
+        url: '../../Admin/PermissionList/AddParentMenu',
         contentType: "application/text; charset=utf-8",
         dataType: "text",
         async: false,
         success: function (data) {
-            console.log(data);
             $('.modal-body').html(data);
             $('#myform').data('validator', null);
             $.validator.unobtrusive.parse('#myform');
@@ -176,28 +175,30 @@ function insertArea() {
         contentType: "application/json;charset=UTF-8",
         dataType: "json",
         beforeSend: function () {
-            StartLoading();
+          /*  StartLoading();*/
         },
         success: function (data) {
-            StopLoading();
-            console.log(data);
+          /*  StopLoading();*/
+            location.reload();
             Swal.fire({
                 title: "موفق!",
                 text: "عملیات با موفقیت انجام شد",
                 icon: "success",
                 confirmButtonText: "باشه"
             });
-            location.reload();
+       
         },
         error: function (data) {
-            StopLoading();
+           /* StopLoading();*/
+ 
+            console.log(data.responseText);
             Swal.fire({
                 title: "خطا!",
                 text: "عملیات با خطا انجام شد .",
                 icon: "error",
                 confirmButtonText: "باشه"
             });
-            location.reload();
+       
         }
 
 

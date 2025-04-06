@@ -11,11 +11,12 @@ using Domain.User;
 using Core.Interface.Admin;
 using Microsoft.Extensions.Logging;
 using EventId = Core.Enums.EventId;
+using WebStore.Base;
 
 namespace NoorMehr.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class PermissionListController : Controller
+    public class PermissionListController : BaseController
     {
         private IPermisionList _permisionList;
         private ILogger _logger;
@@ -28,9 +29,13 @@ namespace NoorMehr.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult ShowPermision(string MyArea, string SearchController )
         {
+            if(!_permisionList.GetAll().Any())
+            {
+                return RedirectToAction("insertArea");
+            }
             if (MyArea == null)
             {
-                ViewBag.Area = new SelectList(_permisionList.GetAllArea(), "Area", "Area", MyArea);
+                ViewBag.Area = new SelectList(_permisionList.GetAllArea(), "Area", "Area");
                 ViewBag.Controller = new SelectList(_permisionList.GetControllerByArea(MyArea), "ControllerName", "ControllerName", SearchController);
                 return View(_permisionList.GetAllParentPermissionList());
             }
@@ -242,6 +247,39 @@ namespace NoorMehr.Areas.Admin.Controllers
             var result = new SelectList(_permisionList.GetContrllersOfArea(Id), "Value", "Text");
 
             return Json(result);
+        }
+
+
+        public IActionResult MenuList(int ParentMenuId)
+        {
+            ViewBag.MenuList = new SelectList(_permisionList.GetAllMenu(), "PermissionListId", "Descript");
+
+            var obj = _permisionList.GetAllMenu();
+            return View(obj);
+        }
+        [HttpGet]
+        public IActionResult AddParentMenu()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddParentMenu(PermissionList permissionList)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(permissionList);
+            }
+
+            var result = _permisionList.InsertParentMenu(permissionList);
+
+            if (result != null)
+            {
+                TempData[Success] = "عملیات با موفقیت ثبت گردید";
+                return RedirectToAction("MenuList", new { ParentMenuId = result.PermissionListId });
+            }
+
+            TempData[Error] = "عملیات با خطا مواجه شد .";
+            return RedirectToAction("MenuList", new { ParentMenuId = result.PermissionListId });
         }
     }
 }

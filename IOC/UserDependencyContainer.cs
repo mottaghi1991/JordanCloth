@@ -46,7 +46,10 @@ namespace IOC
             Services.AddScoped<IQuestion, QuestionServices>();
             Services.AddScoped<IUserAnswer, UserAnswerServices>();
             Services.AddScoped<IOption, OptionServices>();
-           
+            Services.AddScoped<IJobQuestion, JobQuestionServices>();
+            Services.AddScoped<IJobUserNaswer, JobUserAnswerServices>();
+
+
 
 
 
@@ -55,12 +58,15 @@ namespace IOC
             Services.AddScoped<IMaster<Question>, MasterServices<Question>>();
             Services.AddScoped<IMaster<Option>, MasterServices<Option>>();
             Services.AddScoped<IMaster<SubOption>, MasterServices<SubOption>>();
+            Services.AddScoped<IMaster<JobQuestion>, MasterServices<JobQuestion>>();
+            Services.AddScoped<IMaster<JobUserAnswer>, MasterServices<JobUserAnswer>>();
 
 
 
 
             Services.AddScoped<IMaster<ShowExamToUserViewModel>, MasterServices<ShowExamToUserViewModel>>();
             Services.AddScoped<IMaster<ExamResultViewModel>, MasterServices<ExamResultViewModel>>();
+            Services.AddScoped<IMaster<JobTestViewModel>, MasterServices<JobTestViewModel>>();
             #endregion
 
         }

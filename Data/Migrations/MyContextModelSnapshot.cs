@@ -17,10 +17,124 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("dbo")
                 .HasAnnotation("ProductVersion", "8.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Domain.Exam.JobOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("JobQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TItle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.Property<int>("jobGroupIndexId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobQuestionId");
+
+                    b.HasIndex("jobGroupIndexId");
+
+                    b.ToTable("JobOptions", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JobQuestions", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobUserAnswer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("JobQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OptionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobQuestionId");
+
+                    b.HasIndex("OptionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("JobUserAnswers", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JopGroupIndex", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JopGroupIndex", "dbo");
+                });
 
             modelBuilder.Entity("Domain.Exam.Option", b =>
                 {
@@ -45,7 +159,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Options");
+                    b.ToTable("Options", "dbo");
                 });
 
             modelBuilder.Entity("Domain.Exam.Question", b =>
@@ -71,7 +185,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Questions");
+                    b.ToTable("Questions", "dbo");
                 });
 
             modelBuilder.Entity("Domain.Exam.SubOption", b =>
@@ -107,7 +221,7 @@ namespace Data.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("SubOptions");
+                    b.ToTable("SubOptions", "dbo");
                 });
 
             modelBuilder.Entity("Domain.Exam.UserAnswer", b =>
@@ -127,6 +241,9 @@ namespace Data.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
+                    b.Property<int>("ItUserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("OptionId")
                         .HasColumnType("int");
 
@@ -136,21 +253,15 @@ namespace Data.Migrations
                     b.Property<int>("SubOptionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("userId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.ToTable("UserAnswers");
+                    b.ToTable("UserAnswers", "dbo");
                 });
 
             modelBuilder.Entity("Domain.User.MyUser", b =>
                 {
                     b.Property<int>("ItUserId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItUserId"));
 
                     b.Property<string>("ActiveCode")
                         .IsRequired()
@@ -181,14 +292,9 @@ namespace Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("userId")
-                        .HasColumnType("int");
-
                     b.HasKey("ItUserId");
 
-                    b.HasIndex("userId");
-
-                    b.ToTable("MyUser");
+                    b.ToTable("MyUser", "dbo");
                 });
 
             modelBuilder.Entity("Domain.User.Permission.PermissionList", b =>
@@ -222,7 +328,7 @@ namespace Data.Migrations
 
                     b.HasKey("PermissionListId");
 
-                    b.ToTable("PermissionList");
+                    b.ToTable("PermissionList", "dbo");
                 });
 
             modelBuilder.Entity("Domain.User.Permission.Role", b =>
@@ -239,7 +345,7 @@ namespace Data.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("Role");
+                    b.ToTable("Role", "dbo");
                 });
 
             modelBuilder.Entity("Domain.User.Permission.RolePermission", b =>
@@ -262,7 +368,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RolePermission");
+                    b.ToTable("RolePermission", "dbo");
                 });
 
             modelBuilder.Entity("Domain.User.UserRole", b =>
@@ -285,7 +391,53 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRole");
+                    b.ToTable("UserRole", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobOption", b =>
+                {
+                    b.HasOne("Domain.Exam.JobQuestion", "jobQuestion")
+                        .WithMany("JobOptions")
+                        .HasForeignKey("JobQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Exam.JopGroupIndex", "jopGroupIndex")
+                        .WithMany("JobOptions")
+                        .HasForeignKey("jobGroupIndexId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("jobQuestion");
+
+                    b.Navigation("jopGroupIndex");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobUserAnswer", b =>
+                {
+                    b.HasOne("Domain.Exam.JobQuestion", "JobQuestion")
+                        .WithMany("JobUserAnswers")
+                        .HasForeignKey("JobQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Exam.JobOption", "jobOption")
+                        .WithMany("JobUserAnswers")
+                        .HasForeignKey("OptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User.MyUser", "MyUser")
+                        .WithMany("JobUserAnswers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("JobQuestion");
+
+                    b.Navigation("MyUser");
+
+                    b.Navigation("jobOption");
                 });
 
             modelBuilder.Entity("Domain.Exam.SubOption", b =>
@@ -311,7 +463,9 @@ namespace Data.Migrations
                 {
                     b.HasOne("Domain.Exam.UserAnswer", null)
                         .WithMany("users")
-                        .HasForeignKey("userId");
+                        .HasForeignKey("ItUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.User.Permission.RolePermission", b =>
@@ -352,6 +506,23 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Exam.JobOption", b =>
+                {
+                    b.Navigation("JobUserAnswers");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobQuestion", b =>
+                {
+                    b.Navigation("JobOptions");
+
+                    b.Navigation("JobUserAnswers");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JopGroupIndex", b =>
+                {
+                    b.Navigation("JobOptions");
+                });
+
             modelBuilder.Entity("Domain.Exam.Option", b =>
                 {
                     b.Navigation("SubOptions");
@@ -369,6 +540,8 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Domain.User.MyUser", b =>
                 {
+                    b.Navigation("JobUserAnswers");
+
                     b.Navigation("UserRoles");
                 });
 

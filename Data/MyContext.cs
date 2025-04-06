@@ -29,10 +29,15 @@ namespace Data
         public virtual DbSet<SubOption> SubOptions{ get; set; }
         public virtual DbSet<UserAnswer> UserAnswers{ get; set; }
 
+        public virtual DbSet<JobQuestion> JobQuestions{ get; set; }
+        public virtual DbSet<JobOption> JobOptions { get; set; }
+        public virtual DbSet<JobUserAnswer> JobUserAnswers{ get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("dbo");
 
         }
     }

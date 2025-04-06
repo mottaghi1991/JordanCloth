@@ -25,11 +25,13 @@ namespace Core.Interface.Admin
         bool Delete(PermissionList permissionList);
         IEnumerable<PermissionList> permissionLists();
 
-        IEnumerable<ShowMenuVm> GetAllMenu();
         IEnumerable<RolePermission> GetPermissionOfRole(int RoleId);
         public IEnumerable<SelectListItem> GetContrllersOfArea(int SystemMenuId);
         public IEnumerable<SelectListItem> ParentList();
         public IEnumerable<PermissionList> GetAllParentPermissionList();
         public IEnumerable<SelectListItem> PermissionParentList();
+        public IEnumerable<PermissionList> GetAllMenu();
+        public PermissionList InsertParentMenu(PermissionList permissionList);
+        public bool CheckFirst();
     }
 }

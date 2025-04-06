@@ -17,7 +17,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Core.Services.Users
 {
-    public class PermissionListServices:IPermisionList
+    public class PermissionListServices : IPermisionList
     {
         IMaster<PermissionList> _master;
         IMaster<RolePermission> _RolePemissionmaster;
@@ -57,7 +57,7 @@ namespace Core.Services.Users
 
         public List<PermissionList> UserMenu()
         {
-            return _master.GetAll(a=>a.Status==2).ToList();
+            return _master.GetAll(a=>a.Status==(int)MenuStatus.menu).ToList();
         }
 
         public int checkExistArea(string Area)
@@ -115,11 +115,7 @@ namespace Core.Services.Users
             return obj;
         }
 
-        public IEnumerable<ShowMenuVm> GetAllMenu()
-        {
-            return _master.GetAll(a => a.Status == 2).Select(a => new ShowMenuVm()
-                { PermissionListId = a.PermissionListId, MenuDesc = a.Descript,ParentId = a.ParentId});
-        }
+     
 
         public IEnumerable<RolePermission> GetPermissionOfRole(int RoleId)
         {
@@ -155,13 +151,75 @@ namespace Core.Services.Users
 
         public IEnumerable<SelectListItem> PermissionParentList()
         {
-            var obj = _master.GetAll(a => a.ParentId == 0).Select(a => new SelectListItem()
-            {
-                Text = a.Descript,
-                Value = a.PermissionListId.ToString()
-            }).Append(new SelectListItem("دسترسی والد", "0"));
+            var obj = _master
+                .GetAllEf(a => a.ParentId == (int)MenuStatus.permission & a.Status == (int)MenuStatus.permission)
+                .Select(a => new SelectListItem()
+                {
+                    Text = a.Descript,
+                    Value = a.PermissionListId.ToString()
+                });
             var dis = obj.OrderBy(a => a.Text);
             return dis;
         }
+
+
+
+        public PermissionList InsertParentMenu(PermissionList permissionList)
+        {
+            PermissionList permission = new PermissionList()
+            {
+                Area = null,
+                ParentId = null,
+                Descript = permissionList.Descript,
+                Radif = permissionList.Radif,
+                Status = (int)MenuStatus.menu,
+                ActionName = null,
+                ControllerName = null,
+
+            };
+            var Result = _master.Insert(permission);
+            return Result;
+        }
+
+        public bool CheckFirst()
+        {
+            var result = _master.GetAllEf(null);
+
+            if (!result.Any())
+            {
+
+                _master.Insert(new PermissionList()
+                {
+                    ParentId = 0,
+                    Area = null,
+                    Descript = "دسترسی ریشه بدون Area",
+                    Radif = 1,
+                    Status = (int)MenuStatus.permission
+
+                });
+                var Res = _master.Insert(new PermissionList()
+                {
+                    ParentId = null,
+                    Area = null,
+                    Descript = "دسترسی ها",
+                    Radif = 1,
+                    Status = (int)MenuStatus.menu
+                });
+
+                if (Res == null)
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            return true;
+        }
+
+        public IEnumerable<PermissionList> GetAllMenu()
+        {
+            return _master.GetAllEf(a => a.Status == (int)MenuStatus.menu);
+        }
     }
 }
+
