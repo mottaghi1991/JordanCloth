@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Domain.Exam
 {
-    public class JobQuestion:BaseModel
+    public class ExamList:BaseModel
     {
         [DisplayName("عنوان")]
+        [MaxLength(50, ErrorMessage = "طول رشته بیشتر از 50 کاراکتر می باشد")]
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
-        public string  Title{ get; set; }
-        public virtual IEnumerable<JobOption> JobOptions { get; set; }  
-        public virtual IEnumerable<JobUserAnswer> JobUserAnswers{ get; set; }  
+        public string Title { get; set; }
+        public virtual IEnumerable<ExamEvent> ExamEvents { get; set; }
     }
 }

@@ -39,6 +39,11 @@ namespace Core.Services.Exam
             return _master.GetAllEf().FirstOrDefault(a => a.Id == OptionId);
         }
 
+        public IEnumerable<Option> GetOptionByQuestionId(int QuestionId)
+        {
+            return _master.GetAllEf(a => a.QuestionId == QuestionId);
+        }
+
         public Option Insert(Option Option)
         {
             return _master.Insert(Option);

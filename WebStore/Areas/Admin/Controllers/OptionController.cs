@@ -1,7 +1,11 @@
-﻿using Core.Interface.Exam;
+﻿using Core.Dto.ViewModel.Exam;
+using Core.Interface.Exam;
 using Domain.Exam;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using MySqlX.XDevAPI.Common;
 using System;
+using System.Linq;
 using WebStore.Base;
 
 namespace Personal.Areas.Admin.Controllers
@@ -10,20 +14,36 @@ namespace Personal.Areas.Admin.Controllers
     public class OptionController : BaseController
     {
         private readonly IOption _option;
+        private readonly IQuestion _question;
 
-        public OptionController(IOption option)
+        public OptionController(IOption option, IQuestion question)
         {
             _option = option;
+            _question = question;
         }
 
         public IActionResult Index(int QuestionId)
         {
-            TempData["QuestionId"] = QuestionId;
-            return View(_option.GetAllOptions());
+           
+
+            var Question = _question.GetQuestionById(QuestionId);
+            if(Question==null)
+            {
+                return NotFound();
+            }
+            return View(new OptionViewModel()
+            {
+                QuestionId=Question.Id,
+                QuestionTitle=Question.Title,
+                options= _option.GetOptionByQuestionId(QuestionId).ToList()
+            });
         }
-        public ActionResult Create()
+        public ActionResult Create(int QuestionId)
         {
-            return View();
+            return View(new Option()
+            {
+                QuestionId=QuestionId
+            });
         }
 
         // POST: RoleController/Create
@@ -41,24 +61,22 @@ namespace Personal.Areas.Admin.Controllers
 
             try
             {
-
-
                 var result =_option.Insert(option);
                 if (result != null)
                 {
                     TempData[Success] = SuccessMessage;
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { QuestionId =result.QuestionId});
                 }
                 else
                 {
                     TempData[Error] = ErrorMessage;
-                    return RedirectToAction("Index");
+                    return View(option);
                 }
             }
             catch (Exception e)
             {
                 TempData[Error] = ErrorMessage;
-                return RedirectToAction("Index");
+                return View(option);
             }
 
 
@@ -86,20 +104,16 @@ namespace Personal.Areas.Admin.Controllers
             {
                 return View(option);
             }
-
-
-
-
             var result =_option.Update(option);
             if (result != null)
             {
                 TempData[Success] = SuccessMessage;
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { QuestionId =result.QuestionId});
             }
             else
             {
                 TempData[Error] = ErrorMessage;
-                return RedirectToAction("Index");
+                return View(option);
             }
 
         }

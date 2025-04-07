@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace Domain.User
     public class MyUser
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int ItUserId { get; set; }
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         [Display(Name = "کاربر سیستم")]
@@ -32,6 +35,7 @@ namespace Domain.User
         public bool IsAdmin { get; set; }
         public virtual List<UserRole> UserRoles { get; set; }
         public virtual IEnumerable<JobUserAnswer> JobUserAnswers { get; set; }
+        public virtual IEnumerable<ExamEvent> ExamEvents { get; set; }
 
     }
 

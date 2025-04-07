@@ -41,6 +41,7 @@ namespace Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TItle")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Value")
@@ -73,6 +74,7 @@ namespace Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -153,11 +155,16 @@ namespace Data.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("int");
 
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("Options", "dbo");
                 });
@@ -180,6 +187,10 @@ namespace Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("descript")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -261,6 +272,7 @@ namespace Data.Migrations
             modelBuilder.Entity("Domain.User.MyUser", b =>
                 {
                     b.Property<int>("ItUserId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("ActiveCode")
@@ -440,6 +452,17 @@ namespace Data.Migrations
                     b.Navigation("jobOption");
                 });
 
+            modelBuilder.Entity("Domain.Exam.Option", b =>
+                {
+                    b.HasOne("Domain.Exam.Question", "Question")
+                        .WithMany("options")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+                });
+
             modelBuilder.Entity("Domain.Exam.SubOption", b =>
                 {
                     b.HasOne("Domain.Exam.Option", "Option")
@@ -530,6 +553,8 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Domain.Exam.Question", b =>
                 {
+                    b.Navigation("options");
+
                     b.Navigation("subOptions");
                 });
 

@@ -42,6 +42,11 @@ namespace Core.Services.Exam
             return _SubMaster.GetAllEf();
         }
 
+        public SubOption GetSubOptionById(int SubOptionId)
+        {
+            return _SubMaster.GetAllEf(a => a.Id == SubOptionId).FirstOrDefault();
+        }
+
         public IEnumerable<SubOption> GetSubOptionByQuestionAndOption(int QuestionId, int OptionId)
         {
            return _SubMaster.GetAllEf().Where(a=>a.QuestionId==QuestionId&a.OptionId==OptionId).ToList();   
@@ -50,6 +55,11 @@ namespace Core.Services.Exam
         public SubOption Insert(SubOption subOption)
         {
        return _SubMaster.Insert(subOption); 
+        }
+
+        public SubOption update(SubOption subOption)
+        {
+            return _SubMaster.Update(subOption);
         }
     }
 }

@@ -14,10 +14,15 @@ namespace Domain.Exam
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public int Order { get; set; }
 
-        [DisplayName("متن سوال")]
+        [DisplayName("عنوان سوال")]
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public string Title { get; set; }
+
+        [DisplayName("متن سوال")]
+        [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
+        public string descript { get; set; }
         public IEnumerable<SubOption>subOptions { get; set; }
+        public IEnumerable<Option> options{ get; set; }
 
     }
 }

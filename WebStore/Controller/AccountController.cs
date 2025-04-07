@@ -66,9 +66,18 @@ namespace WebStore.Controller
                 ActiveCode = StringTools.GenerateUniqeCode()
             };
             var result = _user.AddUser(user);
-            TempData[Success] = "ثبت نام با موفقیت انجام شد";
+            if(result!=null)
+            {
+                TempData[Success] = "ثبت نام با موفقیت انجام شد";
+
+            }
+            else
+            {
+                ModelState.AddModelError("UserName", "در حال حاصر سیستم در حال برزورسانی است");
+                return View(model);
+            }
             //Send Active Code
-           return RedirectToAction("Login");
+            return RedirectToAction("Login");
         }
         [HttpGet]
         [Route("Login")]
@@ -107,8 +116,15 @@ namespace WebStore.Controller
                     IsPersistent = loginViewModel.IsRemember
                 };
                 HttpContext.SignInAsync(principal, Properties);
-                
-                return RedirectToAction("Index","UserPanel",new{ area = "UserPanel" });
+                if(user.IsAdmin==true)
+                {
+                    return RedirectToAction("Index", "AdminHome", new { area = AreaNames.Admin });
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Exams", new { area = AreaNames.Admin });
+                }
+             
             }
             
         }

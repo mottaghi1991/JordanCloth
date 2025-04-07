@@ -21,6 +21,9 @@
                             @Html.DisplayNameFor(model => model.Title)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.descript)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.Order)
                         </th>
                       
@@ -33,6 +36,9 @@
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.descript)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Order)

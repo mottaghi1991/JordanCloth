@@ -10,7 +10,8 @@ namespace Core.Interface.Exam
     public interface IOption
     {
         public IEnumerable<Option> GetAllOptions();
-        public Option Insert(Option Option);
+        public IEnumerable<Option> GetOptionByQuestionId(int QuestionId);
+                public Option Insert(Option Option);
         public Option Update(Option Option);
         public bool Delete(int OptionId);
         public Option GetOptionById(int OptionId);

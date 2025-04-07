@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using Core.Dto.ViewModel.Admin.Role;
+using Core.Dto.ViewModel.User;
 using Core.Interface.Admin;
 using Core.Interface.Users;
 using Domain.User;
@@ -24,6 +25,15 @@ namespace WebStore.Areas.Admin.Controllers
         {
             var obj=_user.GetPAggingUser(1,10);
             return View(obj);
+        }
+        public IActionResult UserExam(string Username)
+        {
+            var User=_user.GetUserByUserName(Username);
+
+            return View(new ShowUserBrifViewModel()
+            {
+                UserName = Username, 
+            });
         }
       
     }

@@ -14,10 +14,19 @@ namespace Domain.Exam
         [DisplayName("متن زیرگزینه")]
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public string Title { get; set; }
+
+
+        [DisplayName("دسته بندی")]
+        [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public int OptionId { get; set; }
+
+
         [DisplayName("ترتیب")]
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public int Order { get; set; }
+
+        [DisplayName("سوال")]
+        [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public int QuestionId { get; set; }
         [ForeignKey("OptionId")]
         public Option Option { get; set; }

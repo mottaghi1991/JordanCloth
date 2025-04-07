@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Domain.Exam.Option>
+﻿@model Core.Dto.ViewModel.Exam.OptionViewModel
 
 @{
     ViewData["Title"] = "لیست گزینه ها";
@@ -9,27 +9,27 @@
 <div class="col-md-12">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">لیست گزینه ها</h3>
+            <h3 class="card-title">لیست گزینه های (@Model.QuestionTitle)</h3>
         </div>
         <div class="card-body">
             <p>
-                <a class="btn btn-success" asp-action="create">جدید</a>
+                <a class="btn btn-success" asp-action="create" asp-route-QuestionId="@Model.QuestionId">جدید</a>
             </p>
             <table class="table table-sm table-responsive table-hover table-striped text-center" style="width: auto">
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Title)
+                            @Html.DisplayNameFor(model => model.options.FirstOrDefault().Title)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Order)
+                            @Html.DisplayNameFor(model => model.options.FirstOrDefault().Order)
                         </th>
 
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.options)
                     {
                         <tr>
                             <td>
@@ -41,13 +41,14 @@
 
                             <td>
                                 <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info" style="font-size: 10px">ویرایش</a>
-                                <a class="btn btn-warning" asp-action="Index" asp-controller="SubOption" asp-route-questionId="@TempData["QuestionId"]" asp-route-optionId="@item.Id" style="font-size: 10px">لیست زیرگزینه ها</a>
+                                <a class="btn btn-warning" asp-action="Index" asp-controller="SubOption" asp-route-questionId="@Model.QuestionId" asp-route-optionId="@item.Id" style="font-size: 10px">لیست زیرگزینه ها</a>
 
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
+            <a asp-action="Index" asp-controller="Question" class="btn btn-primary">بازگشت به لیست</a>
         </div>
     </div>
 </div>

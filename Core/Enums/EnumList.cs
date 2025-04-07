@@ -12,4 +12,5 @@ namespace Core.Enums
         menu = 1,
         system = 2
     }
+ 
 }

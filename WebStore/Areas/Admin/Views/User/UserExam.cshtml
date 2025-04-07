@@ -1,0 +1,44 @@
+﻿@model Core.Dto.ViewModel.User.ShowUserBrifViewModel
+@{
+    ViewData["Title"] = "UserExam";
+}
+
+
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">@Model.UserName</h3>
+        </div>
+        <div class="card-body">
+            <p>
+                <a class="btn btn-success" asp-action="Create">جدید</a>
+            </p>
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                    <th>نام آزمون</th>
+                    <th>نتیجه</th>
+                    <th>وضعیت</th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                        <tr>
+                         <td></td>
+                         <td></td>
+                         <td></td>
+                            <td>
+                                <a asp-action="Edit" class="btn btn-info" asp-route-id="">ویرایش</a>
+                                <a asp-action="UserExam" class="btn btn-primary" asp-route-Username="">آزمون ها</a>
+                            </td>
+                        </tr>
+                    
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

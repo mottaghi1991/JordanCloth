@@ -48,6 +48,7 @@ namespace IOC
             Services.AddScoped<IOption, OptionServices>();
             Services.AddScoped<IJobQuestion, JobQuestionServices>();
             Services.AddScoped<IJobUserNaswer, JobUserAnswerServices>();
+            Services.AddScoped<IJobOption, JobOptionServices>();
 
 
 
@@ -60,6 +61,8 @@ namespace IOC
             Services.AddScoped<IMaster<SubOption>, MasterServices<SubOption>>();
             Services.AddScoped<IMaster<JobQuestion>, MasterServices<JobQuestion>>();
             Services.AddScoped<IMaster<JobUserAnswer>, MasterServices<JobUserAnswer>>();
+            Services.AddScoped<IMaster<JobOption>, MasterServices<JobOption>>();
+            Services.AddScoped<IMaster<JopGroupIndex>, MasterServices<JopGroupIndex>>();
 
 
 

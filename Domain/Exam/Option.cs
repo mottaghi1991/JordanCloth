@@ -13,13 +13,19 @@ namespace Domain.Exam
     {
 
 
-        [DisplayName("ترتیب")]
-        [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
-        public int Order { get; set; }
+       
 
         [DisplayName("متن سوال")]
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public string Title { get; set; }
+
+        [DisplayName("ترتیب")]
+        [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
+        public int Order { get; set; }
+
+        public int QuestionId { get; set; }
+        [ForeignKey("QuestionId")]
+        public virtual Question Question { get; set; }
 
         public IEnumerable<SubOption> SubOptions { get; set; }
     }

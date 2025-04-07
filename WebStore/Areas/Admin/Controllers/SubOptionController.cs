@@ -1,7 +1,9 @@
-﻿using Core.Interface.Exam;
+﻿using Core.Dto.ViewModel.Exam;
+using Core.Interface.Exam;
 using Domain.Exam;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using WebStore.Base;
 
@@ -21,22 +23,29 @@ namespace Personal.Areas.Admin.Controllers
             _Option = option;
         }
 
-        public IActionResult Index(int? questionId,int? optionId)
+        public IActionResult Index(int questionId,int optionId)
         {
-            ViewBag.Questions = new SelectList(_Question.GetAllQuestions(), "Id", "Title");
-            ViewBag.options = new SelectList(_Option.GetAllOptions(), "Id", "Title");
-            if (questionId == null || optionId == null)
+            if (questionId == 0 || optionId == 0) { return NotFound(); }
+
+            var Question= _Question.GetQuestionById(questionId);
+            var Option = _Option.GetOptionById(optionId);
+            return View(new SubOptionViewModel()
             {
-                return View(_subOption.GetAllSubOptions()); 
-            }
-            
-            return View(_subOption.GetSubOptionByQuestionAndOption(questionId.Value,optionId.Value));
+                QuestionId=Question.Id,
+                QuestionTitle=Question.Title,
+                OptionId=Option.Id,
+                OptionTitle=Option.Title,
+               subOptions= _subOption.GetSubOptionByQuestionAndOption(questionId,optionId)
+            });
         }
-        public ActionResult Create()
+        public ActionResult Create(int questionId, int optionId)
         {
-            ViewBag.Questions = new SelectList(_Question.GetAllQuestions(), "Id", "Title");
-            ViewBag.options = new SelectList(_Option.GetAllOptions(), "Id", "Title");
-            return View();
+     
+            return View(new SubOption()
+            {
+                OptionId=optionId,
+                QuestionId=questionId
+            });
         }
 
         // POST: RoleController/Create
@@ -48,8 +57,7 @@ namespace Personal.Areas.Admin.Controllers
 
             if (!ModelState.IsValid)
             {
-                ViewBag.Questions = new SelectList(_Question.GetAllQuestions(), "Id", "Title",subOption.QuestionId);
-                ViewBag.options = new SelectList(_Option.GetAllOptions(), "Id", "Title",subOption.OptionId);
+        
                 return View(subOption);
             }
 
@@ -62,18 +70,65 @@ namespace Personal.Areas.Admin.Controllers
                 if (result != null)
                 {
                     TempData[Success] = SuccessMessage;
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { questionId =result.QuestionId, optionId =result.OptionId});
                 }
                 else
                 {
                     TempData[Error] = ErrorMessage;
-                    return RedirectToAction("Index");
+                    return View(subOption);
                 }
             }
             catch (Exception e)
             {
                 TempData[Error] = ErrorMessage;
-                return RedirectToAction("Index");
+                return View(subOption);
+            }
+
+
+
+
+
+        }
+        public ActionResult Edit(int SubOptionId)
+        {
+            var obj=_subOption.GetSubOptionById(SubOptionId);
+            return View(obj);
+        }
+
+        // POST: RoleController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(SubOption subOption)
+        {
+
+
+            if (!ModelState.IsValid)
+            {
+
+                return View(subOption);
+            }
+
+
+            try
+            {
+
+
+                var result = _subOption.update(subOption);
+                if (result != null)
+                {
+                    TempData[Success] = SuccessMessage;
+                    return RedirectToAction("Index", new { questionId = result.QuestionId, optionId = result.OptionId });
+                }
+                else
+                {
+                    TempData[Error] = ErrorMessage;
+                    return View(subOption);
+                }
+            }
+            catch (Exception e)
+            {
+                TempData[Error] = ErrorMessage;
+                return View(subOption);
             }
 
 

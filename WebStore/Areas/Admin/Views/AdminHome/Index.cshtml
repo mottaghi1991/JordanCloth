@@ -1,7 +1,133 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "پنل مدیریت";
 }
 
-<h1>Index</h1>
-<a asp-action="ShowPermision" asp-controller="PermissionList">click</a>
+
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>۱۵۰</h3>
+
+                <p>تعداد کاربران ثبت شده</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>۱۵۰</h3>
+
+                <p>افراد شرکت کرده در آزمون</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>۴۴</h3>
+
+                <p>تعداد پرداختی ها</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>۶۵</h3>
+
+                <p>مبلغ پرداخت شده</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">آخرین شرکت کننده ها در آزمون</h3>
+
+           
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                        
+                            <th>ایمیل</th>
+                            <th>تاریخ</th>
+                            <th>نام آزمون</th>
+                            <th>وضعیت</th>
+                            <th>نتیجه</th>
+                         
+                        </tr>
+                        <tr>
+                          
+                            <td>محمد</td>
+                            <td>۱۱-۷-۲۰۱۴</td>
+                            <td>MBTI</td>
+                            <td><span class="badge badge-warning">شروع کرده</span></td>
+                            <td>EFSD</td>
+                           
+                        </tr>
+                        <tr>
+                           
+                            <td>حسام</td>
+                            <td>۱۱-۷-۲۰۱۴</td>
+                            <td>شغلی</td>
+                            <td><span class="badge bg-danger">عدم پرداخت</span></td>
+                            <td>الف ج ه و</td>
+                        </tr>
+                        <tr>
+
+                            <td>محمد</td>
+                            <td>۱۱-۷-۲۰۱۴</td>
+                            <td>MBTI</td>
+                            <td><span class="badge badge-success">پرداخت شده</span></td>
+                            <td>EFSD</td>
+                          
+                        </tr>
+                        <tr>
+                            <td>حسام</td>
+                            <td>۱۱-۷-۲۰۱۴</td>
+                            <td>شغلی</td>
+                            <td><span class="badge bg-danger">عدم پرداخت</span></td>
+                            <td>الف ج ه و</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>

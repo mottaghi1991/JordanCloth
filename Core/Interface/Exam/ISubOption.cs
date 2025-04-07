@@ -15,6 +15,8 @@ namespace Core.Interface.Exam
         public IEnumerable<SubOption> GetAllSubOptions();
         public IEnumerable<SubOption> GetSubOptionByQuestionAndOption(int QuestionId,int OptionId);
         public SubOption Insert(SubOption subOption);
+        public SubOption update(SubOption subOption);
+        public SubOption GetSubOptionById(int SubOptionId);
 
     }
 }

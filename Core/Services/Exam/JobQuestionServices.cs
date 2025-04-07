@@ -21,14 +21,34 @@ namespace Core.Services.Exam
             _Showmaster = showmaster;
         }
 
+        public bool Delete(int JobQuestionId)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<JobQuestion> GetAll()
         {
             return _master.GetAllEf();
         }
 
+        public JobQuestion GetQuestionById(int JobQuestionId)
+        {
+            return _master.GetAllEf(a => a.Id == JobQuestionId).FirstOrDefault();
+        }
+
+        public JobQuestion Insert(JobQuestion JobQuestion)
+        {
+            return _master.Insert(JobQuestion);
+        }
+
         public IEnumerable<JobTestViewModel> ShowJobExamToUser()
         {
            return _Showmaster.GetAll("ShowJobExamToUser");
+        }
+
+        public JobQuestion Update(JobQuestion JobQuestion)
+        {
+            return _master.Update(JobQuestion);
         }
     }
 }
