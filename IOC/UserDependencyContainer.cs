@@ -49,6 +49,10 @@ namespace IOC
             Services.AddScoped<IJobQuestion, JobQuestionServices>();
             Services.AddScoped<IJobUserNaswer, JobUserAnswerServices>();
             Services.AddScoped<IJobOption, JobOptionServices>();
+            Services.AddScoped<INinQuestion,ninQuestionServices>();
+            Services.AddScoped<INinExam,NinExamServices>();
+            Services.AddScoped<IExamResult,ExamResultServices>();
+            Services.AddScoped<IExamResultFinals,ExamResultFinalServices>();
 
 
 
@@ -62,7 +66,11 @@ namespace IOC
             Services.AddScoped<IMaster<JobQuestion>, MasterServices<JobQuestion>>();
             Services.AddScoped<IMaster<JobUserAnswer>, MasterServices<JobUserAnswer>>();
             Services.AddScoped<IMaster<JobOption>, MasterServices<JobOption>>();
-            Services.AddScoped<IMaster<JopGroupIndex>, MasterServices<JopGroupIndex>>();
+            Services.AddScoped<IMaster<JobGroupIndex>, MasterServices<JobGroupIndex>>();
+            Services.AddScoped<IMaster<NinQuestion>, MasterServices<NinQuestion>>();
+            Services.AddScoped<IMaster<Seri>, MasterServices<Seri>>();
+            Services.AddScoped<IMaster<UserExam>, MasterServices<UserExam>>();
+            Services.AddScoped<IMaster<ExamResultFinal>, MasterServices<ExamResultFinal>>();
 
 
 

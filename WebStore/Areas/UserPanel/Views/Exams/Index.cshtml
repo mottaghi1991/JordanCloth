@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Domain.Exam.UserExam>
+
+<div class="card card-primary">
+
+    <div class="card-header">آزمون </div>
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <div class="card card-info text-center">
+
+                    <div class="card-header">رغبت سنجی </div>
+                    <div class="card-body">
+                        @if(Model.Any(a=>a.ExamId==1))
+                        {
+                            <a class="btn btn-success" asp-action="GetExam">نتیجه آزمون</a>
+
+                        }
+                        else{
+                            <a class="btn btn-success" asp-action="GetExam">شروع آزمون</a>
+
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-2">
+                <div class="card card-dark text-center">
+
+                    <div class="card-header">MBTI</div>
+                    <div class="card-body">
+                        @if (Model.Any(a => a.ExamId == 2))
+                        {
+                            <a class="btn btn-success" asp-action="ShowMbtiResult" asp-controller="Exams" asp-area="UserPanel">نتیجه آزمون</a>
+                        }
+                        else
+                        {
+                              <a class="btn btn-success" asp-action="JobExams" asp-controller="Exams" asp-area="UserPanel">شروع آزمون</a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-warning text-center">
+
+                    <div class="card-header">ریون </div>
+                    <div class="card-body">
+                        @if (Model.Any(a => a.ExamId == 3))
+                        {
+                            <a class="btn btn-success" asp-action="GetExam">نتیجه آزمون</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-success" asp-action="GetExam">شروع آزمون</a>
+                        }
+                      
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-danger text-center">
+
+                    <div class="card-header">تحصیلی </div>
+                    <div class="card-body">
+
+                        <a class="btn btn-success" asp-action="GetExam">شروع آزمون</a>
+                        @*                         <a class="btn btn-success" asp-action="ExamResult">مشاهده نتیجه آزمون</a>
+ *@                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@* @model IEnumerable<Core.Dto.ViewModel.Exam.ShowExamToUserViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form method="post" asp-action="SubmitExam" >
+    @foreach (var QuestionItem in Model.GroupBy(q => new { q.QuestionId, q.QuestionTitle }))
+    {
+        <div>
+            <h6>@QuestionItem.Key.QuestionTitle</h6>
+            @foreach (var OptionItem in QuestionItem.GroupBy(o => new { o.OptionId, o.OptionTitle }))
+            {
+                <h4>@OptionItem.Key.OptionTitle</h4>
+                @foreach (var SubOptionItem in OptionItem)
+                {
+                    <label>
+                        <input type="checkbox" name="SelectedOptions[@QuestionItem.Key.QuestionId][@OptionItem.Key.OptionId][]" value="@SubOptionItem.subOptionId" />
+                        @SubOptionItem.subOptionTitle<br />
+                    </label>
+                }
+
+            }
+        </div>
+        <hr />
+    }
+    <button type="submit">ارسال پاسخ‌ها</button>
+</form>
+
+ *@

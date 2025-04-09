@@ -36,6 +36,10 @@ namespace Domain.User
         public virtual List<UserRole> UserRoles { get; set; }
         public virtual IEnumerable<JobUserAnswer> JobUserAnswers { get; set; }
         public virtual IEnumerable<ExamEvent> ExamEvents { get; set; }
+        public virtual IEnumerable<NinUserAnswer> NinUserAnswers { get; set; }
+        public virtual IEnumerable<UserExam> UserExams{ get; set; }
+
+
 
     }
 

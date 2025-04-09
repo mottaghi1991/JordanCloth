@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Domain.Exam.Seri>
+@{
+    ViewData["Title"] = "Seris";
+}
+
+
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">لیست سوالات</h3>
+        </div>
+        <div class="card-body">
+         
+            <table class="table table-sm table-responsive table-hover table-striped text-center" style="width: auto">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            سوالات
+                        </th>
+
+                   
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                <a asp-action="Index" class="btn btn-primary" asp-route-seriId="@item.Id">سوالات</a>
+                            </td>
+
+                           
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

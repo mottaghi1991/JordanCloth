@@ -1,4 +1,67 @@
-﻿@model IEnumerable<Core.Dto.ViewModel.Exam.ShowExamToUserViewModel>
+﻿<div class="card card-primary">
+
+    <div class="card-header">آزمون </div>
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <div class="card card-info text-center">
+
+                    <div class="card-header">رغبت سنجی </div>
+                    <div class="card-body">
+
+                        <a class="btn btn-success" asp-action="GetExam">شروع آزمون</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-2">
+                <div class="card card-dark text-center">
+
+                    <div class="card-header">MBTI</div>
+                    <div class="card-body">
+
+                        <a class="btn btn-success" asp-action="JobExams" asp-controller="Exams" asp-area="UserPanel">شرکت کننده ها</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-warning text-center">
+
+                    <div class="card-header">ریون </div>
+                    <div class="card-body">
+
+                        <a class="btn btn-success" asp-action="GetExam">شروع آزمون</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-danger text-center">
+
+                    <div class="card-header">تحصیلی </div>
+                    <div class="card-body">
+
+                        <a class="btn btn-success" asp-action="GetExam">شروع آزمون</a>
+                        @*                         <a class="btn btn-success" asp-action="ExamResult">مشاهده نتیجه آزمون</a>
+ *@                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@* @model IEnumerable<Core.Dto.ViewModel.Exam.ShowExamToUserViewModel>
 @{
     ViewData["Title"] = "Index";
 }
@@ -26,3 +89,4 @@
     <button type="submit">ارسال پاسخ‌ها</button>
 </form>
 
+ *@

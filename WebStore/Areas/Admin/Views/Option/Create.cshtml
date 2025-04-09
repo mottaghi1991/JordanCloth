@@ -16,7 +16,15 @@
                         <input type="hidden" asp-for="QuestionId" />
                         <div class="form-group">
                             <label asp-for="Title" class="control-label"></label>
-                            <input asp-for="Title" class="form-control" />
+                            <select asp-for="Title" class="form-control"> 
+                                <option value="الف">الف</option>
+                                <option value="و">و</option>
+                                <option value="ه">ه</option>
+                                <option value="ج">ج</option>
+                                <option value="و">و</option>
+                                <option value="م">م</option>
+                                <option value="ی">ی</option>
+                            </select> 
                             <span asp-validation-for="Title" class="text-danger"></span>
 
                         </div>

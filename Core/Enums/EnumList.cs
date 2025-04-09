@@ -12,5 +12,11 @@ namespace Core.Enums
         menu = 1,
         system = 2
     }
- 
+
+    public enum ExamId
+    {
+        Haland = 1,
+        MBTI =2,
+        system = 3
+    }
 }

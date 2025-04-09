@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Domain.Users;
 using Domain.User;
 using Domain.Exam;
+using Domain;
 
 namespace Data
 {
@@ -34,11 +35,29 @@ namespace Data
         public virtual DbSet<JobUserAnswer> JobUserAnswers{ get; set; }
 
 
+        public virtual DbSet<NinQuestion> NinQuestions{ get; set; }
+        public virtual DbSet<NinOption> NinOptions{ get; set; }
+        public virtual DbSet<NinUserAnswer> NinUserAnswers{ get; set; }
+
+        public virtual DbSet<UserExam> UserExams{ get; set; }
+        public virtual DbSet<ExamResultFinal>ExamResultFinals{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("dbo");
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                if (typeof(BaseModel).IsAssignableFrom(entityType.ClrType))
+                {
+                    var prop = entityType.FindProperty(nameof(BaseModel.IsDelete));
+                    if (prop != null)
+                    {
+                        prop.SetDefaultValue(false);
+                    }
+                }
+            }
 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

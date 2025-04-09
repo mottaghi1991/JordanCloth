@@ -17,6 +17,6 @@ namespace Core.Interface.Exam
         public JobOption GetJobOptionById(int JobOptionId);
 
 
-        public IEnumerable<JopGroupIndex> AllJobGroupIndex();
+        public IEnumerable<JobGroupIndex> AllJobGroupIndex();
     }
 }

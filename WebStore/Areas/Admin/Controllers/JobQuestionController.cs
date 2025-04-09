@@ -17,7 +17,10 @@ namespace Personal.Areas.Admin.Controllers
         {
             _jobQuestion = jobQuestion;
         }
-
+        public IActionResult MBTIManageExam()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View(_jobQuestion.GetAll());

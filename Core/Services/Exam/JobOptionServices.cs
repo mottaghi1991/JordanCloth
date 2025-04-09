@@ -12,15 +12,15 @@ namespace Core.Services.Exam
     public class JobOptionServices : IJobOption
     {
         private readonly  IMaster<JobOption> _master;
-        private readonly  IMaster<JopGroupIndex> _JobGroupmaster;
+        private readonly  IMaster<JobGroupIndex> _JobGroupmaster;
 
-        public JobOptionServices(IMaster<JobOption> master, IMaster<JopGroupIndex> jobGroupmaster)
+        public JobOptionServices(IMaster<JobOption> master, IMaster<JobGroupIndex> jobGroupmaster)
         {
             _master = master;
             _JobGroupmaster = jobGroupmaster;
         }
 
-        public IEnumerable<JopGroupIndex> AllJobGroupIndex()
+        public IEnumerable<JobGroupIndex> AllJobGroupIndex()
         {
             return _JobGroupmaster.GetAllEf();
         }

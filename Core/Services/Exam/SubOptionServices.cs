@@ -5,6 +5,7 @@ using Data.MasterInterface;
 using Domain.Exam;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,15 @@ namespace Core.Services.Exam
         public IEnumerable<ShowExamToUserViewModel> GetAllQuestion(int QuestionId)
         {
             DynamicParameters p=new DynamicParameters();
-            p.Add("QuestionId", QuestionId, System.Data.DbType.Int32);
+            if (QuestionId == 0) {
+                p.Add("QuestionId", null, DbType.Int32);
+
+            }
+            else
+            {
+                p.Add("QuestionId", QuestionId, System.Data.DbType.Int32);
+
+            }
             return _VmMaster.GetAll("GetAllQuestion",p);
         }
 
@@ -49,7 +58,7 @@ namespace Core.Services.Exam
 
         public IEnumerable<SubOption> GetSubOptionByQuestionAndOption(int QuestionId, int OptionId)
         {
-           return _SubMaster.GetAllEf().Where(a=>a.QuestionId==QuestionId&a.OptionId==OptionId).ToList();   
+           return _SubMaster.GetAllEf().Where(a=>a.QuestionId==QuestionId&a.OptionId==OptionId).OrderBy(a=>a.Order).ToList();   
         }
 
         public SubOption Insert(SubOption subOption)

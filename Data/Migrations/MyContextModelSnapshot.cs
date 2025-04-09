@@ -23,6 +23,135 @@ namespace Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Domain.Exam.ExamEvent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("examListId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("examListId");
+
+                    b.ToTable("ExamEvent", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.ExamList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ExamList", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.ExamResultFinal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descript")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FinalResult")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamId");
+
+                    b.ToTable("ExamResultFinals", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobGroupIndex", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JobGroupIndex", "dbo");
+                });
+
             modelBuilder.Entity("Domain.Exam.JobOption", b =>
                 {
                     b.Property<int>("Id")
@@ -35,7 +164,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("JobQuestionId")
                         .HasColumnType("int");
@@ -71,7 +202,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -94,7 +227,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("JobQuestionId")
                         .HasColumnType("int");
@@ -116,7 +251,7 @@ namespace Data.Migrations
                     b.ToTable("JobUserAnswers", "dbo");
                 });
 
-            modelBuilder.Entity("Domain.Exam.JopGroupIndex", b =>
+            modelBuilder.Entity("Domain.Exam.NinOption", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -128,14 +263,95 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("JopGroupIndex", "dbo");
+                    b.ToTable("NinOptions", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.NinQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("seriId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("seriId");
+
+                    b.ToTable("NinQuestions", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.NinUserAnswer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("InsertDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("ItUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ninOptionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ninQuestionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItUserId");
+
+                    b.HasIndex("ninOptionId");
+
+                    b.HasIndex("ninQuestionId");
+
+                    b.ToTable("NinUserAnswers", "dbo");
                 });
 
             modelBuilder.Entity("Domain.Exam.Option", b =>
@@ -150,7 +366,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("Order")
                         .HasColumnType("int");
@@ -181,7 +399,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("Order")
                         .HasColumnType("int");
@@ -199,6 +419,30 @@ namespace Data.Migrations
                     b.ToTable("Questions", "dbo");
                 });
 
+            modelBuilder.Entity("Domain.Exam.Seri", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Seri", "dbo");
+                });
+
             modelBuilder.Entity("Domain.Exam.SubOption", b =>
                 {
                     b.Property<int>("Id")
@@ -211,7 +455,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("OptionId")
                         .HasColumnType("int");
@@ -250,7 +496,9 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("ItUserId")
                         .HasColumnType("int");
@@ -267,6 +515,29 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserAnswers", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Exam.UserExam", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserExams", "dbo");
                 });
 
             modelBuilder.Entity("Domain.User.MyUser", b =>
@@ -406,6 +677,34 @@ namespace Data.Migrations
                     b.ToTable("UserRole", "dbo");
                 });
 
+            modelBuilder.Entity("Domain.Exam.ExamEvent", b =>
+                {
+                    b.HasOne("Domain.User.MyUser", "myUser")
+                        .WithMany("ExamEvents")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Exam.ExamList", "examList")
+                        .WithMany("ExamEvents")
+                        .HasForeignKey("examListId");
+
+                    b.Navigation("examList");
+
+                    b.Navigation("myUser");
+                });
+
+            modelBuilder.Entity("Domain.Exam.ExamResultFinal", b =>
+                {
+                    b.HasOne("Domain.Exam.ExamList", "examList")
+                        .WithMany("ExamResultFinals")
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("examList");
+                });
+
             modelBuilder.Entity("Domain.Exam.JobOption", b =>
                 {
                     b.HasOne("Domain.Exam.JobQuestion", "jobQuestion")
@@ -414,7 +713,7 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Exam.JopGroupIndex", "jopGroupIndex")
+                    b.HasOne("Domain.Exam.JobGroupIndex", "jopGroupIndex")
                         .WithMany("JobOptions")
                         .HasForeignKey("jobGroupIndexId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -452,6 +751,44 @@ namespace Data.Migrations
                     b.Navigation("jobOption");
                 });
 
+            modelBuilder.Entity("Domain.Exam.NinQuestion", b =>
+                {
+                    b.HasOne("Domain.Exam.Seri", "seri")
+                        .WithMany("NinQuestions")
+                        .HasForeignKey("seriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("seri");
+                });
+
+            modelBuilder.Entity("Domain.Exam.NinUserAnswer", b =>
+                {
+                    b.HasOne("Domain.User.MyUser", "users")
+                        .WithMany("NinUserAnswers")
+                        .HasForeignKey("ItUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Exam.NinOption", "ninOption")
+                        .WithMany("NinUserAnswers")
+                        .HasForeignKey("ninOptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Exam.NinQuestion", "ninQuestion")
+                        .WithMany("NinUserAnswers")
+                        .HasForeignKey("ninQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ninOption");
+
+                    b.Navigation("ninQuestion");
+
+                    b.Navigation("users");
+                });
+
             modelBuilder.Entity("Domain.Exam.Option", b =>
                 {
                     b.HasOne("Domain.Exam.Question", "Question")
@@ -480,6 +817,25 @@ namespace Data.Migrations
                     b.Navigation("Option");
 
                     b.Navigation("Question");
+                });
+
+            modelBuilder.Entity("Domain.Exam.UserExam", b =>
+                {
+                    b.HasOne("Domain.Exam.ExamList", "examList")
+                        .WithMany("UserExams")
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User.MyUser", "myUser")
+                        .WithMany("UserExams")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("examList");
+
+                    b.Navigation("myUser");
                 });
 
             modelBuilder.Entity("Domain.User.MyUser", b =>
@@ -529,6 +885,20 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Exam.ExamList", b =>
+                {
+                    b.Navigation("ExamEvents");
+
+                    b.Navigation("ExamResultFinals");
+
+                    b.Navigation("UserExams");
+                });
+
+            modelBuilder.Entity("Domain.Exam.JobGroupIndex", b =>
+                {
+                    b.Navigation("JobOptions");
+                });
+
             modelBuilder.Entity("Domain.Exam.JobOption", b =>
                 {
                     b.Navigation("JobUserAnswers");
@@ -541,9 +911,14 @@ namespace Data.Migrations
                     b.Navigation("JobUserAnswers");
                 });
 
-            modelBuilder.Entity("Domain.Exam.JopGroupIndex", b =>
+            modelBuilder.Entity("Domain.Exam.NinOption", b =>
                 {
-                    b.Navigation("JobOptions");
+                    b.Navigation("NinUserAnswers");
+                });
+
+            modelBuilder.Entity("Domain.Exam.NinQuestion", b =>
+                {
+                    b.Navigation("NinUserAnswers");
                 });
 
             modelBuilder.Entity("Domain.Exam.Option", b =>
@@ -558,6 +933,11 @@ namespace Data.Migrations
                     b.Navigation("subOptions");
                 });
 
+            modelBuilder.Entity("Domain.Exam.Seri", b =>
+                {
+                    b.Navigation("NinQuestions");
+                });
+
             modelBuilder.Entity("Domain.Exam.UserAnswer", b =>
                 {
                     b.Navigation("users");
@@ -565,7 +945,13 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Domain.User.MyUser", b =>
                 {
+                    b.Navigation("ExamEvents");
+
                     b.Navigation("JobUserAnswers");
+
+                    b.Navigation("NinUserAnswers");
+
+                    b.Navigation("UserExams");
 
                     b.Navigation("UserRoles");
                 });

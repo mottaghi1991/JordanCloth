@@ -41,7 +41,7 @@ namespace Core.Services.Exam
 
         public IEnumerable<Option> GetOptionByQuestionId(int QuestionId)
         {
-            return _master.GetAllEf(a => a.QuestionId == QuestionId);
+            return _master.GetAllEf(a => a.QuestionId == QuestionId).OrderBy(a=>a.Order);
         }
 
         public Option Insert(Option Option)

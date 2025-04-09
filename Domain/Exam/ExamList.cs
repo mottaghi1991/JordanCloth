@@ -15,5 +15,7 @@ namespace Domain.Exam
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public string Title { get; set; }
         public virtual IEnumerable<ExamEvent> ExamEvents { get; set; }
+        public virtual IEnumerable<UserExam> UserExams { get; set; }
+        public virtual IEnumerable<ExamResultFinal> ExamResultFinals{ get; set; }
     }
 }

@@ -40,6 +40,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\UserPanel\Views\Exam\" />
   </ItemGroup>
 
 </Project>

@@ -27,7 +27,7 @@ namespace Domain.Exam
         [ForeignKey("JobQuestionId")]
         public JobQuestion jobQuestion { get; set; }
         [ForeignKey("jobGroupIndexId")]
-        public JopGroupIndex jopGroupIndex { get; set; }
+        public JobGroupIndex jopGroupIndex { get; set; }
         public virtual IEnumerable<JobUserAnswer> JobUserAnswers { get; set; }
 
     }

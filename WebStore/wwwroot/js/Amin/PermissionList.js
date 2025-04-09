@@ -175,10 +175,10 @@ function insertArea() {
         contentType: "application/json;charset=UTF-8",
         dataType: "json",
         beforeSend: function () {
-          /*  StartLoading();*/
+            StartLoading();
         },
         success: function (data) {
-          /*  StopLoading();*/
+            StopLoading();
             location.reload();
             Swal.fire({
                 title: "موفق!",
@@ -189,7 +189,7 @@ function insertArea() {
        
         },
         error: function (data) {
-           /* StopLoading();*/
+            StopLoading();
  
             console.log(data.responseText);
             Swal.fire({

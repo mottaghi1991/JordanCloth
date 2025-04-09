@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Exam
 {
-    public class JopGroupIndex:BaseModel
+    public class Seri:BaseModel
     {
         public string Title { get; set; }
-        public virtual IEnumerable<JobOption> JobOptions { get; set; }
-
+        public virtual IEnumerable<NinQuestion> NinQuestions{ get; set; }
     }
 }
