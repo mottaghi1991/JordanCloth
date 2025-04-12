@@ -15,7 +15,10 @@ namespace Personal.Areas.Admin.Controllers
         {
             _question = question;
         }
-
+        public  IActionResult MangeExamHaland()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View(_question.GetAllQuestions());

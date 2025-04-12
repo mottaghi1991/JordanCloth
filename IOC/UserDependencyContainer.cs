@@ -71,6 +71,8 @@ namespace IOC
             Services.AddScoped<IMaster<Seri>, MasterServices<Seri>>();
             Services.AddScoped<IMaster<UserExam>, MasterServices<UserExam>>();
             Services.AddScoped<IMaster<ExamResultFinal>, MasterServices<ExamResultFinal>>();
+            Services.AddScoped<IMaster<NinOption>, MasterServices<NinOption>>();
+            Services.AddScoped<IMaster<NinUserAnswer>, MasterServices<NinUserAnswer>>();
 
 
 

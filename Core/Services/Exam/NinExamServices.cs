@@ -12,10 +12,17 @@ namespace Core.Services.Exam
     public class NinExamServices : INinExam
     {
         private readonly IMaster<Seri> _seri;
+        private readonly IMaster<NinUserAnswer> _UserNaswer;
 
-        public NinExamServices(IMaster<Seri> seri)
+        public NinExamServices(IMaster<Seri> seri, IMaster<NinUserAnswer> userNaswer)
         {
             _seri = seri;
+            _UserNaswer = userNaswer;
+        }
+
+        public bool BulkInsertUserAnswer(List<NinUserAnswer> ninUserAnswers)
+        {
+            return _UserNaswer.BulkeInsert(ninUserAnswers);
         }
 
         public IEnumerable<Seri> GetAllSeri()

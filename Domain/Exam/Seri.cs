@@ -9,6 +9,7 @@ namespace Domain.Exam
     public class Seri:BaseModel
     {
         public string Title { get; set; }
+        public int Level { get; set; }
         public virtual IEnumerable<NinQuestion> NinQuestions{ get; set; }
     }
 }

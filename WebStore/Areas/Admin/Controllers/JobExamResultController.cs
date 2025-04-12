@@ -1,5 +1,9 @@
-﻿using Core.Interface.Exam;
+﻿using Core.Enums;
+using Core.Interface.Exam;
+using Domain.Exam;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 using WebStore.Base;
 
 namespace Personal.Areas.Admin.Controllers
@@ -28,6 +32,45 @@ namespace Personal.Areas.Admin.Controllers
             }
 
             return View(obj);
+        }
+        [HttpPost]
+        public IActionResult Edit(ExamResultFinal examResultFinals)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(examResultFinals);
+            }
+            var result = _examResultFinals.Update(examResultFinals);
+          
+            if (result == null)
+            {
+                TempData[Error] = ErrorMessage;
+                return View(examResultFinals);
+            }
+            TempData[Success] = SuccessMessage;
+            return RedirectToAction("Index",new { ExamId = result.ExamId });
+        }
+        public IActionResult Create()
+        {
+            return View(new ExamResultFinal() { ExamId=1});
+        }
+        [HttpPost]
+        public IActionResult Create(ExamResultFinal examResultFinal)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(examResultFinal);
+            }
+            var result = _examResultFinals.Insert(examResultFinal);
+
+            if (result == null)
+            {
+                TempData[Error] = ErrorMessage;
+                return View(examResultFinal);
+            }
+            TempData[Success] = SuccessMessage;
+            return RedirectToAction("Index", new { ExamId = result.ExamId });
+      
         }
     }
 }

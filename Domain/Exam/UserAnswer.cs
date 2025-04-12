@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,5 +18,6 @@ namespace Domain.Exam
         [ForeignKey("ItUserId")]
         public IEnumerable<MyUser> users { get; set; }
         public DateTime InsertDate { get; set; } = DateTime.Now;
+        public int? Score { get; set; }
     }
 }

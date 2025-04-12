@@ -11,5 +11,7 @@ namespace Core.Interface.Exam
     {
         public IEnumerable<Seri> GetAllSeri();  
         public Seri GetSeriById(int seriId);
+
+        public bool BulkInsertUserAnswer(List<NinUserAnswer> ninUserAnswers);
     }
 }

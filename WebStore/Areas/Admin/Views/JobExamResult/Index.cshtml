@@ -9,7 +9,7 @@
             <h3 class="card-title">لیست سوالات آزمون MBTI</h3>
         </div>
         <div class="card-body">
-           
+           <a asp-action="Create" class="btn btn-success" >جدید</a>
             <table class="table table-sm table-responsive table-hover table-striped text-center" style="width: auto">
                 <thead>
                     <tr>
@@ -35,7 +35,7 @@
                             </td>
 
                             <td>
-                                <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-info" style="font-size: 10px">ویرایش</a>
+                                <a asp-action="Edit" asp-route-ResultId="@item.Id" class="btn btn-info" style="font-size: 10px">ویرایش</a>
 
                             </td>
                         </tr>

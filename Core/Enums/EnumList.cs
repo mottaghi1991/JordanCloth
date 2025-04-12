@@ -17,6 +17,6 @@ namespace Core.Enums
     {
         Haland = 1,
         MBTI =2,
-        system = 3
+        Rion = 3
     }
 }

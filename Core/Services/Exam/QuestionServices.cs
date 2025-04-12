@@ -37,10 +37,9 @@ namespace Core.Services.Exam
         public int GetNextQuestionNum(int cuurentNumber)
         {
             var nextQuestion = _master.GetAllEf()
-                                       .OrderBy(a => a.Id)
-                                       .Skip(cuurentNumber)  // Skip همه سوالات قبل از currentNumber
-                                       .Take(1)              // یک سوال بعدی
-                                       .FirstOrDefault();
+                           .Where(a => a.Id > cuurentNumber)
+                           .OrderBy(a => a.Id)
+                           .FirstOrDefault();
             // اگر سوال بعدی وجود نداشت، 0 را برمی‌گرداند
             return nextQuestion?.Id ?? 0;  // اگر nextQuestion null بود، 0 برمی‌گرداند
         }

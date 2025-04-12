@@ -34,7 +34,7 @@ namespace Personal.Areas.Admin.Controllers
                 {
                     SeriId = seriId,
                 SeriTitle=_inExam.GetSeriById(seriId).Title,
-                    ninQuestions=_ninQuestion.GetAllNinQuestions()
+                    ninQuestions=_ninQuestion.GetNinQuestionBySeriId(seriId)
                 }
                 
                 );

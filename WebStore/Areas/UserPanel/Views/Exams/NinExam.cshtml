@@ -1,0 +1,28 @@
+﻿@using Domain.Exam
+@model IEnumerable<Domain.Exam.NinQuestion>
+@{
+    ViewData["Title"] = "NinExam";
+    IEnumerable<NinOption> options = ViewBag.NinOptions as IEnumerable<NinOption>;
+}
+<form method="post" asp-action="NinExamSubmit">
+    @foreach (var question in Model)
+    {
+        <div class="mb-3">
+            <label><strong>@question.Title</strong></label>
+            <br />
+            @foreach (var option in options)
+            {
+                <input type="radio"
+                       name="Answer[@question.Id]"
+                       value="@option.Id" /> @option.Title
+                <br />
+            }
+        </div>
+    }
+
+    <button type="submit">ارسال</button>
+</form>
+
+
+
+

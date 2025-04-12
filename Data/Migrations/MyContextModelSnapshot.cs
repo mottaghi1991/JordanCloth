@@ -435,6 +435,9 @@ namespace Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -507,6 +510,9 @@ namespace Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Score")
                         .HasColumnType("int");
 
                     b.Property<int>("SubOptionId")

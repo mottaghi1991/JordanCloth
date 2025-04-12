@@ -10,9 +10,11 @@ namespace Core.Dto.ViewModel.Exam
     {
         public int QuestionId { get; set; }
         public string QuestionTitle { get; set; }
+        public string QuestionDesc{ get; set; }
 
         public int OptionId { get; set; }
         public string OptionTitle { get; set; }
+        public int OptionOrder { get; set; }
 
         public int subOptionId { get; set; }
         public string subOptionTitle { get; set; }

@@ -11,9 +11,15 @@ namespace Core.Interface.Exam
     {
         public IEnumerable<NinQuestion> GetAllNinQuestions();
         public IEnumerable<NinQuestion> GetNinQuestionBySeriId(int seriId);
+        public IEnumerable<NinQuestion> GetNinQuestionBySeriLevel(int seriLevel);
         public NinQuestion Insert(NinQuestion NinQuestion);
         public NinQuestion Update(NinQuestion NinQuestion);
         public bool Delete(int NinQuestionId);
         public NinQuestion GetNinQuestionById(int NinQuestionId);
+
+
+
+        public IEnumerable<NinOption> GetAllNinOption();
+   
     }
 }

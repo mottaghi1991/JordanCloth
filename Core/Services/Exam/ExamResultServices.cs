@@ -24,6 +24,13 @@ namespace Core.Services.Exam
             return _UserExam.GetAllEf(a => a.UserId == UserId);
         }
 
+        public string HAlandResult(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId, dbType: System.Data.DbType.Int32);
+            return _UserExam.GetStringFromDatabase("GetExamResult", dynamicParameters);
+        }
+
         public bool InsertUserExamDone(int UserId, int ExamId)
         {
             var obj= _UserExam.Insert(new UserExam { UserId = UserId, ExamId = ExamId });

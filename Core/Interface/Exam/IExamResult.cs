@@ -13,5 +13,6 @@ namespace Core.Interface.Exam
         public IEnumerable<UserExam> GetListOfUserExamByUserId(int UserId);
         public bool UserExistInExam(int userid,int ExamId);
         public string MBTIResult(int UserId);
+        public string HAlandResult(int UserId);
     }
 }
