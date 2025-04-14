@@ -15,7 +15,7 @@
                     <div class="card-body">
                         @if(Model.Any(a=>a.ExamId==(int)ExamId.Haland))
                         {
-                            <a class="btn btn-success" asp-action="ExamResult">نتیجه آزمون</a>
+                            <a class="btn btn-primary" asp-action="ExamResult">نتیجه آزمون</a>
 
                         }
                         else{
@@ -35,7 +35,7 @@
                     <div class="card-body">
                         @if (Model.Any(a => a.ExamId == (int)ExamId.MBTI))
                         {
-                            <a class="btn btn-success" asp-action="ShowMbtiResult" asp-controller="Exams" asp-area="UserPanel">نتیجه آزمون</a>
+                            <a class="btn btn-primary" asp-action="ShowMbtiResult" asp-controller="Exams" asp-area="UserPanel">نتیجه آزمون</a>
                         }
                         else
                         {
@@ -49,11 +49,11 @@
             <div class="col-md-2">
                 <div class="card card-warning text-center">
 
-                    <div class="card-header">ریون </div>
+                    <div class="card-header">اناگرام </div>
                     <div class="card-body">
-                        @if (Model.Any(a => a.ExamId == (int)ExamId.Rion))
+                        @if (Model.Any(a => a.ExamId == (int)ExamId.Anageram))
                         {
-                            <a class="btn btn-success" asp-action="GetExam">نتیجه آزمون</a>
+                            <a class="btn btn-primary" asp-action="GetExam">نتیجه آزمون</a>
                         }
                         else
                         {

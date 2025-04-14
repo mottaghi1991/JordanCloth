@@ -1,4 +1,5 @@
 ﻿using Core.Interface.Exam;
+using Dapper;
 using Data.MasterInterface;
 using Domain.Exam;
 using System;
@@ -28,6 +29,24 @@ namespace Core.Services.Exam
         public IEnumerable<Seri> GetAllSeri()
         {
            return _seri.GetAllEf();
+        }
+
+        public string GetMaxFirstLevel(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId,System.Data.DbType.Int32);
+            return _UserNaswer.GetStringFromDatabase("GetMaxFirstLevel", dynamicParameters);
+        }
+
+        public int GetMaxSerUserAnswer(int UserId)
+        {
+            DynamicParameters p = new DynamicParameters();
+            p.Add("UserId", UserId, System.Data.DbType.Int32);
+            var obj= _UserNaswer.GetStringFromDatabase("GetMaxSerUserAnswer",p);
+            if (obj==null)
+                return 0;
+            return Convert.ToInt32(obj);
+
         }
 
         public Seri GetSeriById(int seriId)

@@ -1,6 +1,7 @@
 ﻿using Core.Dto.ViewModel.Exam;
 using Core.Interface.Exam;
 using Domain.Exam;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using WebStore.Base;
@@ -8,6 +9,7 @@ using WebStore.Base;
 namespace Personal.Areas.Admin.Controllers
 {
     [Area(AreaNames.Admin)]
+    [Authorize]
     public class ninQuestionController : BaseController
     {
         private readonly INinQuestion _ninQuestion;
@@ -21,6 +23,10 @@ namespace Personal.Areas.Admin.Controllers
         public IActionResult Seris()
         {
             return View(_inExam.GetAllSeri());
+        }
+        public IActionResult ManageNinExam()
+        {
+            return View();
         }
         public IActionResult Index(int seriId)
         {

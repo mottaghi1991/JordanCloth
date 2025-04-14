@@ -101,7 +101,7 @@ namespace Core.Services.Users
 
         public IEnumerable<PermissionList> GetParentList()
         {
-            return _master.GetAll(a => a.ActionName == null&a.Status==2);
+            return _master.GetAll(a => a.ActionName == null&a.Status==(int)MenuStatus.system);
         }
 
         public bool Delete(PermissionList permissionList)
@@ -109,7 +109,7 @@ namespace Core.Services.Users
             return _master.Delete(permissionList);
         }
 
-        public IEnumerable<PermissionList> permissionLists()
+        public IEnumerable<PermissionList> permissionAllLists()
         {
             var obj = _master.GetAll(a => a.Status != (int)PermissionStatus.menu);
             return obj;
@@ -129,7 +129,7 @@ namespace Core.Services.Users
             {
                 Text = a.ControllerName,
                 Value = a.PermissionListId.ToString()
-            }).AsEnumerable().Append(new SelectListItem("منو", "-1")).Append(new SelectListItem("کنترلر اصلی", "-2"));
+            }).OrderBy(a=>a.Text).AsEnumerable().Append(new SelectListItem("منو", "-1")).Append(new SelectListItem("کنترلر اصلی", "-2"));
             return obj;
         }
 
@@ -219,6 +219,11 @@ namespace Core.Services.Users
         public IEnumerable<PermissionList> GetAllMenu()
         {
             return _master.GetAllEf(a => a.Status == (int)MenuStatus.menu);
+        }
+
+        public IEnumerable<PermissionList> GetpermissionLists()
+        {
+            return _master.GetAllEf(a => a.Status == (int)MenuStatus.permission);
         }
     }
 }

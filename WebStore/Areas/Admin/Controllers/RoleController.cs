@@ -9,10 +9,12 @@ using Domain.User.Permission;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MYCms.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class RoleController : Controller
     {
         private IRole _role;
@@ -177,7 +179,7 @@ namespace MYCms.Areas.Admin.Controllers
             {
                 return BadRequest();
             }
-            ViewBag.PermssionList = _permisionList.GetAllMenu();
+            ViewBag.PermssionList = _permisionList.GetpermissionLists();
             var obj = new EditPermissionRoleVm()
             {
                 RoleId = RoleId,

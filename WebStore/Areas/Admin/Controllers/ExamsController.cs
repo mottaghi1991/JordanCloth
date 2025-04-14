@@ -6,27 +6,93 @@ using WebStore.Base;
 using Domain.Exam;
 using System.Linq;
 using Core.Extention;
+using Microsoft.AspNetCore.Authorization;
+using Core.Dto.ViewModel.User;
+using Core.Dto.ViewModel.Exam;
+using Core.Interface.Users;
 
 namespace Personal.Areas.Admin.Controllers
 {
     [Area(AreaNames.Admin)]
+    [Authorize]
     public class ExamsController : BaseController
     {
-        private readonly ISubOption _subOption;
-        private readonly IQuestion _Question;
-        private readonly IUserAnswer _userAnswer;
 
-        public ExamsController(ISubOption subOption, IQuestion question, IUserAnswer userAnswer)
+        private readonly IExamResult _examResult;
+        private readonly IExamResultFinals _examResultFinal;
+        private readonly IUser _user;
+
+        public ExamsController(IExamResult examResult, IExamResultFinals examResultFinal, IUser user)
         {
-            _subOption = subOption;
-            _Question = question;
-            _userAnswer = userAnswer;
+            _examResult = examResult;
+            _examResultFinal = examResultFinal;
+            _user = user;
         }
 
         public IActionResult Index()
         {
           return View();
         }
-      
+        public IActionResult GetUserDoneExam(int ExamId)
+        {
+            var Exam=_examResult.examById(ExamId);
+            if (Exam==null)
+            {
+                return NotFound();
+            }
+            return View(new ShowUsersExam
+            {
+                ExamId=ExamId,
+                ExamTitle=Exam.Title,
+                UsersList= _examResult.GetListOfUserDoneExam(ExamId)
+            });
+        }
+        public IActionResult UserExamInfo(int UserId,int ExamId)
+        {
+            switch(ExamId)
+            {
+                case (int)Core.Enums.ExamId.Haland:
+                     string letter= _examResult.HAlandResult(UserId);
+                    return View(_examResultFinal.resultFinal(letter));
+                    break;
+                case (int)Core.Enums.ExamId.MBTI:
+                     letter = _examResult.MBTIResult(UserId);
+                    return View(_examResultFinal.resultFinal(letter));
+                    break;
+                case (int)Core.Enums.ExamId.Anageram:
+
+                    break;
+                default:
+                    return View(new ExamResultFinal()
+                    {
+                        Descript = "لطفا با دفتر موسسه تماس حاصل فرمائید",
+                        FinalResult = "لطفا با دفتر موسسه تماس حاصل فرمائید"
+                    });
+                    break;
+            }
+              return View(new ExamResultFinal()
+            {
+                Descript = "لطفا با دفتر موسسه تماس حاصل فرمائید",
+                FinalResult = "لطفا با دفتر موسسه تماس حاصل فرمائید"
+            });
+        }
+        public IActionResult GetExamOfUser(int UserId)
+        {
+            var User=_user.GetUserByUserId(UserId);
+            if (User == null)
+            {
+                return NotFound();
+            }
+            return View(new ShowExamOfUserViewModel()
+            {
+                UserId = UserId,
+                UserName = User.UserName,
+                examLists = _examResult.GetListOFExamDoneWithUser(UserId)
+            });
+
+
+              
+        }
+
     }
 }

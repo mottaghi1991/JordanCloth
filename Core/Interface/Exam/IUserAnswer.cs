@@ -10,5 +10,7 @@ namespace Core.Interface.Exam
     public interface IUserAnswer
     {
         public IEnumerable<ExamResultViewModel> ExamResult();
+        //آیا کاربر قبلا در آزمون شرکت کرده و در نیمه راه است؟
+        public int GetmaxQuestionOfUserNaswer(int UserId);
     }
 }

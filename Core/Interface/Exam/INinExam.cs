@@ -13,5 +13,7 @@ namespace Core.Interface.Exam
         public Seri GetSeriById(int seriId);
 
         public bool BulkInsertUserAnswer(List<NinUserAnswer> ninUserAnswers);
+        public string GetMaxFirstLevel(int UserId);
+        public int GetMaxSerUserAnswer(int UserId);
     }
 }

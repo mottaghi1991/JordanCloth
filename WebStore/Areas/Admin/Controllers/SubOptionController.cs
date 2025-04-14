@@ -1,6 +1,7 @@
 ﻿using Core.Dto.ViewModel.Exam;
 using Core.Interface.Exam;
 using Domain.Exam;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -10,6 +11,7 @@ using WebStore.Base;
 namespace Personal.Areas.Admin.Controllers
 {
     [Area(AreaNames.Admin)]
+    [Authorize]
     public class SubOptionController : BaseController
     {
         private readonly ISubOption _subOption;

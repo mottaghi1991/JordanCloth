@@ -1,4 +1,5 @@
 ﻿using Core.Dto.ViewModel.Exam;
+using Core.Dto.ViewModel.User;
 using Core.Interface.Admin;
 using Core.Interface.Exam;
 using Core.Interface.Users;
@@ -73,6 +74,7 @@ namespace IOC
             Services.AddScoped<IMaster<ExamResultFinal>, MasterServices<ExamResultFinal>>();
             Services.AddScoped<IMaster<NinOption>, MasterServices<NinOption>>();
             Services.AddScoped<IMaster<NinUserAnswer>, MasterServices<NinUserAnswer>>();
+            Services.AddScoped<IMaster<ExamList>, MasterServices<ExamList>>();
 
 
 
@@ -80,6 +82,7 @@ namespace IOC
             Services.AddScoped<IMaster<ShowExamToUserViewModel>, MasterServices<ShowExamToUserViewModel>>();
             Services.AddScoped<IMaster<ExamResultViewModel>, MasterServices<ExamResultViewModel>>();
             Services.AddScoped<IMaster<JobTestViewModel>, MasterServices<JobTestViewModel>>();
+            Services.AddScoped<IMaster<ShowUserBrifViewModel>, MasterServices<ShowUserBrifViewModel>>();
             #endregion
 
         }

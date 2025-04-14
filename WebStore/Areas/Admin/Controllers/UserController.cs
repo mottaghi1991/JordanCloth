@@ -7,12 +7,14 @@ using Core.Interface.Admin;
 using Core.Interface.Exam;
 using Core.Interface.Users;
 using Domain.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace WebStore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class UserController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly IUser _user;

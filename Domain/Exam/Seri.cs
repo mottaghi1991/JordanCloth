@@ -10,6 +10,7 @@ namespace Domain.Exam
     {
         public string Title { get; set; }
         public int Level { get; set; }
+        public int Number { get; set; }
         public virtual IEnumerable<NinQuestion> NinQuestions{ get; set; }
     }
 }

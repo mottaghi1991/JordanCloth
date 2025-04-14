@@ -1,4 +1,7 @@
-﻿using Core.Interface.Exam;
+﻿using Core.Dto.ViewModel.User;
+using Core.Enums;
+using Core.Interface.Exam;
+using Core.Interface.Users;
 using Dapper;
 using Data.MasterInterface;
 using Domain.Exam;
@@ -13,10 +16,38 @@ namespace Core.Services.Exam
     public class ExamResultServices : IExamResult
     {
         private readonly IMaster<UserExam> _UserExam;
+        private readonly IMaster<ShowUserBrifViewModel> _UserVm;
+        private readonly IMaster<ExamList> _ExamList;
 
-        public ExamResultServices(IMaster<UserExam> userExam)
+        public ExamResultServices(IMaster<UserExam> userExam, IMaster<ShowUserBrifViewModel> userVm, IMaster<ExamList> examList)
         {
             _UserExam = userExam;
+            _UserVm = userVm;
+            _ExamList = examList;
+        }
+
+        public ExamList examById(int examId)
+        {
+            return _ExamList.GetAllEf(a => a.Id == examId).FirstOrDefault();
+        }
+
+        public IEnumerable<ExamList> examLists()
+        {
+            return _ExamList.GetAllEf();
+        }
+
+        public IEnumerable<ExamList> GetListOFExamDoneWithUser(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId, System.Data.DbType.Int32);
+            return _ExamList.GetAll("GetListOFExamDoneWithUser", dynamicParameters);
+        }
+
+        public IEnumerable<ShowUserBrifViewModel> GetListOfUserDoneExam(int ExamId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("examId", ExamId, System.Data.DbType.Int32);
+            return _UserVm.GetAll("GetListOfUserDoneExam", dynamicParameters);
         }
 
         public IEnumerable<UserExam> GetListOfUserExamByUserId(int UserId)

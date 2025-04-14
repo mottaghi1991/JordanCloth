@@ -23,7 +23,8 @@ namespace Core.Interface.Admin
         PermissionList Update(PermissionList permissionList);
         IEnumerable<PermissionList> GetParentList();
         bool Delete(PermissionList permissionList);
-        IEnumerable<PermissionList> permissionLists();
+        IEnumerable<PermissionList> GetpermissionLists();
+        IEnumerable<PermissionList> permissionAllLists();
 
         IEnumerable<RolePermission> GetPermissionOfRole(int RoleId);
         public IEnumerable<SelectListItem> GetContrllersOfArea(int SystemMenuId);

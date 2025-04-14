@@ -27,5 +27,6 @@ namespace Core.Interface.Users
     
     IEnumerable<ShowUserBrifViewModel> GetPAggingUser(int Page,int pagesize);
     IEnumerable<ShowUserBrifViewModel> GetAllAdmin();
+        public MyUser GetUserByUserId(int userId);
     }
 }

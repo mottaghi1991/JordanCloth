@@ -12,7 +12,7 @@ using Domain.Users;
 
 namespace Core.Services.Users
 {
-    public class UserServices:IUser
+    public class UserServices : IUser
     {
         private readonly IMaster<MyUser> _User;
 
@@ -109,6 +109,11 @@ namespace Core.Services.Users
         public IEnumerable<ShowUserBrifViewModel> GetAllAdmin()
         {
             return _User.GetAll(a=>a.IsAdmin==true).Select(a => new ShowUserBrifViewModel() { Email = a.Email, UserName = a.UserName, UserId = a.ItUserId });
+        }
+
+        public MyUser GetUserByUserId(int userId)
+        {
+         return _User.GetAllEf(a=>a.ItUserId == userId).FirstOrDefault();
         }
     }
 }

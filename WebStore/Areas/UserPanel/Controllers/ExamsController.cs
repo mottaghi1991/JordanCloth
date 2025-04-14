@@ -1,16 +1,20 @@
-﻿using Core.Extention;
+﻿using Core.Enums;
+using Core.Extention;
 using Core.Interface.Exam;
 using Domain.Exam;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using WebStore.Base;
 
 namespace Personal.Areas.UserPanel.Controllers
 {
     [Area(AreaNames.UserPanel)]
+    [Authorize]
     public class ExamsController : BaseController
     {
         private readonly IJobQuestion _jobQuestion;
@@ -22,6 +26,8 @@ namespace Personal.Areas.UserPanel.Controllers
         private readonly IExamResultFinals _examResultFinal;
         private readonly INinQuestion _ninQuestion;
         private readonly INinExam _ninExam;
+ 
+
 
 
         public ExamsController(IJobQuestion jobQuestion, IJobUserNaswer jobUserNaswer, IUserAnswer userAnswer, IQuestion question, ISubOption subOption, IExamResult examResult, IExamResultFinals examResultFinal, INinQuestion ninQuestion, INinExam ninExam)
@@ -42,52 +48,24 @@ namespace Personal.Areas.UserPanel.Controllers
             var list = _examResult.GetListOfUserExamByUserId(User.GetUserId());
             return View(list);
         }
-        public IActionResult JobExams()
-        {
-            if (_examResult.UserExistInExam(User.GetUserId(), 2))
-            {
-                TempData[warning] = "شما قبلا در این آزمون شرکت نموده اید";
-                return RedirectToAction("Index");
-            }
-            return View(_jobQuestion.ShowJobExamToUser());
-        }
-        [HttpPost]
-        public IActionResult SubmitJobTest(Dictionary<int,int> Answers)
-        {
-             List<JobUserAnswer> List=new List<JobUserAnswer>();
-            foreach(var answer in Answers)
-            {
-                List.Add(new JobUserAnswer
-                {
-                    JobQuestionId = answer.Key,
-                    OptionId = answer.Value,
-                    UserId = User.GetUserId()
-                });
-            
-            }
-            _jobUserNaswer.BulkInsert(List);
-
-            return RedirectToAction("");
-        }
-
-
-        public IActionResult ShowMbtiResult()
-        {
-          var a=  _examResult.MBTIResult(User.GetUserId());
-            var obj = _examResultFinal.resultFinal(a);
-            return View(obj);
-        }
+        #region HalandExam
         public IActionResult GetExam(int? QuestionId)
         {
-
+            var result = _userAnswer.GetmaxQuestionOfUserNaswer(User.GetUserId());
+            if (result != 0)
+            {
+                int next = _Question.GetNextQuestionNum(result);
+                var obj = _subOption.GetAllQuestion(next);
+                return View(obj);
+            }
             //noe azmon moshakhas gardad
-            if (QuestionId == null)
+            if (QuestionId == null || result==0)
             {
                 return View(_subOption.GetAllQuestion(1));
             }
-            int next = _Question.GetNextQuestionNum(QuestionId.Value);
-            var obj = _subOption.GetAllQuestion(next);
-            return View(obj);
+            //karbar ghablan soalat ra ta nime pasokh dade ast
+            return View();
+            
 
         }
         [HttpPost]
@@ -151,6 +129,7 @@ namespace Personal.Areas.UserPanel.Controllers
 
 
             _subOption.BulkInsert(answers);
+         var res=_examResult.InsertUserExamDone(UserId:User.GetUserId(),ExamId:(int)ExamId.Haland);
             return RedirectToAction("ExamResult");
         }
 
@@ -158,20 +137,63 @@ namespace Personal.Areas.UserPanel.Controllers
         {
             string Res = _examResult.HAlandResult(User.GetUserId());
             var Result= _examResultFinal.resultFinal(Res);
+            if(Result==null)
+            {
+                return View(new ExamResultFinal()
+                {
+                    Descript = "لطفا با دفتر موسسه تماس حاصل فرمائید",
+                    FinalResult = "لطفا با دفتر موسسه تماس حاصل فرمائید"
+                });
+            }
             return View(Result);
         }
-        public IActionResult NinExam(int Seri)
+        #endregion
+        #region mbti
+        public IActionResult JobExams()
         {
-            IEnumerable<NinQuestion> Question =null;
-            if (Seri==0)
+            if (_examResult.UserExistInExam(User.GetUserId(), (int)ExamId.MBTI))
             {
-              Question=_ninQuestion.GetNinQuestionBySeriLevel(1);
+                TempData[warning] = "شما قبلا در این آزمون شرکت نموده اید";
+                return RedirectToAction("Index");
+            }
+            return View(_jobQuestion.ShowJobExamToUser());
+        }
+        [HttpPost]
+        public IActionResult SubmitJobTest(Dictionary<int, int> Answers)
+        {
+            List<JobUserAnswer> List = new List<JobUserAnswer>();
+            foreach (var answer in Answers)
+            {
+                List.Add(new JobUserAnswer
+                {
+                    JobQuestionId = answer.Key,
+                    OptionId = answer.Value,
+                    UserId = User.GetUserId()
+                });
 
             }
-            else
-            {
-                Question = _ninQuestion.GetNinQuestionBySeriLevel(Seri);
+            _jobUserNaswer.BulkInsert(List);
+            _examResult.InsertUserExamDone(User.GetUserId(),(int)ExamId.MBTI);
+            return RedirectToAction("");
+        }
 
+
+        public IActionResult ShowMbtiResult()
+        {
+            var a = _examResult.MBTIResult(User.GetUserId());
+            var obj = _examResultFinal.resultFinal(a);
+            return View(obj);
+        }
+#endregion
+        #region Anageram
+
+        public IActionResult NinExam(int SeriId)
+        {
+            IEnumerable<NinQuestion> Question =_ninQuestion.GetNextQuestions(SeriId, User.GetUserId());
+            if (Question == null)
+            {
+                _examResult.InsertUserExamDone(User.GetUserId(), (int)ExamId.Anageram);
+                return RedirectToAction("result");
             }
             ViewBag.NinOptions=_ninQuestion.GetAllNinOption();
             return View(Question);
@@ -193,18 +215,36 @@ namespace Personal.Areas.UserPanel.Controllers
                 });
                
             }
-          var Result= _ninExam.BulkInsertUserAnswer(Answers);
-            var Question = _ninQuestion.GetNinQuestionById(Answer.FirstOrDefault().Key);
-            var seri = _ninExam.GetSeriById(Question.seriId);
-            if (seri.Level==3)
+            var Result= _ninExam.BulkInsertUserAnswer(Answers);
+            if (!Result)
             {
-                int check=0;
+                TempData[Error]=ErrorMessage;
+                return RedirectToAction("Index");
             }
+            var Question = _ninQuestion.GetNinQuestionById(Answer.FirstOrDefault().Key);
             return RedirectToAction("NinExam", new
             {
-                Seri = seri.Level + 1
+                SeriId = Question.seriId,
             });
-        
+            //var seri = _ninExam.GetSeriById(Question.seriId);
+
+            //if (seri.Level>=3 &seri.Level<6)
+            //{
+            //   var MaxLetter=_ninExam.GetMaxFirstLevel(User.GetUserId());
+            //    return RedirectToAction("NinExam", new { Seri = seri.Level+1, letter = MaxLetter });
+
+            //}
+            //if (seri.Level==6)
+            //{
+            //    return RedirectToAction("result");
+            //}
+
+            //return RedirectToAction("NinExam", new
+            //{
+            //    Seri = seri.Level + 1
+            //});
+
         }
+        #endregion
     }
 }

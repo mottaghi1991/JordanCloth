@@ -4,24 +4,74 @@
     ViewData["Title"] = "NinExam";
     IEnumerable<NinOption> options = ViewBag.NinOptions as IEnumerable<NinOption>;
 }
-<form method="post" asp-action="NinExamSubmit">
-    @foreach (var question in Model)
-    {
-        <div class="mb-3">
-            <label><strong>@question.Title</strong></label>
-            <br />
-            @foreach (var option in options)
-            {
-                <input type="radio"
-                       name="Answer[@question.Id]"
-                       value="@option.Id" /> @option.Title
-                <br />
-            }
-        </div>
-    }
 
-    <button type="submit">ارسال</button>
-</form>
+<div class="card card-primary mt-3">
+    <div class="card-header text-center">آزمون اناگرام</div>
+    <div class="card-body">
+
+        <form method="post" asp-action="NinExamSubmit" id="jobTestForm" onsubmit="return validateForm()">
+            @foreach (var question in Model)
+            {
+                <div class="mb-3 question-group">
+                    <label><strong>@question.Title</strong></label>
+                    <br />
+                    @foreach (var option in options)
+                    {
+                        <input type="radio"
+                               name="Answer[@question.Id]"
+                               value="@option.Id" /> @option.Title
+                        <br />
+                    }
+                </div>
+            }
+
+            <button type="submit" class="btn btn-primary">ارسال</button>
+        </form>
+
+
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+             function validateForm() {
+            var isAnyRadioSelected = true;
+            var allQuestionsAnswered = true;
+
+            $(".question-group").each(function() {
+                var questionAnswered = false;
+
+                $(this).find("input[type=radio]").each(function() {
+                    if ($(this).is(":checked")) {
+                        questionAnswered = true;
+                    }
+                });
+
+                if (!questionAnswered) {
+                    allQuestionsAnswered = false;
+                    var questionTitle = $(this).find("strong").text(); // عنوان سوال
+                    // استفاده از SweetAlert به جای alert
+                    Swal.fire({
+                        icon: 'warning',  // نوع آیکن (برای هشدار)
+                        title: 'توجه',
+                        text: "لطفاً برای سوال '" + questionTitle + "' یک گزینه را انتخاب کنید.",
+                        confirmButtonText: 'باشه'  // متن دکمه تایید
+                    });
+                    return false;  // جلوگیری از ارسال فرم
+                }
+            });
+
+            if (allQuestionsAnswered) {
+                console.log("Form submission attempt.");
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+}
 
 
 

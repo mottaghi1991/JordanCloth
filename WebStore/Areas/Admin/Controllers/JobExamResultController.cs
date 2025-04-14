@@ -1,6 +1,7 @@
 ﻿using Core.Enums;
 using Core.Interface.Exam;
 using Domain.Exam;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using WebStore.Base;
 namespace Personal.Areas.Admin.Controllers
 {
     [Area(AreaNames.Admin)]
+    [Authorize]
     public class JobExamResultController : BaseController
     {
         private readonly IExamResultFinals _examResultFinals;
@@ -50,9 +52,9 @@ namespace Personal.Areas.Admin.Controllers
             TempData[Success] = SuccessMessage;
             return RedirectToAction("Index",new { ExamId = result.ExamId });
         }
-        public IActionResult Create()
+        public IActionResult Create(int ExamId)
         {
-            return View(new ExamResultFinal() { ExamId=1});
+            return View(new ExamResultFinal() { ExamId= ExamId });
         }
         [HttpPost]
         public IActionResult Create(ExamResultFinal examResultFinal)

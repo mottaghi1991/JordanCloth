@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.Interface.Exam
-{
+{/// <summary>
+/// پاسخنامه
+/// </summary>
     public interface IExamResultFinals
     {
         public ExamResultFinal resultFinal(string ResultText);

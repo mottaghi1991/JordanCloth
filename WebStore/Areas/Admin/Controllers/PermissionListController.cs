@@ -12,10 +12,14 @@ using Core.Interface.Admin;
 using Microsoft.Extensions.Logging;
 using EventId = Core.Enums.EventId;
 using WebStore.Base;
+using Microsoft.AspNetCore.Authorization;
+using Core.Enums;
+using System;
 
 namespace NoorMehr.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class PermissionListController : BaseController
     {
         private IPermisionList _permisionList;
@@ -56,11 +60,21 @@ namespace NoorMehr.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            if (result.Status == 1)
+            if (result.Status == (int)MenuStatus.menu)
             {
                 ViewBag.Parent = new SelectList(_permisionList.ParentList(), "Value", "Text", result.ParentId);
             }
-            else
+            else if(result.ParentId==null)
+            {
+                ViewBag.Parent = new SelectList(_permisionList.PermissionParentList(), "Value", "Text", result.ParentId);
+            }
+            else if(result.Status==(int)MenuStatus.permission)
+            {
+
+                ViewBag.Parent = new SelectList(_permisionList.PermissionParentList(), "Value", "Text", result.ParentId);
+                ViewBag.Controller = new SelectList(_permisionList.GetContrllersOfArea(result.ParentId.Value), "Value", "Text", result.ParentId.Value);
+            }
+            else if(result.Status==null)
             {
                 ViewBag.Parent = new SelectList(_permisionList.PermissionParentList(), "Value", "Text", result.ParentId);
                 ViewBag.Controller = new SelectList(_permisionList.GetContrllersOfArea(result.ParentId.Value), "Value", "Text", result.PermissionListId.ToString());
@@ -77,12 +91,63 @@ namespace NoorMehr.Areas.Admin.Controllers
                 return View(permissionList);
             }
             var obj = _permisionList.GetById(permissionList.PermissionListId);
-            obj.ParentId = permissionList.ParentId!=-1?permissionList.ParentId:obj.ParentId;
-            obj.Radif=permissionList.Radif;
-            obj.Descript=permissionList.Descript;
-            obj.Status=permissionList.Status;
-            _permisionList.Update(obj);
-            return RedirectToAction("ShowPermision",new { MyArea =obj.Area, SearchController =obj.ControllerName});
+            obj.Radif = permissionList.Radif;
+            obj.Descript = permissionList.Descript;
+            // head menu
+            if (obj.ParentId == null)
+            {
+
+
+            }
+            //head permission
+            if (obj.ParentId == 0)
+            {
+
+            }
+            //laye 2 menu
+            if (permissionList.Status == (int)MenuStatus.menu & obj.ParentId != null)
+            {
+                obj.ParentId = permissionList.ParentId != -1 ? permissionList.ParentId : obj.ParentId;
+                obj.Status = permissionList.Status;
+            }
+            //system
+            if (permissionList.Status == (int)MenuStatus.system)
+            {
+                obj.Status = permissionList.Status;
+            }
+            //head permission nist
+            if (permissionList.Status == (int)MenuStatus.permission & permissionList.ParentId != 0)
+            {
+                //اگر دسترسی در سطح میانی بود دسترسی والد از parent گرفته شود
+                if (permissionList.ControllerName == "-2")
+                {
+                    obj.ParentId = permissionList.ParentId;
+                   
+                }
+                //اگر دسترسی در سطح برگ بود parent از کنترلر گرفته شود
+          
+                else
+                {
+                    obj.ParentId = Convert.ToInt32(permissionList.ControllerName);
+                }
+
+                obj.Status = permissionList.Status;
+            }
+            //obj.ParentId = permissionList.ParentId != -1 ? permissionList.ParentId : obj.ParentId;
+            //obj.Radif = permissionList.Radif;
+            //obj.Descript = permissionList.Descript;
+            //obj.Status = permissionList.Status;
+
+            var Result = _permisionList.Update(obj);
+            if (Result != null)
+            {
+                TempData[Success] = "عملیات با موفقیت ثبت گردید";
+                return RedirectToAction("ShowPermision", new { MyArea = Result.Area, SearchController = Result.ControllerName });
+            }
+
+            TempData[Error] = "عملیات با خطا مواجه شد .";
+            return RedirectToAction("ShowPermision", new { MyArea = obj.Area, SearchController = obj.ControllerName });
+
         }
 
         [HttpGet]
@@ -133,7 +198,7 @@ namespace NoorMehr.Areas.Admin.Controllers
                             ActionName = null,
                             ParentId = null,
                             Descript = null,
-                            Status = 0
+                            Status = (int)MenuStatus.permission
                         });
 
                         AreaId = _permisionList.checkExistArea(item.Area);
@@ -228,7 +293,7 @@ namespace NoorMehr.Areas.Admin.Controllers
         [HttpGet]
         public JsonResult FillParent(int Id)
         {
-            if (Id == 0)
+            if (Id == (int)MenuStatus.permission)
             {
                 var result = new SelectList(_permisionList.GetAllParentPermissionList(), "SystemMenuID", "Description");
 

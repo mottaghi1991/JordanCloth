@@ -7,7 +7,7 @@
 
 
 @{
-    IEnumerable<ShowMenuVm> Permissions = ViewBag.PermssionList as IEnumerable<ShowMenuVm>;
+    IEnumerable<PermissionList> Permissions = ViewBag.PermssionList as IEnumerable<PermissionList>;
 }
 <div class="card card-primary">
     <div class="card-header">
@@ -16,14 +16,15 @@
     <div class="card-body">
         <form asp-action="RolePermission">
             <input type="hidden" asp-for="RoleId"/>
-            @foreach (var permission in Permissions.Where(a => a.ParentId == 1))
+            <div class="row">
+            @foreach (var permission in Permissions.Where(a => a.ParentId == 0))
             {
-                <div class="col-md-4" style="padding-bottom: 25px">
+                <div class="col-md-6" style="padding-bottom: 25px">
                     <div class="card">
-                        <div class="card-body" style="height: 150px; overflow-y: auto">
+                        <div class="card-body" style="height: 250px; overflow-y: auto">
                             <li style="color: red">
-                                <input type="checkbox" name="PermissionList" value="@permission.PermissionListId" @((Model.MenuVm.Any(r => r.PermissionListId == permission.PermissionListId) ? "checked" : "")) />
-                                @permission.MenuDesc
+                                
+                                @permission.Descript
                             </li>
                             @if (Permissions.Any(p => p.ParentId == permission.ParentId))
                             {
@@ -31,9 +32,21 @@
                                     @foreach (var sub in Permissions.Where(a => a.ParentId == permission.PermissionListId))
                                     {
                                         <li style="font-weight: 500">
-                                            <input type="checkbox" name="PermissionList" value="@sub.PermissionListId" @((Model.MenuVm.Any(r => r.PermissionListId == permission.PermissionListId) ? "checked" : "")) />
-                                            @sub.MenuDesc
+@*                                             <input type="checkbox" name="PermissionList" value="@sub.PermissionListId" @((Model.MenuVm.Any(r => r.PermissionListId == permission.PermissionListId) ? "checked" : "")) />
+ *@                                            @sub.Descript
                                         </li>
+                                        if (Permissions.Any(p => p.ParentId == sub.ParentId))
+                                        {
+                                            <ul style=" padding-right:20px">
+                                                @foreach (var sub2 in Permissions.Where(a => a.ParentId == sub.PermissionListId))
+                                                {
+                                                    <li>
+                                                        <input type="checkbox" name="AceeptgroupMenu" value="@sub2.PermissionListId" @((Model.MenuVm.Any(r => r.PermissionListId== sub2.PermissionListId) ? "checked" : "")) />
+                                                       @sub2.Descript
+                                                    </li>
+                                                }
+                                            </ul>
+                                        }
 
                                     }
                                 </ul>
@@ -42,6 +55,7 @@
                     </div>
                 </div>
             }
+            </div>
             <input type="submit" class="btn btn-success" value="ثبت">
         </form>
 

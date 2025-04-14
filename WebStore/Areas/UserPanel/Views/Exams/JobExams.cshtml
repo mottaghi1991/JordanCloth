@@ -3,7 +3,9 @@
 @{
     var grouped = Model.GroupBy(x => new { x.QuestionId, x.QuestionTitle }).ToList();
 }
-
+<div class="card card-primary mt-3">
+    <div class="card-header text-center">آزمون MBTI</div>
+    <div class="card-body">
 <form asp-action="SubmitJobTest" method="post" id="jobTestForm" onsubmit="return validateForm()">
     @foreach (var questionGroup in grouped)
     {
@@ -21,9 +23,10 @@
         <hr />
     }
 
-    <button type="submit">ارسال</button>
+    <button type="submit" class="btn btn-primary">ارسال</button>
 </form>
-
+</div>
+</div>
 @section Scripts
 {
     <script>

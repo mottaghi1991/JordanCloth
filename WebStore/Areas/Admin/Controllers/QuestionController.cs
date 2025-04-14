@@ -1,5 +1,6 @@
 ﻿using Core.Interface.Exam;
 using Domain.Exam;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using WebStore.Base;
@@ -7,6 +8,7 @@ using WebStore.Base;
 namespace Personal.Areas.Admin.Controllers
 {
     [Area(AreaNames.Admin)]
+    [Authorize]
     public class QuestionController : BaseController
     {
         private readonly IQuestion _question;

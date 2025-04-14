@@ -4,9 +4,9 @@
 }
 <div class="card card-primary mt-3">
     <div class="card-header text-center">آزمون رغبت سنجی</div>
-<div class="card-body">
-     
-        @if(Model.FirstOrDefault().QuestionId==4)
+    <div class="card-body">
+
+        @if (Model.FirstOrDefault().QuestionId == 4)
         {
             <form method="post" asp-action="SubmitExamFour">
                 @foreach (var questionGroup in Model
@@ -67,7 +67,8 @@
 
 
         }
-        else{
+        else
+        {
             <form method="post" asp-action="SubmitExam">
                 @foreach (var QuestionItem in Model.GroupBy(q => new { q.QuestionId, q.QuestionTitle, q.QuestionDesc }))
                 {
@@ -95,8 +96,42 @@
             </form>
         }
 
-</div>
+    </div>
 
 </div>
 
+@section Scripts {
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function (e) {
+                const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+                const selects = form.querySelectorAll('select');
+
+                let hasChecked = checkboxes.length > 0;
+
+                if (!hasChecked) {
+                    for (let i = 0; i < selects.length; i++) {
+                        if (selects[i].value !== "") {
+                            hasChecked = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (!hasChecked) {
+                    e.preventDefault();
+
+                      Swal.fire({
+            title: "خطا!",
+            text: "لطفاً حداقل یک گزینه را انتخاب کنید.",
+            icon: "error",
+            confirmButtonText:"باشه"
+        });
+                }
+            });
+        });
+    </script>
+}
 
