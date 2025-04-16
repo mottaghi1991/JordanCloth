@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Enums;
 using Core.Interface.Admin;
 using Core.Interface.Users;
+using Dapper;
 using Data.MasterInterface;
 using Domain.User.Permission;
 
@@ -20,9 +22,18 @@ namespace Core.Services.Users
         }
         public IEnumerable<RolePermission> GetPermissionOfRole(int RoleId)
         {
-            return _master.GetAll(a => a.RoleId == RoleId);
-        }
+            DynamicParameters p = new DynamicParameters();
+            p.Add("RoleId", RoleId, System.Data.DbType.Int32);
 
+            return _master.GetAll("GetMenuOfRole", p);
+        }
+        public IEnumerable<RolePermission> GetMenuOfRole(int RoleId)
+        {
+            DynamicParameters p = new DynamicParameters();
+            p.Add("RoleId", RoleId, System.Data.DbType.Int32);
+
+            return _master.GetAll("GetMenuOfRole",p);
+        }
         public bool BulkInsert(List<RolePermission> list)
         {
             return _master.BulkeInsert(list);

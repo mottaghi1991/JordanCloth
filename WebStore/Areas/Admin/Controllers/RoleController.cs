@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
+using Core.Extention;
 
 namespace MYCms.Areas.Admin.Controllers
 {
@@ -174,6 +175,7 @@ namespace MYCms.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult RolePermission(int RoleId)
         {
+            var deletedata = _permission.GetPermissionOfRole(RoleId).ToList();
             var Role = _role.GetRole(RoleId);
             if (Role == null)
             {
@@ -200,6 +202,58 @@ namespace MYCms.Areas.Admin.Controllers
                     return RedirectToAction("RolePermission", new { RoleId = RoleId });
                 }
 
+
+            }
+            List<RolePermission> list = new List<RolePermission>();
+            foreach (int i in PermissionList)
+            {
+                list.Add(new RolePermission()
+                {
+                    RoleId = RoleId,
+                    PermissionListId = i
+                });
+            }
+            list.AddRange(list);
+
+            var obj = _permission.BulkInsert(list);
+            if (obj)
+            {
+                TempData["Success"] = "عملیات با موفقیت انجام گردید";
+                return RedirectToAction("Index", "Role");
+            }
+            else
+            {
+                TempData["Error"] = "خطایی رخ داده است";
+                return RedirectToAction("Index", "Role");
+            }
+        }
+        public IActionResult RoleMenu(int RoleId)
+        {
+                var Role = _role.GetRole(RoleId);
+            if (Role == null)
+            {
+                return BadRequest();
+            }
+            ViewBag.PermssionList = _permisionList.GetAllMenu();
+            var obj = new EditPermissionRoleVm()
+            {
+                RoleId = RoleId,
+                RoleName = Role.RoleTitle,
+                MenuVm = _permisionList.GetPermissionOfRole(RoleId)
+            };
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult RoleMenu(List<int> PermissionList, int RoleId)
+        {
+            var deletedata = _permission.GetMenuOfRole(RoleId).ToList();
+            if (deletedata.Any())
+            {
+                if (!_permission.BulkDelete(deletedata))
+                {
+                    TempData["Error"] = "خطایی رخ داده است";
+                    return RedirectToAction("RolePermission", new { RoleId = RoleId });
+                }
 
             }
             List<RolePermission> list = new List<RolePermission>();

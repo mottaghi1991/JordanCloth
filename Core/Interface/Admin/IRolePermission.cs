@@ -10,5 +10,6 @@ namespace Core.Interface.Admin
         bool BulkInsert(List<RolePermission> list);
 
         bool BulkDelete(List<RolePermission> list);
+        public IEnumerable<RolePermission> GetMenuOfRole(int RoleId);
     }
 }

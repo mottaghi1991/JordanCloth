@@ -83,6 +83,7 @@ namespace IOC
             Services.AddScoped<IMaster<ExamResultViewModel>, MasterServices<ExamResultViewModel>>();
             Services.AddScoped<IMaster<JobTestViewModel>, MasterServices<JobTestViewModel>>();
             Services.AddScoped<IMaster<ShowUserBrifViewModel>, MasterServices<ShowUserBrifViewModel>>();
+            Services.AddScoped<IMaster<ExamDetailItem>, MasterServices<ExamDetailItem>>();
             #endregion
 
         }

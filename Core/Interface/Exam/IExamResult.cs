@@ -1,4 +1,5 @@
-﻿using Core.Dto.ViewModel.User;
+﻿using Core.Dto.ViewModel.Exam;
+using Core.Dto.ViewModel.User;
 using Domain.Exam;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,14 @@ namespace Core.Interface.Exam
         public bool UserExistInExam(int userid,int ExamId);
         public string MBTIResult(int UserId);
         public string HAlandResult(int UserId);
+        public string AnageramResult(int UserId);
         public IEnumerable<ShowUserBrifViewModel> GetListOfUserDoneExam(int ExamId);
         public IEnumerable<ExamList> examLists();
         public IEnumerable<ExamList> GetListOFExamDoneWithUser(int UserId);
         public ExamList examById(int examId);
+
+        public IEnumerable<ExamDetailItem> GetHalandResultDetailByUserId(int UserId);
+        public IEnumerable<ExamDetailItem> GetMBTIResultDetailByUserId(int UserId);
+        public IEnumerable<ExamDetailItem> GetAnageramResultDetailByUserId(int UserId);
     }
 }

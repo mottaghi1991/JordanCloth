@@ -12,7 +12,7 @@ namespace Core.Tools
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("mail.noormehr.ir");
-            mail.From = new MailAddress("test@noormehr.ir", "تاپ لرن");
+            mail.From = new MailAddress("Info@noormehr.ir", "نورمهر");
             mail.To.Add(To);
             mail.Subject = Subject;
             mail.Body = Body;
@@ -24,7 +24,7 @@ namespace Core.Tools
 
             SmtpServer.Port = 587;
             SmtpServer.UseDefaultCredentials = false;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("test@noormehr.ir", "4790243@Li");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("Info@noormehr.ir", "4790243@Li");
             //SmtpServer.EnableSsl = true;
           
             SmtpServer.Send(mail);

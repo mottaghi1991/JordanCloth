@@ -55,9 +55,12 @@ namespace Core.Services.Users
 
         }
 
-        public List<PermissionList> UserMenu()
+        public List<PermissionList> UserMenu(int UserId)
         {
-            return _master.GetAll(a=>a.Status==(int)MenuStatus.menu).ToList();
+
+            DynamicParameters p = new DynamicParameters();
+            p.Add("UserId", UserId, DbType.Int32);
+            return _master.GetAll("UserMenu", p).ToList();
         }
 
         public int checkExistArea(string Area)
@@ -224,6 +227,11 @@ namespace Core.Services.Users
         public IEnumerable<PermissionList> GetpermissionLists()
         {
             return _master.GetAllEf(a => a.Status == (int)MenuStatus.permission);
+        }
+
+        public List<PermissionList> UserPermission(int UserId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

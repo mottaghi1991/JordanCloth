@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 using Domain.User;
 using Domain.User.Permission;
 using Core.Interface.Admin;
+using System.Security.Claims;
+using Core.Extention;
 
 namespace MYCms.Areas.Admin.Component.Menu
 {
@@ -17,22 +19,22 @@ namespace MYCms.Areas.Admin.Component.Menu
     public class FillMenu:ViewComponent
     {
         private IPermisionList _permisionList;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public FillMenu(IPermisionList permisionList)
+        public FillMenu(IPermisionList permisionList,IHttpContextAccessor httpContextAccessor)
         {
             _permisionList = permisionList;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
             
             var menus = new List<PermissionList>();
-            if (HttpContext.Session.GetString("menus") ==null)
+            var obj = HttpContext.Session.GetData<List<PermissionList>>("menus");
+            if (obj==null)
             {
-              
-             var Identity=   User.Identity;
-                DynamicParameters p = new DynamicParameters();
-                p.Add("UserId", Identity);
-                 menus =_permisionList.UserMenu();
+
+             menus =_permisionList.UserMenu(_httpContextAccessor.HttpContext.User.GetUserId());
              HttpContext.Session.SetData("menus", menus);
             }
             else

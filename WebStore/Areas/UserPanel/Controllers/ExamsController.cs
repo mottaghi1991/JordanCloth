@@ -226,24 +226,20 @@ namespace Personal.Areas.UserPanel.Controllers
             {
                 SeriId = Question.seriId,
             });
-            //var seri = _ninExam.GetSeriById(Question.seriId);
-
-            //if (seri.Level>=3 &seri.Level<6)
-            //{
-            //   var MaxLetter=_ninExam.GetMaxFirstLevel(User.GetUserId());
-            //    return RedirectToAction("NinExam", new { Seri = seri.Level+1, letter = MaxLetter });
-
-            //}
-            //if (seri.Level==6)
-            //{
-            //    return RedirectToAction("result");
-            //}
-
-            //return RedirectToAction("NinExam", new
-            //{
-            //    Seri = seri.Level + 1
-            //});
-
+          }
+        public IActionResult Result()
+        {
+            string Res = _examResult.AnageramResult(User.GetUserId());
+            var Result = _examResultFinal.resultFinal(Res);
+            if (Result == null)
+            {
+                return View(new ExamResultFinal()
+                {
+                    Descript = "لطفا با دفتر موسسه تماس حاصل فرمائید",
+                    FinalResult = "لطفا با دفتر موسسه تماس حاصل فرمائید"
+                });
+            }
+            return View(Result);
         }
         #endregion
     }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\UserPanel\Views\Exam\" />
+    <Folder Include="wwwroot\SeriLog\" />
   </ItemGroup>
 
 </Project>

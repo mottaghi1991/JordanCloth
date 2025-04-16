@@ -52,23 +52,40 @@ namespace Personal.Areas.Admin.Controllers
             switch(ExamId)
             {
                 case (int)Core.Enums.ExamId.Haland:
-                     string letter= _examResult.HAlandResult(UserId);
-                    return View(_examResultFinal.resultFinal(letter));
-                    break;
+                    string letter = _examResult.HAlandResult(UserId);
+                    var obj = new ShowExamDetailToAdmin()
+                    {
+                        examDetailItems = _examResult.GetHalandResultDetailByUserId(UserId),
+                        examResultFinal = _examResultFinal.resultFinal(letter)
+                    };
+                     
+                    return View(obj);
+                   
                 case (int)Core.Enums.ExamId.MBTI:
                      letter = _examResult.MBTIResult(UserId);
-                    return View(_examResultFinal.resultFinal(letter));
-                    break;
+                     obj = new ShowExamDetailToAdmin()
+                    {
+                        examDetailItems = _examResult.GetMBTIResultDetailByUserId(UserId),
+                        examResultFinal = _examResultFinal.resultFinal(letter)
+                    };
+                    return View(obj);
+                  
                 case (int)Core.Enums.ExamId.Anageram:
-
-                    break;
+                    letter = _examResult.AnageramResult(UserId);
+                    obj = new ShowExamDetailToAdmin()
+                    {
+                        examDetailItems = _examResult.GetAnageramResultDetailByUserId(UserId),
+                        examResultFinal = _examResultFinal.resultFinal(letter)
+                    };
+                    return View(obj);
+                 
                 default:
                     return View(new ExamResultFinal()
                     {
                         Descript = "لطفا با دفتر موسسه تماس حاصل فرمائید",
                         FinalResult = "لطفا با دفتر موسسه تماس حاصل فرمائید"
                     });
-                    break;
+                 
             }
               return View(new ExamResultFinal()
             {

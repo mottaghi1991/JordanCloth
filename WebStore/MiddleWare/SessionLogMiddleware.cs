@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Core.Enums;
 using Core.Extention;
-using EventId = Core.Enums.EventId;
+using EventId = Domain.EventId;
 
 namespace WebStore.MiddleWare
 {
@@ -26,7 +26,7 @@ namespace WebStore.MiddleWare
             var a = httpContext.User.GetUserId();
             if (!string.IsNullOrEmpty(sessionId))
             {
-                _factory.LogInformation(EventId.Session, "User Requset path={path} SessionId={SessionId} start",path,sessionId);
+                _factory.LogInformation(EventId.Info, "User Requset path={path} SessionId={SessionId} start",path,sessionId);
             }
 
             return _next(httpContext);

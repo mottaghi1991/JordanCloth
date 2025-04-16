@@ -10,7 +10,7 @@ using Domain.User.Permission;
 
 namespace Core.Services.Users
 {
-    public class RoleServices:IRole
+    public class RoleServices : IRole
     {
         private readonly  IMaster<Role> _master;
         private readonly  IMaster<UserRole> _UserRolemaster;
@@ -58,6 +58,12 @@ namespace Core.Services.Users
         public bool BulkInsert(IEnumerable<UserRole> List)
         {
             return _UserRolemaster.BulkeInsert(List.ToList());
+        }
+
+        public bool UserRoleInsert(UserRole userRole)
+        {
+            var result = _UserRolemaster.Insert(userRole);
+            return result==null?false:true;
         }
     }
 }

@@ -10,6 +10,10 @@
     <title>ورود به سیستم</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             background-color: #f8f9fa;
             min-height: 100vh;
@@ -18,6 +22,9 @@
             justify-content: center;
             direction: rtl;
             font-family: 'Vazir', sans-serif;
+            background-image: url(/img/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover
         }
 
         .signup-login-box {
@@ -29,11 +36,11 @@
             max-width: 450px;
         }
 
-        .signup-login-box img {
-            display: block;
-            margin: 0 auto 1.5rem auto;
-            max-width: 150px;
-        }
+            .signup-login-box img {
+                display: block;
+                margin: 0 auto 1.5rem auto;
+                max-width: 150px;
+            }
 
         .signup-login-input {
             border-radius: 10px;
@@ -45,7 +52,7 @@
             border-radius: 10px;
         }
 
-        }
+        
     </style>
     <partial name="_HeaderLink" />
 </head>
@@ -53,19 +60,20 @@
     <div class="signup-login-box">
         <!-- start signup & login box -->
 
-        <img src="~/assets/images/logo.png" alt="لوگو">
+
+        <img src="~/img/logo.png" alt="لوگو">
         <form asp-action="Register" method="post">
             <div asp-validation-summary="All" class="text-danger mb-3"></div>
-            <div class="input-group signup-login-form mobile-number">
+            <div class="input-group signup-login-form icon-voicemail mb-3">
                 <!-- start mobile number input -->
                 <input type="email" asp-for="UserName" class="form-control form-control-lg signup-login-input text-start" placeholder="ایمیل">
             </div><!-- end mobile number input -->
 
-            <div class="input-group signup-login-form password">
+            <div class="input-group signup-login-form password mb-3">
                 <!-- start password input -->
                 <input type="password" asp-for="PassWord" class="form-control form-control-lg signup-login-input" placeholder="رمز عبور ">
             </div><!-- end password input -->
-            <div class="input-group signup-login-form password">
+            <div class="input-group signup-login-form password mb-3">
                 <!-- start password input -->
                 <input type="password" asp-for="RePassword" class="form-control form-control-lg signup-login-input" placeholder="تکرار رمز عبور ">
             </div>

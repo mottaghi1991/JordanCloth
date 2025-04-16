@@ -21,11 +21,19 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">خانه</a>
+                    <a asp-area="UserPanel" asp-Controller="Exams" asp-action="Index" class="nav-link">خانه</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
 
-                    <a href="#" class="nav-link">ویرایش اطلاعات کاربری</a>
+                    <a asp-area="UserPanel" asp-controller="User" asp-action="CHangePassword" class="nav-link">تغییر رمز عبور</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+
+                    <a asp-area="UserPanel" asp-Controller="Exams" asp-action="Index" class="nav-link">آزمون ها</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+
+                    <a  class="nav-link">    @User.Identity.Name</a>
                 </li>
             </ul>
             <!-- Right navbar links -->
@@ -35,22 +43,28 @@
 
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="index3.html" class="brand-link">
+            <a asp-area="UserPanel" asp-Controller="Exams" class="brand-link">
                 <img src="/MyFile/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                      style="opacity: .8">
                 <span class="brand-text font-weight-light"></span>
             </a>
             <div class="">
                 <div>
-                    <div class="user-panel mt-3 pb-3 mb-3 d-flex " style="color: white;padding-right: 50px">
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex" style="color: white; font-size: 12px; text-align: start; white-space: normal; word-break: break-word;">
+
                         <div class="image text-center">
+                        
                         </div>
-                        <div class="info">
-                            <a href="#" class="d-block"></a>
+                        <div class="info" style="">
+                            @User.Identity.Name
                         </div>
                     </div>
                     <nav class="mt-2">
-                        @await Component.InvokeAsync("FillMenu")
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            @await Component.InvokeAsync("FillMenu")
+                        }
+               
                     </nav>
                 </div>
             </div>

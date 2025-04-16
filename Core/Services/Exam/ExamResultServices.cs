@@ -1,4 +1,5 @@
-﻿using Core.Dto.ViewModel.User;
+﻿using Core.Dto.ViewModel.Exam;
+using Core.Dto.ViewModel.User;
 using Core.Enums;
 using Core.Interface.Exam;
 using Core.Interface.Users;
@@ -18,12 +19,21 @@ namespace Core.Services.Exam
         private readonly IMaster<UserExam> _UserExam;
         private readonly IMaster<ShowUserBrifViewModel> _UserVm;
         private readonly IMaster<ExamList> _ExamList;
+        private readonly IMaster<ExamDetailItem> _ExamDetailList;
 
-        public ExamResultServices(IMaster<UserExam> userExam, IMaster<ShowUserBrifViewModel> userVm, IMaster<ExamList> examList)
+        public ExamResultServices(IMaster<UserExam> userExam, IMaster<ShowUserBrifViewModel> userVm, IMaster<ExamList> examList, IMaster<ExamDetailItem> examDetailList)
         {
             _UserExam = userExam;
             _UserVm = userVm;
             _ExamList = examList;
+            _ExamDetailList = examDetailList;
+        }
+
+        public string AnageramResult(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId, dbType: System.Data.DbType.Int32);
+            return _UserExam.GetStringFromDatabase("AnageramResult", dynamicParameters);
         }
 
         public ExamList examById(int examId)
@@ -34,6 +44,20 @@ namespace Core.Services.Exam
         public IEnumerable<ExamList> examLists()
         {
             return _ExamList.GetAllEf();
+        }
+
+        public IEnumerable<ExamDetailItem> GetAnageramResultDetailByUserId(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId, System.Data.DbType.Int32);
+            return _ExamDetailList.GetAll("GetAnageramResultDetail", dynamicParameters);
+        }
+
+        public IEnumerable<ExamDetailItem> GetHalandResultDetailByUserId(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId, System.Data.DbType.Int32);
+            return _ExamDetailList.GetAll("GetHalandResultDetail", dynamicParameters);
         }
 
         public IEnumerable<ExamList> GetListOFExamDoneWithUser(int UserId)
@@ -53,6 +77,13 @@ namespace Core.Services.Exam
         public IEnumerable<UserExam> GetListOfUserExamByUserId(int UserId)
         {
             return _UserExam.GetAllEf(a => a.UserId == UserId);
+        }
+
+        public IEnumerable<ExamDetailItem> GetMBTIResultDetailByUserId(int UserId)
+        {
+            DynamicParameters dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("UserId", UserId, System.Data.DbType.Int32);
+            return _ExamDetailList.GetAll("GetMBTIResultDetail", dynamicParameters);
         }
 
         public string HAlandResult(int UserId)

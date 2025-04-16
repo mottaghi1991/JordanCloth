@@ -15,5 +15,6 @@ namespace Core.Interface.Admin
         IEnumerable<UserRole> GetAllUSerOfRole(int RoleId);
         bool BulkDelete(IEnumerable<UserRole> List);
         bool BulkInsert(IEnumerable<UserRole> List);
+        bool UserRoleInsert(UserRole userRole);
     }
 }

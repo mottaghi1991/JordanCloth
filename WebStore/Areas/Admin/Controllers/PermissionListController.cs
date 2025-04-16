@@ -10,11 +10,11 @@ using Domain;
 using Domain.User;
 using Core.Interface.Admin;
 using Microsoft.Extensions.Logging;
-using EventId = Core.Enums.EventId;
 using WebStore.Base;
 using Microsoft.AspNetCore.Authorization;
 using Core.Enums;
 using System;
+using EventId = Domain.EventId;
 
 namespace NoorMehr.Areas.Admin.Controllers
 {

@@ -1,0 +1,20 @@
+﻿@model Domain.Exam.ExamResultFinal
+@{
+    ViewData["Title"] = "ShowMbtiResult";
+}
+<div class="card card-primary">
+    <div class="card-header">
+        @Model.Descript
+    </div>
+    <div class="card-body">
+
+        <h4>با توجه به گزینه های انتخاب شده شغل های ذیل برای شما مناسب می باشد </h4>
+
+        @Html.Raw(Model.FinalResult.Replace(".", ".<br>"))
+
+
+
+
+    </div>
+</div>
+

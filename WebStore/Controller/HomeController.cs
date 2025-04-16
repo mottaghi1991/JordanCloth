@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using EventId = Core.Enums.EventId;
+using EventId = Domain.EventId;
 
 namespace WebStore.Controller
 {

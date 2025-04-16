@@ -34,7 +34,7 @@
                             <td>
                                 <a class="btn btn-info" onclick="Edit(@item.RoleId)">ویرایش</a>
                                 <a class="btn btn-dark" asp-action="RolePermission" asp-route-RoleId="@item.RoleId">دسترسی های گروه</a>
-                                <a class="btn btn-primary" asp-action="RolePermission" asp-route-RoleId="@item.RoleId">منو های گروه</a>
+                                <a class="btn btn-primary" asp-action="RoleMenu" asp-route-RoleId="@item.RoleId">منو های گروه</a>
                                 <a class="btn btn-warning" asp-action="UserRole" asp-route-RoleId="@item.RoleId">کاربران گروه</a>
 
                                 <a asp-action="Delete" asp-route-id="@item.RoleId" onclick="return confirm('ایا از حذف اطمینان دارید؟')" class="btn btn-danger"> حذف</a>

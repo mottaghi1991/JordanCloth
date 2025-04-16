@@ -14,6 +14,7 @@ namespace Core.Dto.ViewModel.User
         [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public string PassWord { get; set; }
         [Compare("PassWord", ErrorMessage = "رمز عبور یکسان نمی باشد")]
+        [Required(ErrorMessage = "وارد کردن {0} اجباری می باشد")]
         public string RePassword { get; set; }
     }
 }

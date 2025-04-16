@@ -13,7 +13,8 @@ namespace Core.Interface.Admin
         IEnumerable<PermissionList> GetPermisionByAreaAndController(string Area, string Controller);
         IEnumerable<PermissionList> GetAllArea();
         IEnumerable<PermissionList> GetControllerByArea(string Area);
-        List<PermissionList> UserMenu();
+        List<PermissionList> UserMenu(int UserId);
+        List<PermissionList> UserPermission(int UserId);
         int checkExistArea(string Area);
         int checkExistController(string Area, string Controller);
         bool CheckExistPermission(string Area, string Controller, string Action);

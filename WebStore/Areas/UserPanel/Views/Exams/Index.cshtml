@@ -53,7 +53,7 @@
                     <div class="card-body">
                         @if (Model.Any(a => a.ExamId == (int)ExamId.Anageram))
                         {
-                            <a class="btn btn-primary" asp-action="GetExam">نتیجه آزمون</a>
+                            <a class="btn btn-primary" asp-action="Result" asp-controller="Exams" asp-area="UserPanel">نتیجه آزمون</a>
                         }
                         else
                         {

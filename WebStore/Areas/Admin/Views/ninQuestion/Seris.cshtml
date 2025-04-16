@@ -17,11 +17,13 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Title)
                         </th>
+                       
+                        <th>
+                           شماره تیپ
+                        </th>
                         <th>
                             سوالات
                         </th>
-
-                   
                         <th></th>
                     </tr>
                 </thead>
@@ -31,6 +33,9 @@
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Number)
                             </td>
                             <td>
                                 <a asp-action="Index" class="btn btn-primary" asp-route-seriId="@item.Id">سوالات</a>
