@@ -7,7 +7,7 @@ using Domain.User.Permission;
 using Microsoft.EntityFrameworkCore;
 using Domain.Users;
 using Domain.User;
-using Domain.Exam;
+
 using Domain;
 
 namespace Data
@@ -25,22 +25,7 @@ namespace Data
         public virtual DbSet<RolePermission> RolePermission { get; set; }
         #endregion
 
-        public virtual DbSet<Question> Questions{ get; set; }
-        public virtual DbSet<Option> Options{ get; set; }
-        public virtual DbSet<SubOption> SubOptions{ get; set; }
-        public virtual DbSet<UserAnswer> UserAnswers{ get; set; }
-
-        public virtual DbSet<JobQuestion> JobQuestions{ get; set; }
-        public virtual DbSet<JobOption> JobOptions { get; set; }
-        public virtual DbSet<JobUserAnswer> JobUserAnswers{ get; set; }
-
-
-        public virtual DbSet<NinQuestion> NinQuestions{ get; set; }
-        public virtual DbSet<NinOption> NinOptions{ get; set; }
-        public virtual DbSet<NinUserAnswer> NinUserAnswers{ get; set; }
-
-        public virtual DbSet<UserExam> UserExams{ get; set; }
-        public virtual DbSet<ExamResultFinal>ExamResultFinals{ get; set; }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

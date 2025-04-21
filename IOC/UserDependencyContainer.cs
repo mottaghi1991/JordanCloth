@@ -1,13 +1,13 @@
-﻿using Core.Dto.ViewModel.Exam;
+﻿
 using Core.Dto.ViewModel.User;
 using Core.Interface.Admin;
-using Core.Interface.Exam;
+
 using Core.Interface.Users;
-using Core.Services.Exam;
+
 using Core.Services.Users;
 using Data.MasterInterface;
 using Data.MasterServices;
-using Domain.Exam;
+
 using Domain.User;
 using Domain.User.Permission;
 using Domain.Users;
@@ -43,47 +43,14 @@ namespace IOC
             Services.AddScoped<IMaster<UserRole>, MasterServices<UserRole>>();
             #endregion
             #region Exam
-            Services.AddScoped<ISubOption, SubOptionServices>();
-            Services.AddScoped<IQuestion, QuestionServices>();
-            Services.AddScoped<IUserAnswer, UserAnswerServices>();
-            Services.AddScoped<IOption, OptionServices>();
-            Services.AddScoped<IJobQuestion, JobQuestionServices>();
-            Services.AddScoped<IJobUserNaswer, JobUserAnswerServices>();
-            Services.AddScoped<IJobOption, JobOptionServices>();
-            Services.AddScoped<INinQuestion,ninQuestionServices>();
-            Services.AddScoped<INinExam,NinExamServices>();
-            Services.AddScoped<IExamResult,ExamResultServices>();
-            Services.AddScoped<IExamResultFinals,ExamResultFinalServices>();
+         
 
 
 
 
-
-
-            Services.AddScoped<IMaster<UserAnswer>, MasterServices<UserAnswer>>();
-            Services.AddScoped<IMaster<Question>, MasterServices<Question>>();
-            Services.AddScoped<IMaster<Option>, MasterServices<Option>>();
-            Services.AddScoped<IMaster<SubOption>, MasterServices<SubOption>>();
-            Services.AddScoped<IMaster<JobQuestion>, MasterServices<JobQuestion>>();
-            Services.AddScoped<IMaster<JobUserAnswer>, MasterServices<JobUserAnswer>>();
-            Services.AddScoped<IMaster<JobOption>, MasterServices<JobOption>>();
-            Services.AddScoped<IMaster<JobGroupIndex>, MasterServices<JobGroupIndex>>();
-            Services.AddScoped<IMaster<NinQuestion>, MasterServices<NinQuestion>>();
-            Services.AddScoped<IMaster<Seri>, MasterServices<Seri>>();
-            Services.AddScoped<IMaster<UserExam>, MasterServices<UserExam>>();
-            Services.AddScoped<IMaster<ExamResultFinal>, MasterServices<ExamResultFinal>>();
-            Services.AddScoped<IMaster<NinOption>, MasterServices<NinOption>>();
-            Services.AddScoped<IMaster<NinUserAnswer>, MasterServices<NinUserAnswer>>();
-            Services.AddScoped<IMaster<ExamList>, MasterServices<ExamList>>();
-
-
-
-
-            Services.AddScoped<IMaster<ShowExamToUserViewModel>, MasterServices<ShowExamToUserViewModel>>();
-            Services.AddScoped<IMaster<ExamResultViewModel>, MasterServices<ExamResultViewModel>>();
-            Services.AddScoped<IMaster<JobTestViewModel>, MasterServices<JobTestViewModel>>();
+         
             Services.AddScoped<IMaster<ShowUserBrifViewModel>, MasterServices<ShowUserBrifViewModel>>();
-            Services.AddScoped<IMaster<ExamDetailItem>, MasterServices<ExamDetailItem>>();
+  
             #endregion
 
         }

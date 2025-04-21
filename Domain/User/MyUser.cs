@@ -1,4 +1,4 @@
-﻿using Domain.Exam;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -34,10 +34,7 @@ namespace Domain.User
         public string UserAvatar { get; set; }
         public bool IsAdmin { get; set; }
         public virtual List<UserRole> UserRoles { get; set; }
-        public virtual IEnumerable<JobUserAnswer> JobUserAnswers { get; set; }
-        public virtual IEnumerable<ExamEvent> ExamEvents { get; set; }
-        public virtual IEnumerable<NinUserAnswer> NinUserAnswers { get; set; }
-        public virtual IEnumerable<UserExam> UserExams{ get; set; }
+       
 
 
 
