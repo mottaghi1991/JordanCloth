@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Domain.Store.Product>
+
+<div class="card-header">مانتو مجلسی</div>
+<div class="card-body">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            @foreach(var item in Model)
+            {
+                 <div class="swiper-slide">
+
+                <div class="card me-2 position-relative CardMain">
+                    <img src="@item.ImageUrl" class="card-img-top rounded-top " alt="تصویر">
+                    <div class="card-body text-center">
+
+                        <div class="rating">
+                            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        </div>
+                        <p class="price">
+                            <del class="PriceBeforOff">@item.Price تومان</del>
+                            <span class="PriceAfterOff">75,000 تومان</span>
+                        </p>
+                        <h6 class="card-title">@item.ProductName</h6>
+                        <div class="discount-badge position-absolute top-0 start-0 m-2 bg-danger text-white px-2 py-1 rounded d-flex align-items-center" style="top: 10px;">
+                            25%
+                        </div>
+                        <button class="btn btn-link heart-icon position-absolute top-0 end-0 m-2 d-flex align-items-center" type="button" onclick="toggleHeart(this)" style="top: 10px;">
+                            <i class="bi bi-heart HearStyle"></i>
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
+            }
+           
+         
+        </div>
+        <!-- دکمه‌های ناوبری -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- نقاط -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+</div>

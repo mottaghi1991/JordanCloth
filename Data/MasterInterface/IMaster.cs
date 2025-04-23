@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using Dapper;
 
@@ -9,6 +10,7 @@ namespace Data.MasterInterface
     {
         IEnumerable<T> GetAll();
         IEnumerable<T> GetAllEf();
+        IQueryable<T> GetAllAsQueryable();
         IEnumerable<T> GetAllEf(Expression<Func<T, bool>> Filter);
         IEnumerable<T> GetAll(Expression<Func<T, bool>> Filter);
         IEnumerable<T> GetAll(string spName, DynamicParameters parameters);

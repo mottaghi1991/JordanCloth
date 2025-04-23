@@ -19,6 +19,7 @@ body {
     margin-bottom: 60px;
     font-family: Vazir;
     margin: 0 !important;
+ 
 }
 
 
@@ -342,10 +343,7 @@ footer {
         text-align: center;
     }
 
-        .card-body h5 {
-            margin-bottom: 0.5rem;
-            /* فاصله بیشتر بین عنوان و فلش */
-        }
+     
 
         .card-body a i {
             font-size: 1.2rem;

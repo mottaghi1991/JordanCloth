@@ -60,10 +60,9 @@
                         </div>
                     </div>
                     <nav class="mt-2">
-                        @if(User.Identity.IsAuthenticated)
-                        {
+                       
                             @await Component.InvokeAsync("FillMenu")
-                        }
+                        
                
                     </nav>
                 </div>

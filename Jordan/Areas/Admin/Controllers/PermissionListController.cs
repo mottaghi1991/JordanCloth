@@ -19,7 +19,7 @@ using EventId = Domain.EventId;
 namespace NoorMehr.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+
     public class PermissionListController : BaseController
     {
         private IPermisionList _permisionList;

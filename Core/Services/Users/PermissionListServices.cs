@@ -57,10 +57,10 @@ namespace Core.Services.Users
 
         public List<PermissionList> UserMenu(int UserId)
         {
-
-            DynamicParameters p = new DynamicParameters();
-            p.Add("UserId", UserId, DbType.Int32);
-            return _master.GetAll("UserMenu", p).ToList();
+            return _master.GetAllEf(a => a.Status == (int)MenuStatus.menu).ToList();
+            //DynamicParameters p = new DynamicParameters();
+            //p.Add("UserId", UserId, DbType.Int32);
+            //return _master.GetAll("UserMenu", p).ToList();
         }
 
         public int checkExistArea(string Area)

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Domain.Store.FeatureValue>
+
+<div class="row p-2">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-end mb-4 m-2">مانتو</h3>
+
+        </div>
+        <div class="card-body">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach(var item in Model)
+                    {
+                        <div class="swiper-slide">
+
+                            <div class="card me-2 position-relative CardMain cardCstegory">
+                                <img src="@item.Image" class="card-img-top rounded-top" alt="@item.Value">
+                                <div class="card-body">
+
+                                    <h5 class="card-title">
+                                        @item.Value
+                                        <a href="#" class="btn btn-link ms-2">
+                                            <i class="bi bi-arrow-left-circle" style="font-size: 1.5rem; color: #007bff;"></i>
+                                        </a>
+                                        <div class="discount-badge position-absolute top-0 start-0 m-2 bg-danger text-white px-2 py-1 rounded d-flex align-items-center" style="top: 10px;">
+                                            25%
+                                        </div>
+                                        <button class="btn btn-link heart-icon position-absolute top-0 end-0 m-2 d-flex align-items-center" type="button" onclick="toggleHeart(this)" style="top: 10px;">
+                                            <i class="bi bi-heart HearStyle"></i>
+                                        </button>
+
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+              
+                </div>
+                <!-- دکمه‌های ناوبری -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- نقاط -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>

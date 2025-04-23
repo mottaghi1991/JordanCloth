@@ -265,5 +265,18 @@ namespace Data.MasterServices
             var b = Convert.ToInt32(_accessor.HttpContext.User.Claims.FirstOrDefault(a => a.Type == ClaimTypes.NameIdentifier)?.Value);
             return b;
         }
+
+        public IQueryable<T> GetAllAsQueryable()
+        {
+            try
+            {
+                return _ctx.Set<T>().AsQueryable();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(EventId.Error, ex, "(Data Error) User Run GetAllAsQueryable ObjectName= {ObjectName}  UserId = {UserId}", typeof(T).Name, GetUserId());
+                return Enumerable.Empty<T>().AsQueryable();
+            }
+        }
     }
 }

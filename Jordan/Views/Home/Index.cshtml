@@ -1,4 +1,164 @@
-﻿
-@{
-    ViewData["Title"] = "خانه";
-}
+﻿   <!-- اسلایدر بالا -->
+<div class="row">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/Img/slider1.jpg" alt="Slide 1">
+                <div class="caption">متن یا عنوان اسلاید اول</div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/Img/slider2.jpg" alt="Slide 2">
+                <div class="caption">متن یا عنوان اسلاید دوم</div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/Img/slider3.jpg" alt="Slide 3">
+                <div class="caption">متن یا عنوان اسلاید سوم</div>
+            </div>
+        </div>
+        <!-- اگر می‌خواهید دکمه‌های ناوبری هم داشته باشید -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <!-- پایان اسلایدر بالا -->
+</div>
+<!-- مانتو -->
+@await Component.InvokeAsync("FirstFeature")
+<!-- مانتو مجلسی -->
+
+<div class="row p-2">
+    <div class="card">
+
+        @await Component.InvokeAsync("SecondFeature")
+    </div>
+
+
+
+</div>
+
+<!-- بنر -->
+<div class="row" style="background-color:white!important">
+
+
+
+
+    <div class="container-fluid px-0">
+
+        <div class="row">
+            <div class="col-12 p-4">
+
+                <div class="banner-wrapper position-relative">
+                    <img src="/Img/banner1.jpg" class="img-fluid w-100" alt="بنر سایت" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- دسته بندی -->
+@await Component.InvokeAsync("ShowCategory")
+
+<!-- مانتو اداری -->
+<div class="row">
+ 
+    @await Component.InvokeAsync("ThirdFeature")
+</div>
+<!--2 بنر -->
+<div class="row">
+
+
+
+
+    <div class="container-fluid px-0">
+
+        <div class="row">
+            <div class="col-12 p-4">
+
+                <div class="banner-wrapper position-relative">
+                    <img src="/Img/banner1.jpg" class="img-fluid w-100" alt="بنر سایت" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<!-- پر تخفیف ها -->
+
+<div class="row">
+
+    @await Component.InvokeAsync("fourthFeature")
+
+    @await Component.InvokeAsync("SixFeature")
+
+</div>
+<div class="row g-3">
+    <!-- باکس 1 -->
+    <div class="col-6 col-md-3 ">
+        <div class="box d-flex flex-column InfoCastegory">
+            <div class="row flex-grow-1">
+                <!-- قسمت سمت چپ -->
+                <div class="col-3 d-flex flex-column align-items-center justify-content-between">
+                    <img src="/Img/return.png" class="mb-2 p-3 fixcategory" alt="تصویر کوچک">
+                </div>
+                <!-- قسمت سمت راست -->
+                <div class="col-9 d-flex flex-column justify-content-center p-2">
+                    <p class="text-center small fw-bold mb-2">بازگشت کالا</p>
+                    <p class="text-center small mb-0">امکان بازگشت کالا تا 7 روز</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- باکس 2 -->
+    <div class="col-6 col-md-3 ">
+        <div class="box d-flex flex-column InfoCastegory">
+            <div class="row flex-grow-1">
+                <!-- قسمت سمت چپ -->
+                <div class="col-3 d-flex flex-column align-items-center justify-content-between">
+                    <img src="/Img/test.png" class="mb-2 p-3 fixcategory" alt="تصویر کوچک">
+                </div>
+                <!-- قسمت سمت راست -->
+                <div class="col-9 d-flex flex-column justify-content-center p-2">
+                    <p class="text-center small fw-bold mb-2 ">زمان بازگشت</p>
+                    <p class="text-center small mb-0">امکان تست محصول </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- باکس 3 -->
+    <div class="col-6 col-md-3 ">
+        <div class="box d-flex flex-column InfoCastegory">
+            <div class="row flex-grow-1">
+                <!-- قسمت سمت چپ -->
+                <div class="col-3 d-flex flex-column align-items-center justify-content-between">
+                    <img src="/Img/orgin.png" class="mb-2 p-3 fixcategory" alt="تصویر کوچک">
+                </div>
+                <!-- قسمت سمت راست -->
+                <div class="col-9 d-flex flex-column justify-content-center p-2">
+                    <p class="text-center small fw-bold mb-2">جنس اصلی</p>
+                    <p class="text-center small mb-0">تضمین اصلی بودن جنس</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- باکس 4 -->
+    <div class="col-6 col-md-3 ">
+        <div class="box d-flex flex-column InfoCastegory">
+            <div class="row flex-grow-1">
+                <!-- قسمت سمت چپ -->
+                <div class="col-3 d-flex flex-column align-items-center justify-content-between">
+                    <img src="/Img/takhfif.png" class=" mb-2 p-3 fixcategory" alt="تصویر کوچک">
+                </div>
+                <!-- قسمت سمت راست -->
+                <div class="col-9 d-flex flex-column justify-content-center p-2">
+                    <p class="text-center small fw-bold mb-2">تخفیف</p>
+                    <p class="text-center small mb-0">بالاترین تخفیف ممکن</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@ using Domain.Users;
 using Domain.User;
 
 using Domain;
+using Domain.Store;
 
 namespace Data
 {
@@ -25,7 +26,18 @@ namespace Data
         public virtual DbSet<RolePermission> RolePermission { get; set; }
         #endregion
 
-       
+        #region Store
+        public virtual DbSet<Category> Categories{ get; set; }
+        public virtual DbSet<SubCategory> SubCategories{ get; set; }
+        public virtual DbSet<Product> Products{ get; set; }
+        public virtual DbSet<Product_ProductTag> Product_ProductTage{ get; set; }
+        public virtual DbSet<ProductTag> ProductTags{ get; set; }
+        public virtual DbSet<Feature> Features{ get; set; }
+        public virtual DbSet<FeatureValue> FeatureValues{ get; set; }
+        public virtual DbSet<ProductFeatureValue> ProductFeatureValues{ get; set; }
+
+
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,7 +53,20 @@ namespace Data
                     }
                 }
             }
+            modelBuilder.Entity<ProductFeatureValue>()
+    .HasKey(pf => new { pf.ProductId, pf.FeatureValueId });
 
+            modelBuilder.Entity<ProductFeatureValue>()
+                .HasOne(pf => pf.Product)
+                .WithMany(p => p.FeatureValues)
+                .HasForeignKey(pf => pf.ProductId)
+                .OnDelete(DeleteBehavior.Restrict); // یا NoAction
+
+            modelBuilder.Entity<ProductFeatureValue>()
+                .HasOne(pf => pf.FeatureValue)
+                .WithMany(fv => fv.ProductFeatureValues)
+                .HasForeignKey(pf => pf.FeatureValueId)
+                .OnDelete(DeleteBehavior.Restrict);
             base.OnModelCreating(modelBuilder);
         }
     }
