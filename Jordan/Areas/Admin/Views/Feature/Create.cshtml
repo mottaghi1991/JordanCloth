@@ -1,0 +1,50 @@
+﻿@model Domain.Store.Feature
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="col-md-12">
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">دسته بندی </h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12 col-md-4">
+                    <form asp-action="Create" id="myform">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        
+
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="subCategoryId" class="control-label"></label>
+                            <select asp-for="subCategoryId" class="form-control" asp-items="ViewBag.SubCategory"></select>
+                                <span asp-validation-for="subCategoryId" class="text-danger"></span>
+
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <input type="submit" value="ثبت" class="btn btn-success" />
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

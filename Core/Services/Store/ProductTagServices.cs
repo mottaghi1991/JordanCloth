@@ -18,9 +18,29 @@ namespace Core.Services.Store
             _master = master;
         }
 
+        public bool Delete(int ProductTagId)
+        {
+          return _master.Delete(GetProductTagById(ProductTagId));
+                }
+
         public IEnumerable<ProductTag> GetAll()
         {
          return _master.GetAllEf();
+        }
+
+        public ProductTag GetProductTagById(int ProductTagId)
+        {
+            return _master.GetAllEf(a => a.Id == ProductTagId).FirstOrDefault();
+        }
+
+        public ProductTag Insert(ProductTag ProductTag)
+        {
+            return _master.Insert(ProductTag);
+        }
+
+        public ProductTag Update(ProductTag ProductTag)
+        {
+            return _master.Update(ProductTag);
         }
     }
 }

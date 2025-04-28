@@ -23,13 +23,18 @@ namespace Core.Services.Store
 
         public IEnumerable<Product> GetAll()
         {
-           return _master.GetAll();
+           return _master.GetAllEf();
         }
 
         public IEnumerable<Product> GetProductByFeatureValueId(int FeatureValueId)
         {
             var obj= _master.GetAllAsQueryable().Where(p=>p.FeatureValues.Any(pf=>pf.FeatureValueId==FeatureValueId)).ToList();
             return obj;
+        }
+
+        public IEnumerable<Product> GetProductBySubcategory(int SubCategoryId)
+        {
+            return _master.GetAllEf(a => a.SubCategoryId == SubCategoryId);
         }
 
         public IEnumerable<Product> GetProductByTagId(int TagId)

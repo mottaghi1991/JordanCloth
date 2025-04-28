@@ -54,6 +54,8 @@ namespace IOC
             Services.AddScoped<IMaster<Product>, MasterServices<Product>>();
             Services.AddScoped<IMaster<Feature>, MasterServices<Feature>>();
             Services.AddScoped<IMaster<ProductTag>, MasterServices<ProductTag>>();
+            Services.AddScoped<IMaster<ProductFeatureValue>, MasterServices<ProductFeatureValue>>();
+            Services.AddScoped<IMaster<Product_ProductTag>, MasterServices<Product_ProductTag>>();
 
 
 
@@ -63,6 +65,8 @@ namespace IOC
             Services.AddScoped<ISubcategory, SubCategoryServices>();
             Services.AddScoped<IFeature, FeatureServices>();
             Services.AddScoped<IProductTag, ProductTagServices>();
+            Services.AddScoped<IProductFeatureValue, ProductFeatureValueServices>();
+            Services.AddScoped<IPProductTag, PproductTagServices>();
 
 
             #endregion

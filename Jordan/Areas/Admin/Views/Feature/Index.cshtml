@@ -39,7 +39,8 @@
 
                           
                             <td>
-                                <a class="btn btn-info" onclick="Edit(@item.Id)">ویرایش</a>
+                                <a class="btn btn-info" asp-action="Edit" asp-route-FeatureId="@item.Id">ویرایش</a>
+                                <a class="btn btn-danger" asp-action="delete" onclick="return confirm('ایا از حذف اطمینان دارید؟')" asp-route-id="@item.Id">حذف</a>
                                 <a class="btn btn-primary" asp-action="Index" asp-controller="FeatureValue" asp-route-FeatureId="@item.Id">زیر دسته ها</a>
 
 

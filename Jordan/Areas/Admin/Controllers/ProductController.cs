@@ -23,5 +23,9 @@ namespace Personal.Areas.Admin.Controllers
         {
             return View(_Product.GetAll());
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }

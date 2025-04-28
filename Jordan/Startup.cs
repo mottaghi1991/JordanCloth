@@ -58,6 +58,8 @@ namespace WebStore
                 options.LogoutPath = "/Logout";
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
             });
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddAuthorization();
             RegisterServices(services);
             services.AddRazorPages();

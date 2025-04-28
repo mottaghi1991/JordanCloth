@@ -29,7 +29,11 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
                             </td>
-                           
+                           <td>
+                                <a asp-action="Edit" asp-route-TagId="@item.Id" class="btn btn-info">ویرایش</a>
+                                <a asp-action="ProductTag" asp-route-ProductTagId="@item.Id" class="btn btn-primary">محصولات این دسته</a>
+                                <a asp-action="Delete" asp-route-TagId="@item.Id" onclick="return confirm('ایا از حذف اطمینان دارید؟')" class="btn btn-danger"> حذف</a>
+                            </td>
                         </tr>
                     }
                 </tbody>

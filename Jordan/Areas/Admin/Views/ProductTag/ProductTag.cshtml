@@ -1,0 +1,60 @@
+﻿@model Core.Dto.ViewModel.Store.ProductTag.ShowProductByProductTagVm
+@{
+    ViewData["Title"] = "ProductFeatureValue";
+}
+
+
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title"> لیست محصولات @Model.TagTitle</h3>
+        </div>
+        <div class="card-body">
+            <p>
+                <form asp-action="AddProductToTag">
+                    <input type="hidden" name="ProductTagId" value="@Model.ProductTagId" />
+                    <select name="ProductId" class="form-control form-control-sm myselect m-5" asp-items="ViewBag.Product"></select>
+                    <input type="submit" value="افزودن به لیست" class="btn btn-success" />
+
+                </form>
+            </p>
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.products.FirstOrDefault().ProductName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.products.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.products.FirstOrDefault().Price)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.products)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+
+                                <a class="btn btn-danger" asp-action="RemoveProductFromTagId" asp-route-ProductId="@item.Id" asp-route-ProductTagId="@Model.ProductTagId">حذف از لیست</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Store
 {
-    public class ProductFeatureValue : BaseModel
+    public class ProductFeatureValue 
     {
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]

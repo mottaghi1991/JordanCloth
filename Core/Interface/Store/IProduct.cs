@@ -13,5 +13,6 @@ namespace Core.Interface.Store
         public IEnumerable<Product> GetProductByFeatureValueId(int FeatureValueId);
         public IEnumerable<Product> GetProductByTagId(int TagId);
         public IEnumerable<Product> GetAll();
+        public IEnumerable<Product> GetProductBySubcategory(int SubCategoryId);
     }
 }

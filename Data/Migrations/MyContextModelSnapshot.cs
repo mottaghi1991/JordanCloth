@@ -66,7 +66,9 @@ namespace Data.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("subCategoryId")
                         .HasColumnType("int");
@@ -90,10 +92,13 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("FeatureId")
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsDelete")
                         .ValueGeneratedOnAdd()
@@ -101,7 +106,9 @@ namespace Data.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -163,17 +170,6 @@ namespace Data.Migrations
 
                     b.Property<int>("FeatureValueId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime?>("DeleteDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDelete")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
 
                     b.HasKey("ProductId", "FeatureValueId");
 
