@@ -11,6 +11,6 @@ namespace Core.Dto.ViewModel.Store.ProductFeatureValue
     {
         public int FeatureValueId { get; set; }
         public string FeatureValueTitle { get; set; }
-        public IEnumerable<Product> products{ get; set; }
+        public IEnumerable<Domain.Store.Product> products{ get; set; }
     }
 }

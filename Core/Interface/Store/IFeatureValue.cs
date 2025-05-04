@@ -10,6 +10,8 @@ namespace Core.Interface.Store
     public interface IFeatureValue
     {
         public IEnumerable<FeatureValue> GetFeatureValueByfeatureId(int featureId);
+        public IEnumerable<FeatureValue> GetFeatureValueBySubcategoryId(int SubCategoryId);
+        public IEnumerable<FeatureValue> GetAll();
 
         public FeatureValue Insert(FeatureValue FeatureValue);
         public FeatureValue Update(FeatureValue FeatureValue);

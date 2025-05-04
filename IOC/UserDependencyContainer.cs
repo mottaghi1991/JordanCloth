@@ -3,6 +3,7 @@ using Core.Dto.ViewModel.User;
 using Core.Interface.Admin;
 using Core.Interface.Store;
 using Core.Interface.Users;
+using Core.Services.Admin;
 using Core.Services.Store;
 using Core.Services.Users;
 using Data.GenericRepository;
@@ -56,6 +57,7 @@ namespace IOC
             Services.AddScoped<IMaster<ProductTag>, MasterServices<ProductTag>>();
             Services.AddScoped<IMaster<ProductFeatureValue>, MasterServices<ProductFeatureValue>>();
             Services.AddScoped<IMaster<Product_ProductTag>, MasterServices<Product_ProductTag>>();
+            Services.AddScoped<IMaster<SitSetting>, MasterServices<SitSetting>>();
 
 
 
@@ -67,6 +69,7 @@ namespace IOC
             Services.AddScoped<IProductTag, ProductTagServices>();
             Services.AddScoped<IProductFeatureValue, ProductFeatureValueServices>();
             Services.AddScoped<IPProductTag, PproductTagServices>();
+            Services.AddScoped<ISiteSetting, SiteSettingServices>();
 
 
             #endregion

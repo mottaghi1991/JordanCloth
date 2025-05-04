@@ -32,6 +32,11 @@ namespace Core.Services.Store
             return obj;
         }
 
+        public Product GetProductById(int ProductId)
+        {
+           return _master.GetAllEf(a=>a.Id==ProductId).FirstOrDefault();
+        }
+
         public IEnumerable<Product> GetProductBySubcategory(int SubCategoryId)
         {
             return _master.GetAllEf(a => a.SubCategoryId == SubCategoryId);
@@ -41,6 +46,11 @@ namespace Core.Services.Store
         {
             var obj = _master.GetAllAsQueryable().Where(p => p.Product_ProductTags.Any(pf => pf.ProductTagId== TagId)).ToList();
             return obj;
+        }
+
+        public Product Insert(Product product)
+        {
+            return _master.Insert(product);
         }
     }
 }

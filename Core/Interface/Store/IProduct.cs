@@ -14,5 +14,8 @@ namespace Core.Interface.Store
         public IEnumerable<Product> GetProductByTagId(int TagId);
         public IEnumerable<Product> GetAll();
         public IEnumerable<Product> GetProductBySubcategory(int SubCategoryId);
+        public Product GetProductById(int ProductId);
+        public Product Insert(Product product);
+
     }
 }

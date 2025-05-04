@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "AddGroupToPrduct";
+    IEnumerable<Domain.Store.FeatureValue> FeatureValue = ViewBag.Featurevalue as IEnumerable<Domain.Store.FeatureValue>;
+    IEnumerable<Domain.Store.ProductTag> ProductTag = ViewBag.ProductTag as IEnumerable<Domain.Store.ProductTag>;
+
+}
+
+<div class="card card-primary ">
+    <div class="card-header">
+        عضویت در دسته بندی
+    </div>
+    <div class="card-body align-items-start">
+        <form asp-action="RolePermission">
+            <input type="hidden" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        دسته بندی بر اساس
+                        <div class="card-body p-3" style="height: 250px; overflow-y: auto">
+                            @foreach (var permission in FeatureValue)
+                            {
+                                <li>
+                                    <input type="checkbox" name="AceeptgroupMenu" value="@permission.Value" @* @((Model.MenuVm.Any(r => r.PermissionListId == sub2.PermissionListId) ? "checked" : "")) *@ />
+                                    @permission.Value
+                                </li>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        دسته بندی شخصی
+                        <div class="card-body p-3" style="height: 250px; overflow-y: auto">
+                            @foreach (var permission in ProductTag)
+                            {
+                                <li>
+                                    <input type="checkbox" name="AceeptgroupMenu" value="@permission.Title" @* @((Model.MenuVm.Any(r => r.PermissionListId == sub2.PermissionListId) ? "checked" : "")) *@ />
+                                    @permission.Title
+                                </li>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success" value="ثبت">
+        </form>
+
+    </div>
+</div>
+

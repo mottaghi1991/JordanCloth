@@ -125,6 +125,9 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Attrib")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("DeleteDate")
                         .HasColumnType("datetime2");
 
@@ -142,6 +145,9 @@ namespace Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<int>("OffPricePercent")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -149,6 +155,9 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Proper")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -236,6 +245,42 @@ namespace Data.Migrations
                     b.HasIndex("ProductTagId");
 
                     b.ToTable("Product_ProductTage", "dbo");
+                });
+
+            modelBuilder.Entity("Domain.Store.SitSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FirstSlider")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FourthSlider")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("SecondSlider")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SixSlider")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ThirdSlider")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SitSettings", "dbo");
                 });
 
             modelBuilder.Entity("Domain.Store.SubCategory", b =>

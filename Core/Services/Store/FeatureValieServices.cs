@@ -24,14 +24,24 @@ namespace Core.Services.Store
           return _master.Delete(GetFeatureValueById(FeatureValueId));
         }
 
+        public IEnumerable<FeatureValue> GetAll()
+        {
+            return _master.GetAllEf();
+        }
+
         public IEnumerable<FeatureValue> GetFeatureValueByfeatureId(int featureId)
         {
-            return _master.GetAllAsQueryable().Include(a=>a.Feature).Where(a => a.FeatureId == featureId);
+            return _master.GetAllAsQueryable().Include(a=>a.Feature).Where(a => a.FeatureId == featureId).ToList();
         }
 
         public FeatureValue GetFeatureValueById(int FeatureValueId)
         {
        return _master.GetAllAsQueryable().Include(a=>a.Feature).FirstOrDefault(a=>a.Id==FeatureValueId);  
+        }
+
+        public IEnumerable<FeatureValue> GetFeatureValueBySubcategoryId(int SubCategoryId)
+        {
+            return _master.GetAllAsQueryable().Include(a => a.Feature).Where(a => a.Feature.subCategoryId == SubCategoryId);
         }
 
         public FeatureValue Insert(FeatureValue FeatureValue)

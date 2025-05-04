@@ -1,0 +1,61 @@
+﻿@model Domain.Store.SitSetting
+@{
+    ViewData["Title"] = "FirstPageSetting";
+}
+
+
+<div class="col-md-12">
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">دسته بندی </h3>
+        </div>
+        <div class="card-body m-3">
+            <div class="row">
+                <div class="col-lg-12 col-md-4">
+                    <form asp-action="Create" id="myform">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                        <div class="form-group">
+                            <label asp-for="FirstSlider" class="control-label"></label>
+                            <select asp-for="FirstSlider" asp-items="ViewBag.FirstComponent" class="form-control"></select>
+                            <span asp-validation-for="FirstSlider" class="text-danger"></span>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="SecondSlider" class="control-label"></label>
+                            <select asp-for="SecondSlider" asp-items="ViewBag.SecondComponent" class="form-control"></select>
+                            <span asp-validation-for="SecondSlider" class="text-danger"></span>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ThirdSlider" class="control-label"></label>
+                            <select asp-for="ThirdSlider" asp-items="ViewBag.thiradComponent" class="form-control"></select>
+                            <span asp-validation-for="ThirdSlider" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FourthSlider" class="control-label"></label>
+                            <select asp-for="FourthSlider" asp-items="ViewBag.fourthComponent" class="form-control"></select>
+                            <span asp-validation-for="FourthSlider" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SixSlider" class="control-label"></label>
+                            <select asp-for="SixSlider" asp-items="ViewBag.SixComponent" class="form-control"></select>
+                            <span asp-validation-for="SixSlider" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="ثبت" class="btn btn-success" />
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

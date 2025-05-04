@@ -35,6 +35,7 @@ namespace Data
         public virtual DbSet<Feature> Features{ get; set; }
         public virtual DbSet<FeatureValue> FeatureValues{ get; set; }
         public virtual DbSet<ProductFeatureValue> ProductFeatureValues{ get; set; }
+        public virtual DbSet<SitSetting> SitSettings{ get; set; }
 
 
         #endregion
